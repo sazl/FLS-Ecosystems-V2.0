@@ -705,6 +705,38 @@
                 <section name="column"/>
                 <section name="column"/>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[LatitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[LatitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[LongitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[LongitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[true]]></value>
@@ -976,6 +1008,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import com.wfp.utils.*;
 import com.spacetimeinsight.events.SelectUnSelectLayerEvent;
+import com.enterprisehorizons.magma.models.util.Coordinate;
+import com.wfp.db.platform.model.LassoTemplate;
+import com.spacetimeinsight.db.lasso.model.Lasso;
 
 private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
 private com.wfp.custom.datasource.CustomWebServiceDataDriver $trackingdriver;
@@ -986,8 +1021,9 @@ public String serverRootUrl = getServerContextBaseUrl();
 List<String> userMissionsList = null;
 Map<String, String> deviceOffsetMap = com.wfp.jobs.LDAPCacheJob.getDeviceOffsetMap();
 List<String> userProfilesList = null;
-Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
+List<Lasso> lassoList = LassoUtils.getAllLassos();
+List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
 
 public String currentVersion(){   
 	return "2.0";
@@ -1027,15 +1063,17 @@ void bindData() {
 	 	com.wfp.security.form.DeviceBean data = (com.wfp.security.form.DeviceBean )$trackingdatamodel;
 	 	
 	 	if (data != null)	
-	 	{
-	 	  	
+	 	{ 	
 	 		$artefact.setCoordinates(data.getLatitude(), data.getLongitude());	 							
-			$artefact.addAttribute("title", data.getTitle());
+			$artefact.addAttribute("title", data.getTitle());//System.out.println( data.getInternalID() );
+			//List<String> internalIdList = data.getInternalID();
+			//if( internalIdList!=null && internalIdList.size()>0 )
+			//$artefact.addAttribute("internalID", getResidentId ( data.getInternalID().get(0) ) );
 			
 										
 			$artefact.addAttribute("deviceId", data.getName());	
-			$artefact.addAttribute("deviceType",getDeviceType( data.getName() ) );	
-			$artefact.addAttribute("source", getTrackerName( data.getName() ) );	
+			$artefact.addAttribute("deviceType",LDAPUtils.getDeviceType( data.getName() ) );	
+			$artefact.addAttribute("source", LDAPUtils.getTrackerName( data.getName() ) );	
 			
 			$artefact.addAttribute("owner", getFullName(data));
 			$artefact.addAttribute("Organization", data.getOrganization());		
@@ -1046,7 +1084,7 @@ void bindData() {
 						
 		 	//Setting Mission
 		 	List<String> mList = LDAPUtils.getLDAPUserDtlsMap().get( data.getName() ).getAuthorizedGroupsList();
-		 	$artefact.addAttribute("mission", getAllMissionFromList( mList ) );	
+		 	$artefact.addAttribute("mission", LDAPUtils.getAllMissionFromList( mList ) );	
 		 	
 			$artefact.addAttribute("userID", data.getUid()); 
 			$artefact.addAttribute("separator", "&nbsp;" );
@@ -1077,6 +1115,8 @@ void bindData() {
 		 	$artefact.addAttribute("pLocalTime", data.getDeviceLocalTime()  );	
 		    $artefact.addAttribute("localTime", CommonUtils.stringDateToDate(data.getDeviceLocalTime()) );
 		 	$artefact.addAttribute("Latitude", "<span id=child_PLUSLast_Reported:DELIM: >"+data.getLatitude()+" / "+data.getLongitude()+"</span>" );
+		 	$artefact.addAttribute("LatitudeStr", data.getLatitude() );
+		 	$artefact.addAttribute("LongitudeStr", data.getLongitude() );
 		 	$artefact.addAttribute("Longitude", "<span id=child_PLUSLast_Reported:DELIM: >"+data.getLongitude()+"</span>" );
 		  	$artefact.addAttribute("Lastseen",  "<span id=child_PLUSLast_Reported:DELIM: >"+data.getTime()+"</span>"  );	
 		 	
@@ -1089,33 +1129,25 @@ void bindData() {
 		 	if( !data.getTotalWaypoints().equals("1") )
 		 	$artefact.addAttribute("fetchHistory",  "<span id=child_PLUSHistorical:DELIM: ><input onclick=selectH(this,'session_deviceId') id="+data.getName()+" type=checkbox /></span>"  );
 		 	
-		 	
-		 	
-		 	
-		 	
-		 		String city = data.getLocality().replace("[","").replace("]","");		 	
-		 		$artefact.addAttribute("PLUSAddress",  "-" );
+		 	String city = data.getLocality().replace("[","").replace("]","");		 	
+		 	$artefact.addAttribute("PLUSAddress",  "-" );
+		 	$artefact.addAttribute("street", "<span id=child_PLUSAddress:DELIM: >"+data.getStreet() + "</span>" );
+		 	$artefact.addAttribute("city", "<span id=child_PLUSAddress:DELIM: >"+city.toUpperCase() + "</span>" );
+		 	$artefact.addAttribute("ccity",city.toUpperCase()  );
+		 	if( data.getPostalCode()!="")
+		 	$artefact.addAttribute("zip", "<span id=child_PLUSAddress:DELIM: >"+data.getPostalCode() + "</span>" );
 		 		
-		 		$artefact.addAttribute("street", "<span id=child_PLUSAddress:DELIM: >"+data.getStreet() + "</span>" );
-		 		$artefact.addAttribute("city", "<span id=child_PLUSAddress:DELIM: >"+city.toUpperCase() + "</span>" );
-		 		$artefact.addAttribute("ccity",city.toUpperCase()  );
-		 		$artefact.addAttribute("zip", "<span id=child_PLUSAddress:DELIM: >"+data.getPostalCode() + "</span>" );
-		 		
-		 		String cntry = data.getCountry();
-		 		if( cntry!=null && countriesMap!=null ) 
-		 		{	cntry = cntry.replace("[","").replace("]","");
-		 			cntry = countriesMap.get( cntry.toUpperCase() );
-		 		}
-		 		
-		 		$artefact.addAttribute("country", "<span id=child_PLUSAddress:DELIM: >"+ cntry + "</span>" );
-		 	 
-		
-		 	//$artefact.addAttribute("IM", CommonUtils.getPagerDtls(data.getSkypePager()));
-			 $artefact.addAttribute("IM","&nbsp;");
+	 		String cntry = data.getCountry();
+	 		if( cntry!=null && countriesMap!=null ) 
+	 		{	cntry = cntry.replace("[","").replace("]","");
+	 			cntry = countriesMap.get( cntry.toUpperCase() );
+	 		}
+	 		
+	 		$artefact.addAttribute("country", "<span id=child_PLUSAddress:DELIM: >"+ cntry + "</span>" );
+	 		$artefact.addAttribute("IM","&nbsp;");
 			String ly=data.getPrimaryEmail();
 			if(ly!=null)
 			{
-			//$artefact.addAttribute("Lync", "<span id=child_PLUSInstantMessage:DELIM: >"+data.getPrimaryEmail() +"</span>" );
 				$artefact.addAttribute("Lync", "<span id=child_PLUSInstantMessage:DELIM: >"+ly +"</span>" );
 			} 
 			String skype = CommonUtils.getMessaging(data.getSkypePager(),"skype" );
@@ -1149,39 +1181,21 @@ void bindData() {
 		e.printStackTrace();
 	}
 } 
-String getDeviceType( String id )
-{
 
-   if( id.indexOf("trackMe-")>=0 && id.length()==16 ) return "Digital Radio";
-   else return "Smartphone";
-}
- String getTrackerName(String deviceId )
- {
- 
-    if( deviceId.indexOf("trackMe")>=0 ) return "<a href=http://trackme.globalepic.lu target=_blank >TRACKME</a>"; 
-    else if( deviceId.indexOf("VISMO")>=0 ) return "<a href=http://vismo.com target=_blank >VISMO</a>";
-    else if( deviceId.indexOf("findmespot")>=0 ) return "<a href=http://http://international.findmespot.com/ target=_blank >findmespot</a>";
-    else return "-NOT AVAILABLE";
- 
- }
  String getResidentId(String s)
  { 
- 	if(s!=null&&s!="" &&s.indexOf("unitId=")>-1 )
+ 	if(s!=null&&s!="" &&s.indexOf("office")>-1 )
  	{
  		String[] a= s.split("unitId=");
  		 s = a[1]; 
  		 s = s.substring( 0, s.indexOf("|") );
- 		 return "<a href=# onclick=gotoResidence('"+s+"'); >"+s+"</a>"; 
+ 		 return "<a href=# onclick=loadOffices('"+s+"'); >"+s+"</a>"; 
+ 		 //return s;
+ 		
  	}
  	return "-";
  }
- String getDMission(){
- 	String miss= "Pakistan_support";
-	String deviceID = $artefact.getAttributeValueAsString("deviceId");	
-	List<String> deviceMissionList = LDAPUtils.getLDAPUserDtlsMap().get( deviceID ).getAuthorizedGroupsList();	
-	if( deviceMissionList!=null && deviceMissionList.size()>0 ) miss = deviceMissionList.get(0);
-	return miss;
- }
+ 
 String getFullName(com.wfp.security.form.DeviceBean data)
 {
 	String fullName = "";	
@@ -1224,12 +1238,15 @@ String getIconUrl_C(){
 String getIconUrl_W(){    
 	return "serverresources/icons/epic/Tracking_Staff_Y.png";		
 }
+String getIconUrl_R(){    
+	return "serverresources/icons/epic/Tracking_Staff_R.png";		
+}
 String legendURL(){    
 	return "serverresources/icons/epic/Staff_Legend.png";		
 }      
 String getStyle()
 {	
-	//if(isInDangerZone()) return "blinkerstyle";
+	if(isInDangerZone()) return "blinkerstyle";
 	Date time = (Date) $artefact.getAttributeValue("time");	
 	if(time!=null )
 	{
@@ -1243,12 +1260,14 @@ String getStyle()
 } 
 boolean isInDangerZone()
 {
-	String[] allZones = RBRegionsUtils.getZoneNames($artefact, getUserBean(), getLayerName(), getLayerId(), getLayerName()+"_DZ", "_SZ");
-	//if( allZones!=null) { for(String s:allZones) System.out.println(s ); }
-	String deviceId = $artefact.getAttributeValueAsString("deviceId");	
-	boolean needToAlert = RBRegionsUtils.isDeviceTraced($artefact, allZones, getSessionId(), deviceId);
-	if( needToAlert )System.out.println("needToAlert:"+needToAlert  );
-	return (!com.enterprisehorizons.util.StringUtils.isNull(allZones) );		
+	//com.spacetimeinsight.db.model.util.DataModelsCache.getInstance().refresh(LassoTemplate.class.getName());
+	Coordinate c = new Coordinate( Double.parseDouble( $artefact.getAttributeValueAsString("LatitudeStr") ),
+	Double.parseDouble(  $artefact.getAttributeValueAsString("LongitudeStr"))  );	
+	boolean isIndanger = LassoUtils.isInDangerZone(templateList, lassoList, c, new Date(),getName(),"Staff" );
+	Object userId = getSession().getHttpSession().getAttribute("session_userId");
+	if( userId==null )getSession().getHttpSession().setAttribute("session_userId",getUserUniqueId() );
+	if( isIndanger )System.out.println(  $artefact.getAttributeValueAsString("LatitudeStr")+":"+templateList.size() +" : "+ lassoList.size() +" isIndager :"+ isIndanger );
+	return isIndanger;	
 }
 String getDangerZoneName()
 {
@@ -1326,7 +1345,7 @@ void fireDashboardRefreshEvent()
 	event.setName("select_layers");
 	event.setLayers("Locations/Airports");
 	fireUserLevelEvent(event);
-	System.out.println(" event triggered" );
+	//System.out.println(" event triggered" );
 	fireUserLevelEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS);
 	
 	
@@ -1355,8 +1374,6 @@ boolean authorizeDevice()
 {
 	
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	
-	
 	try{
 	 if(userProfilesList ==null ) userProfilesList = com.wfp.utils.LDAPUtils.getUserProfilesList( userbean.getUserUniqueId());
 
@@ -1397,51 +1414,19 @@ String getAuthorUrl()
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }
 
-String getAllMissionFromList (List<String> missionList)
-{  
-	if(missionList!=null &&missionList.size()>0 )
-	{	
-		String missions="";
-		Collections.sort( missionList );int i=0;
-		for(String m : missionList )
-		{ 	++i;
-			missions += getMissionFullName( m ) ; 
-			if( i<missionList.size() ) missions+=", ";
-			
-		}
-		return missions;
-	}
-	else return "";
-}
-String getMissionFullName(String mission )
-{ 
-  if( mission==null ) return "-";
-  else{
-         String s =missionsMap.get(mission.toUpperCase()) ;
-         if(s==null) s=mission;
-         return s;
-       }
-}
-Date getTodaysDate() { return Calendar.getInstance().getTime(); }
-Date getFromDate() 
-{ 
-	Calendar c= Calendar.getInstance();
-	c.add(Calendar.DATE, -100);
-	return c.getTime();
-}
 boolean checkHighStatus(){
-	String status = $artefact.getAttributeValueAsString("ccity");
-	if(status.equalsIgnoreCase("DUBAI")){
-			return false;
+	if( isInDangerZone() ){
+			return true;
     }
 	return false;
 }
 
 String alertMsg(){
 	String status = $artefact.getAttributeValueAsString("ccity");
+	String deviceId = $artefact.getAttributeValueAsString("deviceId");
 	String DESCRIPTION = $artefact.getAttributeValueAsString("owner");
 	
-	return DESCRIPTION+" is in --"+status;
+	return DESCRIPTION+"( "+deviceId+" ) is inside -- active geofence ";
 }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
@@ -1501,8 +1486,24 @@ String alertMsg(){
                 <section name="name">
                     <value><![CDATA[blinkerstyle]]></value>
                 </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="customstyleproperties"/>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="iconsymboltype">
+                    <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
                     <section name="script">
@@ -1514,44 +1515,24 @@ String alertMsg(){
                 </section>
                 <section name="iconcolor">
                     <value><![CDATA[#FF0000]]></value>
-                </section>
-                <section name="iconcolorshader">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="labelcolorshader">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="labelscale">
-                    <value><![CDATA[0.0]]></value>
-                </section>
-                <section name="linecolorshader">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="fillcolorshader">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="showhighlightstyles">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="highlighticonurl">
-                    <section name="script">
-                        <value><![CDATA[getIconUrl()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
                     </section>
                 </section>
-                <section name="highlighticonscale">
-                    <value><![CDATA[1.0]]></value>
+                <section name="iconwidth">
+                    <value><![CDATA[16]]></value>
                 </section>
-                <section name="highlightlabelcolor">
-                    <value><![CDATA[#FF0000]]></value>
+                <section name="iconheight">
+                    <value><![CDATA[16]]></value>
                 </section>
-                <section name="highlightlabelscale">
-                    <value><![CDATA[0.5]]></value>
+                <section name="isaddline">
+                    <value><![CDATA[false]]></value>
                 </section>
-                <section name="shadertype">
-                    <value><![CDATA[com.enterprisehorizons.magma.models.util.Shader]]></value>
+                <section name="isaddfill">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[false]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1789,6 +1770,9 @@ String alertMsg(){
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="applicationhelp">
+                    <value><![CDATA[Application_Help.html?type=Tracking_the_Last_Known_Positions_of_the_Staff]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -2377,7 +2361,7 @@ String alertMsg(){
                     <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="windowcustomjsurl">
-                    <value><![CDATA[serverresources/js/htmlViewerModuleLevel.js]]></value>
+                    <value><![CDATA[FLS/js/htmlViewerModuleLevel.js]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -2392,7 +2376,7 @@ String alertMsg(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="applicationhelp">
-                    <value><![CDATA[http://rm.globalepic.lu/]]></value>
+                    <value><![CDATA[Application_Help.html?type=Tracking_the_Last_Known_Positions_of_the_Staff]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -3199,7 +3183,7 @@ String alertMsg(){
                     <value><![CDATA[500]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[150]]></value>
+                    <value><![CDATA[100]]></value>
                 </section>
                 <section name="windowleft">
                     <value><![CDATA[350]]></value>

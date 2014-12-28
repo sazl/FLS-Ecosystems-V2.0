@@ -1247,6 +1247,9 @@ String getMissionFullName(String mission )
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="applicationhelp">
+                    <value><![CDATA[Application_Help.html?type=Tracking_the_Last_Known_Positions_of_the_Airplanes]]></value>
+                </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1663,6 +1666,9 @@ String getMissionFullName(String mission )
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="applicationhelp">
+                    <value><![CDATA[Application_Help.html?type=Tracking_the_Last_Known_Positions_of_the_Airplanes]]></value>
+                </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1824,13 +1830,13 @@ String getMissionFullName(String mission )
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[name]]></value>
+                            <value><![CDATA[owner]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[Text]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[150]]></value>
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1851,6 +1857,46 @@ String getMissionFullName(String mission )
                         </section>
                         <section name="column">
                             <value><![CDATA[150]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[totalWaypoints]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[noOfDays]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1922,28 +1968,65 @@ String getMissionFullName(String mission )
                             <value><![CDATA[Descending]]></value>
                         </section>
                     </section>
+                </section>
+                <section name="windowinlinefilters">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[pLocalTime]]></value>
+                            <value><![CDATA[owner]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[deviceId]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[200]]></value>
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[organisation]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[false]]></value>
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[mission]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[]]></value>
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[ptime]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[None]]></value>
+                            <value><![CDATA[Date]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[noOfDays]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[totalWaypoints]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
                         </section>
                     </section>
                 </section>
-                <section name="windowinlinefilters"/>
                 <section name="groupattributes"/>
                 <section name="summaryattributes"/>
                 <section name="expandall">
