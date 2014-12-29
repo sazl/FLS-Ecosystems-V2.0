@@ -787,9 +787,6 @@
                 </section>
             </section>
         </section>
-        <section name="globalsearchablefields"/>
-        <section name="aggregatableattributes"/>
-        <section name="categories"/>
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
@@ -810,14 +807,11 @@
                 <section name="iscamerasensitive">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="refreshonevents">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[select_layers]]></value>
-                        </section>
-                    </section>
-                </section>
+                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="featuretype">
@@ -974,7 +968,7 @@
                     <value><![CDATA[4712]]></value>
                 </section>
                 <section name="alerttime">
-                    <value><![CDATA[12/19/2014 23:00:10]]></value>
+                    <value><![CDATA[12/27/2014 23:00:10]]></value>
                 </section>
                 <section name="alertsourcetype">
                     <value><![CDATA[247]]></value>
@@ -1266,7 +1260,7 @@ boolean isInDangerZone()
 	boolean isIndanger = LassoUtils.isInDangerZone(templateList, lassoList, c, new Date(),getName(),"Staff" );
 	Object userId = getSession().getHttpSession().getAttribute("session_userId");
 	if( userId==null )getSession().getHttpSession().setAttribute("session_userId",getUserUniqueId() );
-	if( isIndanger )System.out.println(  $artefact.getAttributeValueAsString("LatitudeStr")+":"+templateList.size() +" : "+ lassoList.size() +" isIndager :"+ isIndanger );
+	System.out.println(  $artefact.getAttributeValueAsString("LatitudeStr")+":"+templateList.size() +" : "+ lassoList.size() +" isIndager :"+ isIndanger );
 	return isIndanger;	
 }
 String getDangerZoneName()
@@ -1454,7 +1448,6 @@ String alertMsg(){
         <section name="inputdateformat">
             <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
         </section>
-        <section name="customrange"/>
         <section name="isshowintervals">
             <value><![CDATA[false]]></value>
         </section>
@@ -1477,6 +1470,9 @@ String alertMsg(){
                 </section>
             </section>
         </section>
+        <section name="isapplydefaulttimefilter">
+            <value><![CDATA[false]]></value>
+        </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[false]]></value>
         </section>
@@ -1495,7 +1491,6 @@ String alertMsg(){
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1549,7 +1544,6 @@ String alertMsg(){
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1597,7 +1591,6 @@ String alertMsg(){
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1645,7 +1638,6 @@ String alertMsg(){
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1693,7 +1685,6 @@ String alertMsg(){
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1757,7 +1748,7 @@ String alertMsg(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -1766,7 +1757,7 @@ String alertMsg(){
                     <value><![CDATA[Forms]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -1789,18 +1780,17 @@ String alertMsg(){
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[600]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[300]]></value>
+                    <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
                 <section name="actionevents">
                     <section name="row">
@@ -1817,7 +1807,9 @@ String alertMsg(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -1827,18 +1819,26 @@ String alertMsg(){
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.TabbedViewTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1852,11 +1852,10 @@ String alertMsg(){
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="showindatafilter">
+                <section name="showInDataFilter">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="showfilterpluginproperties">
@@ -1883,11 +1882,10 @@ String alertMsg(){
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
                 <section name="categories">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Location]]></value>
+                            <value><![CDATA[Profile]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -1979,7 +1977,7 @@ String alertMsg(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Contact]]></value>
+                            <value><![CDATA[Location]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -2131,7 +2129,7 @@ String alertMsg(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Others]]></value>
+                            <value><![CDATA[Contact]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -2358,10 +2356,10 @@ String alertMsg(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="windowcustomjsurl">
-                    <value><![CDATA[FLS/js/htmlViewerModuleLevel.js]]></value>
+                    <value><![CDATA[serverresources/js/htmlViewerModuleLevel.js]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -2370,7 +2368,7 @@ String alertMsg(){
                     <value><![CDATA[Tables]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[true]]></value>
@@ -2405,7 +2403,6 @@ String alertMsg(){
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[1100]]></value>
                 </section>
@@ -2422,10 +2419,15 @@ String alertMsg(){
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -2580,11 +2582,20 @@ String alertMsg(){
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -2612,23 +2623,7 @@ String alertMsg(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="istimeaware">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="datefield">
-                    <value><![CDATA[time]]></value>
-                </section>
-                <section name="datefieldformat">
-                    <value><![CDATA[yyyy-MM-dd HH:mm:ss]]></value>
-                </section>
-                <section name="inputdateformat">
-                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-                </section>
-                <section name="customrange"/>
-                <section name="isshowintervals">
                     <value><![CDATA[false]]></value>
-                </section>
-                <section name="defaulttimerange">
-                    <value><![CDATA[startendtime]]></value>
                 </section>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -2636,7 +2631,6 @@ String alertMsg(){
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
                 <section name="filterfields">
                     <section name="row">
                         <section name="column">
@@ -2694,7 +2688,6 @@ String alertMsg(){
                         </section>
                     </section>
                 </section>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -2728,8 +2721,6 @@ String alertMsg(){
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
-                <section name="customwindowproperties"/>
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
@@ -2987,7 +2978,6 @@ String alertMsg(){
                     </section>
                 </section>
                 <section name="groupattributes"/>
-                <section name="summaryattributes"/>
                 <section name="expandall">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -3014,7 +3004,9 @@ String alertMsg(){
                         <section name="column"/>
                     </section>
                 </section>
-                <section name="hyperlinks"/>
+                <section name="createchartfromtable">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="highlighticonurl">
                     <value><![CDATA[/images/highlight.png]]></value>
                 </section>
@@ -3023,6 +3015,12 @@ String alertMsg(){
                 </section>
                 <section name="highlightfeaturecount">
                     <value><![CDATA[50]]></value>
+                </section>
+                <section name="usequery">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="numberofpoints">
+                    <value><![CDATA[200]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -3047,14 +3045,11 @@ String alertMsg(){
                 <section name="windowiconurl">
                     <value><![CDATA[css/images/legend.png]]></value>
                 </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[false]]></value>
-                </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_urlwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -3080,7 +3075,6 @@ String alertMsg(){
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[300]]></value>
                 </section>
@@ -3088,17 +3082,25 @@ String alertMsg(){
                     <value><![CDATA[305]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[150]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[350]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
-                <section name="windowcustomproperties"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -3112,7 +3114,6 @@ String alertMsg(){
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -3140,16 +3141,13 @@ String alertMsg(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_urlwindow.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_urlwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -3175,7 +3173,6 @@ String alertMsg(){
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[900]]></value>
                 </section>
@@ -3186,14 +3183,22 @@ String alertMsg(){
                     <value><![CDATA[100]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[350]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
-                <section name="windowcustomproperties"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -3207,7 +3212,6 @@ String alertMsg(){
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -3235,7 +3239,7 @@ String alertMsg(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/dashboards/icon_search.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -3244,7 +3248,7 @@ String alertMsg(){
                     <value><![CDATA[Data Filters]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/dashboards/icon_search.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -3264,22 +3268,18 @@ String alertMsg(){
                 <section name="windowtoolbarpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[100]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[100]]></value>
                 </section>
-                <section name="windowcustomproperties"/>
-                <section name="actionevents"/>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
                 <section name="filterfields">
                     <section name="row">
                         <section name="column">
@@ -3370,14 +3370,110 @@ String alertMsg(){
                         </section>
                     </section>
                 </section>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="filterdynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="datasourcecolumnmap"/>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[Metadata]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[URL]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#URL_Window/About__URL_Window.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Forms]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerUrlWindow]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[window/url/com.spacetimeinsight.viewer.ui.urlWindow]]></value>
+                </section>
+                <section name="windowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="windowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="windowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="windowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[800]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[400]]></value>
+                </section>
+                <section name="windowtop">
+                    <value><![CDATA[150]]></value>
+                </section>
+                <section name="windowleft">
+                    <value><![CDATA[240]]></value>
+                </section>
+                <section name="hidefrombusinessviewmenu">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isattributelink">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowurl">
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?type=staff]]></value>
+                </section>
             </section>
         </section>
         <section name="datamashups">
@@ -3385,10 +3481,6 @@ String alertMsg(){
                 <value><![CDATA[tracking]]></value>
                 <section name="driver">
                     <value><![CDATA[com.wfp.custom.datasource.CustomWebServiceDataDriver]]></value>
-                    <section name="metadata"/>
-                    <section name="dynamicDatasourceTableMetaData"/>
-                    <section name="dynamicDatasourceIndexes"/>
-                    <section name="dynamicDatasourceUpdateColumns"/>
                 </section>
                 <section name="datarendertype">
                     <value><![CDATA[Collection]]></value>

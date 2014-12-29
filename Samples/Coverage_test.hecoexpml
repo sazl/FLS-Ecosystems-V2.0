@@ -167,7 +167,6 @@
         <section name="cache">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="aggregatableattributes"/>
         <section name="categories">
             <section name="row">
                 <section name="column">
@@ -351,8 +350,10 @@
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="featuretype">
@@ -427,7 +428,6 @@
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="blinkstyles"/>
             </section>
             <section name="folder">
                 <section name="name">
@@ -509,13 +509,6 @@ String getName() {
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="inputdateformat">
-            <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-        </section>
-        <section name="customrange"/>
-        <section name="isshowintervals">
-            <value><![CDATA[false]]></value>
-        </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[true]]></value>
         </section>
@@ -591,9 +584,6 @@ String getName() {
                             </section>
                         </section>
                     </section>
-                    <section name="dynamicDatasourceTableMetaData"/>
-                    <section name="dynamicDatasourceIndexes"/>
-                    <section name="dynamicDatasourceUpdateColumns"/>
                 </section>
                 <section name="datarendertype">
                     <value><![CDATA[2]]></value>
