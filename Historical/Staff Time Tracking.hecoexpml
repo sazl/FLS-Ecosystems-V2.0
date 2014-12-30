@@ -294,6 +294,11 @@
         <section name="blinkloopcount">
             <value><![CDATA[2]]></value>
         </section>
+        <section name="constraints">
+            <section name="constraint">
+                <value><![CDATA[cameraboundary]]></value>
+            </section>
+        </section>
         <section name="listeners"/>
         <section name="layout">
             <section name="folder">
@@ -795,14 +800,6 @@ String getLineColor(){
                 <section name="type">
                     <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
                 </section>
-                <section name="windowtitle">
-                    <section name="script">
-                        <value><![CDATA[name]]></value>
-                        <section name="type">
-                            <value><![CDATA[2]]></value>
-                        </section>
-                    </section>
-                </section>
                 <section name="windowshowbreadcrumbs">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -855,16 +852,16 @@ String getLineColor(){
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[900]]></value>
+                    <value><![CDATA[800]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[350]]></value>
+                    <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[275]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[350]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
@@ -968,30 +965,10 @@ String getLineColor(){
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[name]]></value>
+                            <value><![CDATA[owner]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[250]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[latitude]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[200]]></value>
@@ -1005,16 +982,17 @@ String getLineColor(){
                         <section name="column">
                             <value><![CDATA[None]]></value>
                         </section>
+                        <section name="column"/>
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[longitude]]></value>
+                            <value><![CDATA[name]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[150]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1025,16 +1003,59 @@ String getLineColor(){
                         <section name="column">
                             <value><![CDATA[None]]></value>
                         </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[latitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[200]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[longitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[200]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
                     </section>
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[time]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[150]]></value>
+                            <value><![CDATA[300]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1045,26 +1066,7 @@ String getLineColor(){
                         <section name="column">
                             <value><![CDATA[Descending]]></value>
                         </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[owner]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[250]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
+                        <section name="column"/>
                     </section>
                 </section>
                 <section name="groupattributes">
