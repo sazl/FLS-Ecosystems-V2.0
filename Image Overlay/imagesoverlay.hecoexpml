@@ -76,11 +76,6 @@
         <section name="blinkloopcount">
             <value><![CDATA[2]]></value>
         </section>
-        <section name="constraints">
-            <section name="constraint">
-                <value><![CDATA[cameraboundary]]></value>
-            </section>
-        </section>
         <section name="listeners"/>
         <section name="layout">
             <section name="folder">

@@ -422,8 +422,6 @@
                 </section>
             </section>
         </section>
-        <section name="aggregatableattributes"/>
-        <section name="categories"/>
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
@@ -444,8 +442,10 @@
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="featuretype">
@@ -592,7 +592,7 @@ List<String> userProfilesList = null;
 
 public String currentVersion(){   
 	return "5.0";
-}
+} 
 public String getAuthor(){   
 	return "Kaleem Mohammed"; 
 }
@@ -928,32 +928,6 @@ String getMissionFullName(String mission )
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="inputdateformat">
-            <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-        </section>
-        <section name="customrange"/>
-        <section name="isshowintervals">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="defaulttimerange">
-            <value><![CDATA[startendtime]]></value>
-        </section>
-        <section name="defaultstarttime">
-            <section name="script">
-                <value><![CDATA[time]]></value>
-                <section name="type">
-                    <value><![CDATA[2]]></value>
-                </section>
-            </section>
-        </section>
-        <section name="defaultendtime">
-            <section name="script">
-                <value><![CDATA[time]]></value>
-                <section name="type">
-                    <value><![CDATA[2]]></value>
-                </section>
-            </section>
-        </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[false]]></value>
         </section>
@@ -1030,7 +1004,6 @@ String getMissionFullName(String mission )
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1078,7 +1051,6 @@ String getMissionFullName(String mission )
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1126,7 +1098,6 @@ String getMissionFullName(String mission )
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1174,7 +1145,6 @@ String getMissionFullName(String mission )
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1233,7 +1203,7 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -1242,7 +1212,7 @@ String getMissionFullName(String mission )
                     <value><![CDATA[Forms]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -1265,7 +1235,6 @@ String getMissionFullName(String mission )
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[520]]></value>
                 </section>
@@ -1273,12 +1242,11 @@ String getMissionFullName(String mission )
                     <value><![CDATA[250]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="isinfowindow">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -1288,7 +1256,9 @@ String getMissionFullName(String mission )
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -1298,18 +1268,26 @@ String getMissionFullName(String mission )
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.TabbedViewTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1326,11 +1304,10 @@ String getMissionFullName(String mission )
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="showindatafilter">
+                <section name="showInDataFilter">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="showfilterpluginproperties">
@@ -1357,7 +1334,6 @@ String getMissionFullName(String mission )
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
                 <section name="categories">
                     <section name="row">
                         <section name="column">
@@ -1652,7 +1628,7 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -1661,7 +1637,7 @@ String getMissionFullName(String mission )
                     <value><![CDATA[Tables]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -1696,12 +1672,11 @@ String getMissionFullName(String mission )
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[370]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[400]]></value>
@@ -1709,14 +1684,18 @@ String getMissionFullName(String mission )
                 <section name="windowleft">
                     <value><![CDATA[240]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -1726,7 +1705,6 @@ String getMissionFullName(String mission )
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.ClientSideTableTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -1736,11 +1714,20 @@ String getMissionFullName(String mission )
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1776,12 +1763,17 @@ String getMissionFullName(String mission )
                 <section name="inputdateformat">
                     <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
                 </section>
-                <section name="customrange"/>
                 <section name="isshowintervals">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="defaulttimerange">
                     <value><![CDATA[startendtime]]></value>
+                </section>
+                <section name="isapplydefaulttimefilter">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="showInTimeFilter">
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1789,9 +1781,6 @@ String getMissionFullName(String mission )
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
-                <section name="filterfields"/>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1825,8 +1814,6 @@ String getMissionFullName(String mission )
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
-                <section name="customwindowproperties"/>
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
@@ -2027,8 +2014,6 @@ String getMissionFullName(String mission )
                         </section>
                     </section>
                 </section>
-                <section name="groupattributes"/>
-                <section name="summaryattributes"/>
                 <section name="expandall">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -2055,7 +2040,9 @@ String getMissionFullName(String mission )
                         <section name="column"/>
                     </section>
                 </section>
-                <section name="hyperlinks"/>
+                <section name="createchartfromtable">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="highlighticonurl">
                     <value><![CDATA[/images/highlight.png]]></value>
                 </section>
@@ -2064,6 +2051,12 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="highlightfeaturecount">
                     <value><![CDATA[50]]></value>
+                </section>
+                <section name="usequery">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="numberofpoints">
+                    <value><![CDATA[200]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -2089,16 +2082,13 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Tables]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -2130,24 +2120,28 @@ String getMissionFullName(String mission )
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
-                    <value><![CDATA[630]]></value>
-                </section>
-                <section name="windowheight">
-                    <value><![CDATA[370]]></value>
-                </section>
-                <section name="windowtop">
-                    <value><![CDATA[120]]></value>
-                </section>
-                <section name="windowleft">
                     <value><![CDATA[400]]></value>
                 </section>
-                <section name="actionevents"/>
+                <section name="windowheight">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowtop">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowleft">
+                    <value><![CDATA[100]]></value>
+                </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowmetadata">
@@ -2274,11 +2268,20 @@ String getMissionFullName(String mission )
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -2305,25 +2308,12 @@ String getMissionFullName(String mission )
                 <section name="istimeaware">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="inputdateformat">
-                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-                </section>
-                <section name="customrange"/>
-                <section name="isshowintervals">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="defaulttimerange">
-                    <value><![CDATA[startendtime]]></value>
-                </section>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
-                <section name="filterfields"/>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -2357,10 +2347,6 @@ String getMissionFullName(String mission )
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
-                <section name="customwindowproperties"/>
-                <section name="columndetails"/>
-                <section name="windowinlinefilters"/>
                 <section name="groupattributes">
                     <section name="row">
                         <section name="column">
@@ -2368,15 +2354,15 @@ String getMissionFullName(String mission )
                         </section>
                     </section>
                 </section>
-                <section name="summaryattributes"/>
                 <section name="expandall">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="freezecolumns">
                     <value><![CDATA[1]]></value>
                 </section>
-                <section name="actionbuttons"/>
-                <section name="hyperlinks"/>
+                <section name="createchartfromtable">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="highlighticonurl">
                     <value><![CDATA[/images/highlight.png]]></value>
                 </section>
@@ -2385,6 +2371,12 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="highlightfeaturecount">
                     <value><![CDATA[50]]></value>
+                </section>
+                <section name="usequery">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="numberofpoints">
+                    <value><![CDATA[200]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -2432,16 +2424,13 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_urlwindow.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_urlwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -2467,7 +2456,6 @@ String getMissionFullName(String mission )
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[300]]></value>
                 </section>
@@ -2475,17 +2463,25 @@ String getMissionFullName(String mission )
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[150]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[350]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
-                <section name="windowcustomproperties"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -2499,7 +2495,6 @@ String getMissionFullName(String mission )
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -2527,16 +2522,13 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/dashboards/icon_search.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Data Filters]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/dashboards/icon_search.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -2556,22 +2548,18 @@ String getMissionFullName(String mission )
                 <section name="windowtoolbarpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[100]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[100]]></value>
                 </section>
-                <section name="windowcustomproperties"/>
-                <section name="actionevents"/>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
                 <section name="filterfields">
                     <section name="row">
                         <section name="column">
@@ -2631,14 +2619,12 @@ String getMissionFullName(String mission )
                         </section>
                     </section>
                 </section>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="filterdynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="datasourcecolumnmap"/>
             </section>
         </section>
         <section name="datamashups">
@@ -2646,10 +2632,6 @@ String getMissionFullName(String mission )
                 <value><![CDATA[tracking]]></value>
                 <section name="driver">
                     <value><![CDATA[com.wfp.custom.datasource.CustomWebServiceDataDriver]]></value>
-                    <section name="metadata"/>
-                    <section name="dynamicDatasourceTableMetaData"/>
-                    <section name="dynamicDatasourceIndexes"/>
-                    <section name="dynamicDatasourceUpdateColumns"/>
                 </section>
                 <section name="datarendertype">
                     <value><![CDATA[Collection]]></value>
