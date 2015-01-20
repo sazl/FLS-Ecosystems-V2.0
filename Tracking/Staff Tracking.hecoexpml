@@ -1108,6 +1108,7 @@ void bindData() {
 		 	$artefact.addAttribute("ptime", data.getTime()  );
 		 	$artefact.addAttribute("pLocalTime", data.getDeviceLocalTime()  );	
 		    $artefact.addAttribute("localTime", CommonUtils.stringDateToDate(data.getDeviceLocalTime()) );
+		    
 		 	$artefact.addAttribute("Latitude", "<span id=child_PLUSLast_Reported:DELIM: >"+data.getLatitude()+" / "+data.getLongitude()+"</span>" );
 		 	$artefact.addAttribute("LatitudeStr", data.getLatitude() );
 		 	$artefact.addAttribute("LongitudeStr", data.getLongitude() );
@@ -1240,7 +1241,7 @@ String legendURL(){
 }      
 String getStyle()
 {	
-	if(isInDangerZone()) return "blinkerstyle";
+	//if(isInDangerZone()) return "blinkerstyle";
 	Date time = (Date) $artefact.getAttributeValue("time");	
 	if(time!=null )
 	{
@@ -1766,7 +1767,7 @@ String alertMsg(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="applicationhelp">
-                    <value><![CDATA[Application_Help.html?type=Tracking_the_Last_Known_Positions_of_the_Staff]]></value>
+                    <value><![CDATA[Help_Redirect.html?type=Details&layer=Staff]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -2740,7 +2741,7 @@ String alertMsg(){
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[800]]></value>
+                    <value><![CDATA[900]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[400]]></value>
@@ -2782,7 +2783,7 @@ String alertMsg(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?type=staff]]></value>
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=tracking&type=staff]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -2815,6 +2816,9 @@ String alertMsg(){
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="applicationhelp">
+                    <value><![CDATA[Help_Redirect.html?type=List&layer=Staff]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -2913,6 +2917,26 @@ String alertMsg(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="istimeaware">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="datefield">
+                    <section name="script">
+                        <value><![CDATA[time]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="inputdateformat">
+                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
+                </section>
+                <section name="isshowintervals">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isapplydefaulttimefilter">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showInTimeFilter">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="filterdatasourcetype">
@@ -3083,13 +3107,34 @@ String alertMsg(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[mission]]></value>
+                            <value><![CDATA[noOfDays]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[totalWaypoints]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -3125,6 +3170,27 @@ String alertMsg(){
                     </section>
                     <section name="row">
                         <section name="column">
+                            <value><![CDATA[mission]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[100]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
                             <value><![CDATA[city]]></value>
                         </section>
                         <section name="column">
@@ -3146,7 +3212,28 @@ String alertMsg(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[time]]></value>
+                            <value><![CDATA[country]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[ptime]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -3162,27 +3249,6 @@ String alertMsg(){
                         </section>
                         <section name="column">
                             <value><![CDATA[Descending]]></value>
-                        </section>
-                        <section name="column"/>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[localTime]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[TextAndHtml]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[150]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
                         </section>
                         <section name="column"/>
                     </section>
@@ -3261,8 +3327,9 @@ String alertMsg(){
                         </section>
                     </section>
                 </section>
+                <section name="summaryattributes"/>
                 <section name="expandall">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="freezecolumns">
                     <value><![CDATA[1]]></value>
