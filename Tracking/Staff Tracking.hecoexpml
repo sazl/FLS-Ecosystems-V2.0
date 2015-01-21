@@ -1222,22 +1222,22 @@ String getDeviceCaption(){
 }
 
 String getIconUrl(){   
-	return "serverresources/icons/epic/Tracking_Staff_K.png";	 
+	return "serverresources/FLS/icons/epic/Tracking_Staff_K.png";	 
 }
 String getIconUrl_G(){   
-	return "serverresources/icons/epic/Tracking_Staff_G.png";	
+	return "serverresources/FLS/icons/epic/Tracking_Staff_G.png";	
 }
 String getIconUrl_C(){   
-	return "serverresources/icons/epic/Tracking_Staff_C.png";		
+	return "serverresources/FLS/icons/epic/Tracking_Staff_C.png";		
 }
 String getIconUrl_W(){    
-	return "serverresources/icons/epic/Tracking_Staff_Y.png";		
+	return "serverresources/FLS/icons/epic/Tracking_Staff_Y.png";		
 }
 String getIconUrl_R(){    
-	return "serverresources/icons/epic/Tracking_Staff_R.png";		
+	return "serverresources/FLS/icons/epic/Tracking_Staff_R.png";		
 }
 String legendURL(){    
-	return "serverresources/icons/epic/Staff_Legend.png";		
+	return "serverresources/FLS/icons/epic/Staff_Legend.png";		
 }      
 String getStyle()
 {	

@@ -809,19 +809,19 @@ String getDeviceCaption(){
 	return  $artefact.getAttributeValueAsString("vehicleID");
 }
 String getIconUrl(){ 
-	return "serverresources/icons/epic/Tracking_Vehicles_K.png"; 
+	return "serverresources/FLS/icons/epic/Tracking_Vehicles_K.png"; 
 }
 String getIconUrl_G(){ 
-	return "serverresources/icons/epic/Tracking_Vehicles_G.png"; 
+	return "serverresources/FLS/icons/epic/Tracking_Vehicles_G.png"; 
 }
 String getIconUrl_C(){ 
-	return "serverresources/icons/epic/Tracking_Vehicles_C.png";
+	return "serverresources/FLS/icons/epic/Tracking_Vehicles_C.png";
 }
 String getIconUrl_Y(){ 
-	return "serverresources/icons/epic/Tracking_Vehicles_Y.png";
+	return "serverresources/FLS/icons/epic/Tracking_Vehicles_Y.png";
 }
 String legendURL(){    
-	return "serverresources/icons/epic/Vehicles_Legend.png";		
+	return "serverresources/FLS/icons/epic/Vehicles_Legend.png";		
 } 
 String getStyle(){
 	//if(isInDangerZone())  return "blinkerstyle";

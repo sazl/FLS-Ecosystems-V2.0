@@ -38,13 +38,29 @@
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[description]]></value>
+                    <value><![CDATA[displayName]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[Name]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[description]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Description]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -271,8 +287,6 @@
                 </section>
             </section>
         </section>
-        <section name="aggregatableattributes"/>
-        <section name="categories"/>
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
@@ -293,8 +307,10 @@
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="featuretype">
@@ -389,7 +405,6 @@
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="blinkstyles"/>
                 <section name="infowindowid">
                     <value><![CDATA[Details]]></value>
                 </section>
@@ -439,16 +454,29 @@ void bindData() {
 		
 				
 		$artefact.addAttribute("name", dataMap.get("cn"));
-		//$artefact.addAttribute("displayName", dataMap.get("displayName"));
-		$artefact.addAttribute("address", dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ") );	
-		$artefact.addAttribute("email", dataMap.get("mail"));
-		$artefact.addAttribute("city", dataMap.get("locality"));
-		//$artefact.addAttribute("mission", dataMap.get("mission"));
+		$artefact.addAttribute("displayName", dataMap.get("displayName"));		
+		
 		$artefact.addAttribute("mission", getMissionFullName( dataMap ) );
-		$artefact.addAttribute("country", dataMap.get("c").toString().toUpperCase() );
-		$artefact.addAttribute("type", placeType );
-		$artefact.addAttribute("mobile", dataMap.get("otherPhones")  );
 		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
+		$artefact.addAttribute("type", placeType );
+		
+
+		
+		String mailStr=dataMap.get("mail").toString();
+		if(mailStr!=null&&mailStr!=""){
+			$artefact.addAttribute("email", dataMap.get("mail"));
+			}
+		else{
+			$artefact.addAttribute("email","-");
+		}
+		String mobileStr=dataMap.get("otherPhones").toString();
+		if(mobileStr!=null&&mobileStr!=""){
+			$artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
+			}
+		else{
+			$artefact.addAttribute("mobile","-");
+		}
+		
 		//$artefact.addAttribute("compasId", dataMap.get("compasId"));
 		$artefact.addAttribute("description", dataMap.get("description"));
 		//$artefact.addAttribute("skype", dataMap.get("skype"));
@@ -596,16 +624,6 @@ String getAuthorUrl(){
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="inputdateformat">
-            <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-        </section>
-        <section name="customrange"/>
-        <section name="isshowintervals">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="defaulttimerange">
-            <value><![CDATA[startendtime]]></value>
-        </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[false]]></value>
         </section>
@@ -624,7 +642,6 @@ String getAuthorUrl(){
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -635,7 +652,7 @@ String getAuthorUrl(){
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources\icons\epic\Locations_Guesthouses.png]]></value>
+                    <value><![CDATA[serverresources\FLS\icons\epic\Locations_Residences.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -675,7 +692,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -684,10 +701,13 @@ String getAuthorUrl(){
                     <value><![CDATA[Forms]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="applicationhelp">
+                    <value><![CDATA[Help_Redirect.html?type=Details&layer=Residences]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -704,20 +724,18 @@ String getAuthorUrl(){
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
-                    <value><![CDATA[500]]></value>
+                    <value><![CDATA[600]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[300]]></value>
+                    <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="isinfowindow">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -727,7 +745,9 @@ String getAuthorUrl(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -737,18 +757,26 @@ String getAuthorUrl(){
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.TabbedViewTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -762,11 +790,10 @@ String getAuthorUrl(){
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="showindatafilter">
+                <section name="showInDataFilter">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="showfilterpluginproperties">
@@ -793,11 +820,10 @@ String getAuthorUrl(){
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
                 <section name="categories">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Location]]></value>
+                            <value><![CDATA[Details]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -807,6 +833,16 @@ String getAuthorUrl(){
                                 <section name="row">
                                     <section name="column">
                                     <value><![CDATA[name]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[displayName]]></value>
                                     </section>
                                     <section name="column">
                                     <value><![CDATA[Text]]></value>
@@ -856,26 +892,6 @@ String getAuthorUrl(){
                                 </section>
                                 <section name="row">
                                     <section name="column">
-                                    <value><![CDATA[email]]></value>
-                                    </section>
-                                    <section name="column">
-                                    <value><![CDATA[Text]]></value>
-                                    </section>
-                                    <section name="column"/>
-                                    <section name="column"/>
-                                </section>
-                                <section name="row">
-                                    <section name="column">
-                                    <value><![CDATA[mobile]]></value>
-                                    </section>
-                                    <section name="column">
-                                    <value><![CDATA[Text]]></value>
-                                    </section>
-                                    <section name="column"/>
-                                    <section name="column"/>
-                                </section>
-                                <section name="row">
-                                    <section name="column">
                                     <value><![CDATA[country]]></value>
                                     </section>
                                     <section name="column">
@@ -889,7 +905,7 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Other]]></value>
+                            <value><![CDATA[Location]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -970,6 +986,38 @@ String getAuthorUrl(){
                         </section>
                     </section>
                     <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Contact]]></value>
+                        </section>
+                        <section name="column">
+                            <section name="columntype">
+                                <value><![CDATA[table]]></value>
+                            </section>
+                            <section name="table">
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[email]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[mobile]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section name="row">
                         <section name="column"/>
                         <section name="column">
                             <value><![CDATA[]]></value>
@@ -1006,16 +1054,13 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/dashboards/icon_search.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Data Filters]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/dashboards/icon_search.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -1035,22 +1080,18 @@ String getAuthorUrl(){
                 <section name="windowtoolbarpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[100]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[100]]></value>
                 </section>
-                <section name="windowcustomproperties"/>
-                <section name="actionevents"/>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
                 <section name="filterfields">
                     <section name="row">
                         <section name="column">
@@ -1060,7 +1101,7 @@ String getAuthorUrl(){
                             <value><![CDATA[Text]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[autocomplete]]></value>
+                            <value><![CDATA[]]></value>
                         </section>
                     </section>
                     <section name="row">
@@ -1071,32 +1112,202 @@ String getAuthorUrl(){
                             <value><![CDATA[Text]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[autocomplete]]></value>
+                            <value><![CDATA[]]></value>
                         </section>
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[address]]></value>
+                            <value><![CDATA[organisation]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[Text]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[autocomplete]]></value>
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[mission]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[city]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[country]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[email]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[latitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[longitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[mobile]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
                         </section>
                     </section>
                 </section>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
-                </section>
-                <section name="filterdynamicdatasourcename">
-                    <value><![CDATA[DEFAULT]]></value>
                 </section>
                 <section name="filterdynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="datasourcecolumnmap"/>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[Metadata]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[URL]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#URL_Window/About__URL_Window.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[css/images/info-icon.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Forms]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerUrlWindow]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[window/url/com.spacetimeinsight.viewer.ui.urlWindow]]></value>
+                </section>
+                <section name="windowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="windowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="windowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="windowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[800]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[400]]></value>
+                </section>
+                <section name="windowtop">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowleft">
+                    <value><![CDATA[200]]></value>
+                </section>
+                <section name="hidefrombusinessviewmenu">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isattributelink">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowurl">
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=locations&type=residences]]></value>
+                </section>
             </section>
             <section name="folder">
                 <section name="name">
@@ -1118,19 +1329,19 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Tables]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="applicationhelp">
+                    <value><![CDATA[Help_Redirect.html?type=List&layer=Residences]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -1159,27 +1370,30 @@ String getAuthorUrl(){
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[370]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[400]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[240]]></value>
+                    <value><![CDATA[100]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -1189,160 +1403,26 @@ String getAuthorUrl(){
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.ClientSideTableTransformer]]></value>
                 </section>
-                <section name="windowdataparameters">
-                    <section name="row">
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[name]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[name]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[description]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[description]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[mission]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[mission]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[organisation]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[organisation]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[address]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[address]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[city]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[city]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[country]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                        <section name="column">
-                            <section name="script">
-                                <value><![CDATA[country]]></value>
-                                <section name="type">
-                                    <value><![CDATA[2]]></value>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column"/>
-                        <section name="column"/>
-                    </section>
-                    <section name="row">
-                        <section name="column"/>
-                        <section name="column"/>
-                    </section>
-                    <section name="row">
-                        <section name="column"/>
-                        <section name="column"/>
-                    </section>
-                </section>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
-                </section>
-                <section name="dynamicdatasourcename">
-                    <value><![CDATA[DEFAULT]]></value>
                 </section>
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1356,22 +1436,11 @@ String getAuthorUrl(){
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="istimeaware">
                     <value><![CDATA[false]]></value>
-                </section>
-                <section name="inputdateformat">
-                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-                </section>
-                <section name="customrange"/>
-                <section name="isshowintervals">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="defaulttimerange">
-                    <value><![CDATA[startendtime]]></value>
                 </section>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1379,9 +1448,6 @@ String getAuthorUrl(){
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
-                <section name="filterfields"/>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1415,18 +1481,16 @@ String getAuthorUrl(){
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
-                <section name="customwindowproperties"/>
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[name]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[200]]></value>
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1437,16 +1501,38 @@ String getAuthorUrl(){
                         <section name="column">
                             <value><![CDATA[None]]></value>
                         </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[displayName]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
                     </section>
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[description]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[200]]></value>
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1457,16 +1543,17 @@ String getAuthorUrl(){
                         <section name="column">
                             <value><![CDATA[None]]></value>
                         </section>
+                        <section name="column"/>
                     </section>
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[organisation]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1477,36 +1564,17 @@ String getAuthorUrl(){
                         <section name="column">
                             <value><![CDATA[None]]></value>
                         </section>
+                        <section name="column"/>
                     </section>
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[mission]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[address]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1517,16 +1585,17 @@ String getAuthorUrl(){
                         <section name="column">
                             <value><![CDATA[None]]></value>
                         </section>
+                        <section name="column"/>
                     </section>
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[city]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1537,16 +1606,17 @@ String getAuthorUrl(){
                         <section name="column">
                             <value><![CDATA[None]]></value>
                         </section>
+                        <section name="column"/>
                     </section>
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[country]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Text]]></value>
+                            <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[0]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1557,19 +1627,76 @@ String getAuthorUrl(){
                         <section name="column">
                             <value><![CDATA[Ascending]]></value>
                         </section>
+                        <section name="column"/>
                     </section>
                 </section>
-                <section name="windowinlinefilters"/>
-                <section name="groupattributes"/>
-                <section name="summaryattributes"/>
+                <section name="windowinlinefilters">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[name]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[displayName]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[description]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[organisation]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[mission]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[city]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[country]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                </section>
                 <section name="expandall">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="freezecolumns">
                     <value><![CDATA[1]]></value>
                 </section>
-                <section name="actionbuttons"/>
-                <section name="hyperlinks"/>
+                <section name="createchartfromtable">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="highlighticonurl">
                     <value><![CDATA[/images/highlight.png]]></value>
                 </section>
@@ -1579,6 +1706,12 @@ String getAuthorUrl(){
                 <section name="highlightfeaturecount">
                     <value><![CDATA[50]]></value>
                 </section>
+                <section name="usequery">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="numberofpoints">
+                    <value><![CDATA[200]]></value>
+                </section>
             </section>
         </section>
         <section name="datamashups">
@@ -1586,7 +1719,6 @@ String getAuthorUrl(){
                 <value><![CDATA[ldapplaces]]></value>
                 <section name="driver">
                     <value><![CDATA[com.enterprisehorizons.magma.datamashup.CacheDataDriver]]></value>
-                    <section name="metadata"/>
                 </section>
                 <section name="datasource">
                     <value><![CDATA[com.enterprisehorizons.magma.datamashup.CacheDataSource]]></value>
@@ -1614,7 +1746,6 @@ String getAuthorUrl(){
                         <value><![CDATA[1]]></value>
                     </section>
                 </section>
-                <section name="datasourceartifactmappings"/>
             </section>
         </section>
         <section name="runtimeattributes">

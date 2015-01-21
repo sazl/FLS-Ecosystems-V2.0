@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration name="Airports">
+<configuration name="Camps">
     <section name="artefact">
         <section name="name">
-            <value><![CDATA[Airports]]></value>
+            <value><![CDATA[Camps]]></value>
         </section>
         <section name="artifactname">
             <section name="script">
@@ -42,7 +42,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Airport ID]]></value>
+                    <value><![CDATA[Camp ID]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -306,7 +306,7 @@
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
-                    <value><![CDATA[Airports]]></value>
+                    <value><![CDATA[Camps]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -352,7 +352,7 @@
                             <value><![CDATA[ecoexpmodel]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Airports.hecoexpml]]></value>
+                            <value><![CDATA[Camps.hecoexpml]]></value>
                         </section>
                     </section>
                     <section name="param">
@@ -360,7 +360,7 @@
                             <value><![CDATA[artefactname]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Airports]]></value>
+                            <value><![CDATA[Camps]]></value>
                         </section>
                     </section>
                 </section>
@@ -447,6 +447,7 @@ Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 String getDatasource(){ 
 	return datasource;
 } 
+
 String getLastRefreshTime(){
 	return lastRefreshTime;  
 }
@@ -575,7 +576,7 @@ String getType() {
 
 boolean authorizePlaces()
 { 
-	if(getType().indexOf("AIRPORT") >=0|| getType().indexOf("airport")>=0 )
+	if(getType().indexOf("CAMP") >=0|| getType().indexOf("camp")>=0 )
 	{
 		return true ;
 		/*List<String> placesList = getUserPlacesList( getUserId() );		
@@ -658,7 +659,7 @@ String getAuthorUrl(){
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources\FLS\icons\epic\Locations_Airports.png]]></value>
+                    <value><![CDATA[serverresources\FLS\icons\epic\Locations_Camps.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -713,7 +714,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="applicationhelp">
-                    <value><![CDATA[Help_Redirect.html?type=Details&layer=Airports]]></value>
+                    <value><![CDATA[Help_Redirect.html?type=Details&layer=Camps]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -1273,7 +1274,7 @@ String getAuthorUrl(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=locations&type=airports]]></value>
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=locations&type=camps]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -1308,7 +1309,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="applicationhelp">
-                    <value><![CDATA[Help_Redirect.html?type=List&layer=Airports]]></value>
+                    <value><![CDATA[Help_Redirect.html?type=List&layer=Camps]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -1341,7 +1342,7 @@ String getAuthorUrl(){
                     <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[370]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[300]]></value>
@@ -1592,7 +1593,7 @@ String getAuthorUrl(){
                             <value><![CDATA[]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[Ascending]]></value>
+                            <value><![CDATA[None]]></value>
                         </section>
                         <section name="column"/>
                     </section>
@@ -1600,7 +1601,7 @@ String getAuthorUrl(){
                 <section name="windowinlinefilters">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[id]]></value>
+                            <value><![CDATA[name]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[List]]></value>
@@ -1608,7 +1609,7 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[name]]></value>
+                            <value><![CDATA[id]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[List]]></value>

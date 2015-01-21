@@ -592,7 +592,7 @@ List<String> userProfilesList = null;
 
 public String currentVersion(){   
 	return "5.0";
-} 
+}
 public String getAuthor(){   
 	return "Kaleem Mohammed"; 
 }
@@ -683,22 +683,22 @@ String getDeviceCaption(){
 }
 
 String getIconUrl(){ 
-	return "serverresources/icons/epic/Tracking_Airplanes_K.png"; 
+	return "serverresources/FLS/icons/epic/Tracking_Airplanes_K.png"; 
 }
 String getIconUrl_G(){ 
-	return "serverresources/icons/epic/Tracking_Airplanes_G.png"; 
+	return "serverresources/FLS/icons/epic/Tracking_Airplanes_G.png"; 
 }
 String getIconUrl_C(){ 
-	return "serverresources/icons/epic/Tracking_Airplanes_C.png";
+	return "serverresources/FLS/icons/epic/Tracking_Airplanes_C.png";
 }
 String getIconUrl_Y(){ 
-	return "serverresources/icons/epic/Tracking_Airplanes_Y.png";
+	return "serverresources/FLS/icons/epic/Tracking_Airplanes_Y.png";
 }
 String getIconUrl_B(){ 
-	return "serverresources/icons/epic/Tracking_Airplanes_K.png";
+	return "serverresources/FLS/icons/epic/Tracking_Airplanes_K.png";
 }
 String legendURL(){    
-	return "serverresources/icons/epic/Planes_Legend.png";		
+	return "serverresources/FLS/icons/epic/Planes_Legend.png";		
 } 
 boolean isInDangerZone(){
 	String[] allZones = com.wfp.utils.RBRegionsUtils.getZoneNames($artefact, getUserBean(), getLayerName(), getLayerId(), getLayerName()+"_DZ", "_SZ");
@@ -1337,7 +1337,7 @@ String getMissionFullName(String mission )
                 <section name="categories">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Location]]></value>
+                            <value><![CDATA[Details]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -1419,7 +1419,7 @@ String getMissionFullName(String mission )
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Contact]]></value>
+                            <value><![CDATA[Location]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -1571,7 +1571,7 @@ String getMissionFullName(String mission )
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Other]]></value>
+                            <value><![CDATA[Contact]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -1600,463 +1600,6 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="highlighticonscale">
                     <value><![CDATA[1.0]]></value>
-                </section>
-            </section>
-            <section name="folder">
-                <section name="name">
-                    <value><![CDATA[List]]></value>
-                </section>
-                <section name="type">
-                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
-                </section>
-                <section name="refreshtype">
-                    <value><![CDATA[onInterval]]></value>
-                </section>
-                <section name="periodicrefreshrate">
-                    <value><![CDATA[120]]></value>
-                </section>
-                <section name="windowshowbreadcrumbs">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="windowtype">
-                    <value><![CDATA[ClientSideTable]]></value>
-                </section>
-                <section name="viewerhelp">
-                    <value><![CDATA[#Using_Client_Side_Table.htm]]></value>
-                </section>
-                <section name="loadbydefault">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="windowiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="windowgroupname">
-                    <value><![CDATA[Tables]]></value>
-                </section>
-                <section name="windowgroupiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
-                </section>
-                <section name="isreloadconfiguration">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="applicationhelp">
-                    <value><![CDATA[Application_Help.html?type=Tracking_the_Last_Known_Positions_of_the_Airplanes]]></value>
-                </section>
-                <section name="showpluginproperties">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="windowpluginname">
-                    <value><![CDATA[siViewerClientSideTable]]></value>
-                </section>
-                <section name="windowpluginjsfile">
-                    <value><![CDATA[window/tableWindow/com.spacetimeinsight.viewer.window.clientSideTable]]></value>
-                </section>
-                <section name="windowdrawerpluginname">
-                    <value><![CDATA[siViewerClientSideTableDrawer]]></value>
-                </section>
-                <section name="windowdrawerpluginjsfile">
-                    <value><![CDATA[window/tableWindow/com.spacetimeinsight.viewer.window.clientSideTableDrawer]]></value>
-                </section>
-                <section name="windowtoolbarpluginname">
-                    <value><![CDATA[siViewerTableWindowToolBar]]></value>
-                </section>
-                <section name="windowtoolbarpluginjsfile">
-                    <value><![CDATA[window/tableWindow/com.spacetimeinsight.viewer.window.tableWindowToolbar]]></value>
-                </section>
-                <section name="windowfooterpluginname">
-                    <value><![CDATA[siViewerFooter]]></value>
-                </section>
-                <section name="windowfooterpluginjsfile">
-                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
-                </section>
-                <section name="windowwidth">
-                    <value><![CDATA[1100]]></value>
-                </section>
-                <section name="windowheight">
-                    <value><![CDATA[300]]></value>
-                </section>
-                <section name="windowtop">
-                    <value><![CDATA[400]]></value>
-                </section>
-                <section name="windowleft">
-                    <value><![CDATA[240]]></value>
-                </section>
-                <section name="hidefrombusinessviewmenu">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="allowcopy">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="isattributelink">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="isnestedwindow">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="datasourcetype">
-                    <value><![CDATA[Artifact]]></value>
-                </section>
-                <section name="datafetcher">
-                    <value><![CDATA[com.spacetimeinsight.renderer.window.data.ArtifactDataFetcher]]></value>
-                </section>
-                <section name="datatransformer">
-                    <value><![CDATA[com.spacetimeinsight.renderer.window.transform.ClientSideTableTransformer]]></value>
-                </section>
-                <section name="hasgeographicdata">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="dynamicdatasourcename">
-                    <value><![CDATA[DEFAULT]]></value>
-                </section>
-                <section name="dynamicdatasourceoptimizequery">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="donotloadbydefault">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="isbackground">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="isperiodicrefresh">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="periodicrefreshrate">
-                    <value><![CDATA[120]]></value>
-                </section>
-                <section name="periodicrefreshrateunits">
-                    <value><![CDATA[Seconds]]></value>
-                </section>
-                <section name="isrefreshoncameramove">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="iscamerasensitive">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="refreshonevents">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Artifact data loaded]]></value>
-                        </section>
-                    </section>
-                </section>
-                <section name="isrefreshonlasso">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="istimeaware">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="datefield">
-                    <value><![CDATA[time]]></value>
-                </section>
-                <section name="inputdateformat">
-                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-                </section>
-                <section name="isshowintervals">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="defaulttimerange">
-                    <value><![CDATA[startendtime]]></value>
-                </section>
-                <section name="isapplydefaulttimefilter">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="showInTimeFilter">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="filterdatasourcetype">
-                    <value><![CDATA[Artifact]]></value>
-                </section>
-                <section name="filterdatarenderer">
-                    <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
-                </section>
-                <section name="applydefaultfilter">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="showInDataFilter">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="enableFilter">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="showfilterpluginproperties">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="filterwindowpluginname">
-                    <value><![CDATA[siViewerClientSideTable]]></value>
-                </section>
-                <section name="filterwindowpluginjsfile">
-                    <value><![CDATA[dataFilter/com.spacetimeinsight.viewer.ui.dataFilter]]></value>
-                </section>
-                <section name="filterwindowdrawerpluginname">
-                    <value><![CDATA[siViewerClientSideTableDrawer]]></value>
-                </section>
-                <section name="filterwindowtoolbarpluginname">
-                    <value><![CDATA[siViewerWindowToolBar]]></value>
-                </section>
-                <section name="filterwindowtoolbarpluginjsfile">
-                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
-                </section>
-                <section name="filterwindowfooterpluginname">
-                    <value><![CDATA[siViewerFooter]]></value>
-                </section>
-                <section name="filterwindowfooterpluginjsfile">
-                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
-                </section>
-                <section name="columndetails">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[owner]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[0]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[deviceId]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[150]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[totalWaypoints]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[0]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[noOfDays]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[0]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[organisation]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[200]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[mission]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[150]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[None]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[ptime]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[200]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[false]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Descending]]></value>
-                        </section>
-                    </section>
-                </section>
-                <section name="windowinlinefilters">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[owner]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[deviceId]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[organisation]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[mission]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[ptime]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Date]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[noOfDays]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[totalWaypoints]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                </section>
-                <section name="expandall">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="freezecolumns">
-                    <value><![CDATA[1]]></value>
-                </section>
-                <section name="actionbuttons">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[deviceId]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[airplaneDId]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[click to show History]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[images/dashboards/duvaltriangle.png]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[fetchAirplaneClick]]></value>
-                        </section>
-                        <section name="column"/>
-                    </section>
-                </section>
-                <section name="createchartfromtable">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="highlighticonurl">
-                    <value><![CDATA[/images/highlight.png]]></value>
-                </section>
-                <section name="highlighticonscale">
-                    <value><![CDATA[1.0]]></value>
-                </section>
-                <section name="highlightfeaturecount">
-                    <value><![CDATA[50]]></value>
-                </section>
-                <section name="usequery">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="numberofpoints">
-                    <value><![CDATA[200]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -2624,6 +2167,566 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="filterdynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
+                </section>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[Metadata]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[URL]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#URL_Window/About__URL_Window.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[css/images/info-icon.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Forms]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerUrlWindow]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[window/url/com.spacetimeinsight.viewer.ui.urlWindow]]></value>
+                </section>
+                <section name="windowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="windowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="windowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="windowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[800]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[400]]></value>
+                </section>
+                <section name="windowtop">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowleft">
+                    <value><![CDATA[200]]></value>
+                </section>
+                <section name="hidefrombusinessviewmenu">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isattributelink">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowurl">
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=tracking&type=airplane]]></value>
+                </section>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[List]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[ClientSideTable]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#Using_Client_Side_Table.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Tables]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="applicationhelp">
+                    <value><![CDATA[Help_Redirect.html?type=List&layer=Airplane Tracking]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerClientSideTable]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[window/tableWindow/com.spacetimeinsight.viewer.window.clientSideTable]]></value>
+                </section>
+                <section name="windowdrawerpluginname">
+                    <value><![CDATA[siViewerClientSideTableDrawer]]></value>
+                </section>
+                <section name="windowdrawerpluginjsfile">
+                    <value><![CDATA[window/tableWindow/com.spacetimeinsight.viewer.window.clientSideTableDrawer]]></value>
+                </section>
+                <section name="windowtoolbarpluginname">
+                    <value><![CDATA[siViewerTableWindowToolBar]]></value>
+                </section>
+                <section name="windowtoolbarpluginjsfile">
+                    <value><![CDATA[window/tableWindow/com.spacetimeinsight.viewer.window.tableWindowToolbar]]></value>
+                </section>
+                <section name="windowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="windowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[1100]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowtop">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowleft">
+                    <value><![CDATA[100]]></value>
+                </section>
+                <section name="hidefrombusinessviewmenu">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isattributelink">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="datasourcetype">
+                    <value><![CDATA[Artifact]]></value>
+                </section>
+                <section name="datafetcher">
+                    <value><![CDATA[com.spacetimeinsight.renderer.window.data.ArtifactDataFetcher]]></value>
+                </section>
+                <section name="datatransformer">
+                    <value><![CDATA[com.spacetimeinsight.renderer.window.transform.ClientSideTableTransformer]]></value>
+                </section>
+                <section name="hasgeographicdata">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="dynamicdatasourceoptimizequery">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="donotloadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="istimeaware">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="datefield">
+                    <section name="script">
+                        <value><![CDATA[time]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="inputdateformat">
+                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
+                </section>
+                <section name="isshowintervals">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isapplydefaulttimefilter">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showInTimeFilter">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="filterdatasourcetype">
+                    <value><![CDATA[Artifact]]></value>
+                </section>
+                <section name="filterdatarenderer">
+                    <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
+                </section>
+                <section name="applydefaultfilter">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showInDataFilter">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="enableFilter">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="showfilterpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="filterwindowpluginname">
+                    <value><![CDATA[siViewerClientSideTable]]></value>
+                </section>
+                <section name="filterwindowpluginjsfile">
+                    <value><![CDATA[dataFilter/com.spacetimeinsight.viewer.ui.dataFilter]]></value>
+                </section>
+                <section name="filterwindowdrawerpluginname">
+                    <value><![CDATA[siViewerClientSideTableDrawer]]></value>
+                </section>
+                <section name="filterwindowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="filterwindowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="filterwindowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="filterwindowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="customwindowproperties">
+                    <section name="row">
+                        <section name="column">
+                            <section name="script">
+                                <value><![CDATA[name]]></value>
+                                <section name="type">
+                                    <value><![CDATA[2]]></value>
+                                </section>
+                            </section>
+                        </section>
+                        <section name="column">
+                            <section name="script">
+                                <value><![CDATA[name]]></value>
+                                <section name="type">
+                                    <value><![CDATA[2]]></value>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <section name="script">
+                                <value><![CDATA[organisation]]></value>
+                                <section name="type">
+                                    <value><![CDATA[2]]></value>
+                                </section>
+                            </section>
+                        </section>
+                        <section name="column">
+                            <section name="script">
+                                <value><![CDATA[organisation]]></value>
+                                <section name="type">
+                                    <value><![CDATA[2]]></value>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section name="columndetails">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[name]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[deviceId]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[noOfDays]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[totalWaypoints]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[organisation]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[mission]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[ptime]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Descending]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                </section>
+                <section name="windowinlinefilters">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[owner]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[deviceId]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[organisation]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[mission]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[noOfDays]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[totalWaypoints]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[ptime]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Date]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="expandall">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="freezecolumns">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="createchartfromtable">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="highlighticonurl">
+                    <value><![CDATA[/images/highlight.png]]></value>
+                </section>
+                <section name="highlighticonscale">
+                    <value><![CDATA[1.0]]></value>
+                </section>
+                <section name="highlightfeaturecount">
+                    <value><![CDATA[50]]></value>
+                </section>
+                <section name="usequery">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="numberofpoints">
+                    <value><![CDATA[200]]></value>
                 </section>
             </section>
         </section>
