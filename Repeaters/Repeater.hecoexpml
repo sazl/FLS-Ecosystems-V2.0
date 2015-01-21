@@ -267,6 +267,54 @@
                 <section name="column"/>
                 <section name="column"/>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[PLUSCoverage-Maps]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[PLUSCoverage-Maps]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[handheldMaps]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Handheld Map]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[mobileMaps]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Mobile Map]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[true]]></value>
@@ -502,6 +550,10 @@ void bindData() {
 		$artefact.addAttribute("PLUSGeo-Location",  "-" );
 		$artefact.addAttribute("latitude", "<span id=child_PLUSGeo-Location:DELIM: >"+dataMap.get("coord-latitude")+"</span>");
 		$artefact.addAttribute("longitude","<span id=child_PLUSGeo-Location:DELIM: >"+ dataMap.get("coord-longitude")+"</span>");
+		
+		$artefact.addAttribute("PLUSCoverage-Maps",  "-" );
+		$artefact.addAttribute("handheldMaps", "<span id=child_PLUSCoverage-Maps:DELIM: ><input id="+dataMap.get("cn")+"_HH onclick=selectUnselectRepeaterMap(this)  type=checkbox /></span>");
+		$artefact.addAttribute("mobileMaps","<span id=child_PLUSCoverage-Maps:DELIM: ><input id="+dataMap.get("cn")+"_MOBILE onclick=selectUnselectRepeaterMap(this) type=checkbox /></span>");
 				
 	}
 		   
@@ -652,7 +704,7 @@ String getAuthorUrl(){
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources\icons\epic\Locations_Repeaters.png]]></value>
+                    <value><![CDATA[serverresources\FLS\icons\epic\Locations_Repeaters.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -905,7 +957,7 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[Loctaion]]></value>
+                            <value><![CDATA[Location]]></value>
                         </section>
                         <section name="column">
                             <section name="columntype">
@@ -975,6 +1027,36 @@ String getAuthorUrl(){
                                 <section name="row">
                                     <section name="column">
                                     <value><![CDATA[longitude]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[PLUSCoverage-Maps]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[handheldMaps]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[mobileMaps]]></value>
                                     </section>
                                     <section name="column">
                                     <value><![CDATA[Text]]></value>

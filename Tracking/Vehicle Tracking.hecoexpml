@@ -2200,7 +2200,7 @@ String getMissionFullName(String mission )
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[serverresources/icons/epic/legend.html?type=Vehicle_Tracking]]></value>
+                    <value><![CDATA[serverresources/FLS/icons/epic/legend.html?type=Vehicle_Tracking]]></value>
                 </section>
             </section>
             <section name="folder">

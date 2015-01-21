@@ -1317,7 +1317,7 @@ return true;
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[serverresources/icons/epic/legend_etu.html?type=Locations_ETC]]></value>
+                    <value><![CDATA[serverresources/FLS/icons/epic/legend_etu.html?type=Locations_ETC]]></value>
                 </section>
             </section>
             <section name="folder">

@@ -2429,7 +2429,7 @@ String alertMsg(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[serverresources/icons/epic/legend.html?type=Tracking_Staff]]></value>
+                    <value><![CDATA[serverresources/FLS/icons/epic/legend.html?type=Tracking_Staff]]></value>
                 </section>
             </section>
             <section name="folder">
