@@ -570,8 +570,7 @@ boolean authorizePlaces()
 		
 		if(placesList!=null&&placesList.size()>0 ) 
 			return placesList.contains( $artefact.getAttributeValueAsString("name") );			
-		return false; 
-		
+		return true;
 	} 
 	
 	return false;
