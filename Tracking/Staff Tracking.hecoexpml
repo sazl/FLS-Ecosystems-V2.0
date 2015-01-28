@@ -809,10 +809,10 @@
                     <value><![CDATA[Staff Tracking]]></value>
                 </section>
                 <section name="isperiodicrefresh">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="periodicrefreshrate">
-                    <value><![CDATA[60]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="periodicrefreshrateunits">
                     <value><![CDATA[Seconds]]></value>
@@ -835,9 +835,6 @@
                 </section>
                 <section name="type">
                     <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
-                </section>
-                <section name="autozoom">
-                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="autozoom">
                     <value><![CDATA[true]]></value>
@@ -2885,7 +2882,7 @@ String alertMsg(){
                     <value><![CDATA[350]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[200]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
                     <value><![CDATA[200]]></value>

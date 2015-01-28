@@ -860,6 +860,7 @@ boolean authorizeDevice()
 	String deviceId = $artefact.getAttributeValueAsString("deviceId"); 
 	List<String> deviceMissionList = getDeviceMissionList(deviceId);
   	List<String> userMissionList = getUserMissionList( userbean.getUserUniqueId() );
+  	//System.out.println(" userMissionList :" + userMissionList +":deviceMissionList:"+deviceMissionList +" deviceId :"+deviceId  );
   	if( userMissionList!=null && deviceMissionList!=null )
   	{
   		for(String deviceMission: deviceMissionList )
