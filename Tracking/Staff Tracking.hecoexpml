@@ -1154,7 +1154,6 @@ void bindData() {
 	 		{	cntry = cntry.replace("[","").replace("]","");
 	 			cntry = countriesMap.get( cntry.toUpperCase() );
 	 		}
-	 		
 	 		$artefact.addAttribute("country", "<span id=child_PLUSAddress:DELIM: >"+ cntry + "</span>" );
 	 		$artefact.addAttribute("IM","&nbsp;");
 			String ly=data.getPrimaryEmail();
@@ -2379,7 +2378,7 @@ String alertMsg(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[serverresources/FLS/images/<theme>/legend-b.png]]></value>
+                    <value><![CDATA[serverresources/FLS/images/<theme>/legend.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>
@@ -3319,7 +3318,7 @@ String alertMsg(){
                             <value><![CDATA[click to fetch history]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[images/dashboards/duvaltriangle.png]]></value>
+                            <value><![CDATA[FLS/images/footprint.png]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[testNumberClick]]></value>
