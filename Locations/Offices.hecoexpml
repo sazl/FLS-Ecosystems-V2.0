@@ -564,8 +564,7 @@ List<String> getUserPlacesList( String userId )
 	return userPlacesList;
 }
 String getUserId()
-{
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
+{	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	if(userbean != null) return userbean.getUserUniqueId();
 	return null;		
 }

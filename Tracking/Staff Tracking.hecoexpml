@@ -1034,7 +1034,7 @@ List<String> userProfilesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 List<Lasso> lassoList = LassoUtils.getAllLassos();
 List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
-List<String> userOrgList = LDAPWSUtils.getOrganizationByUnit( getUserId() );
+List<String> userOrgList = LDAPWSUtils.getOrganizationByUnit( getUserUniqueId() );
 public String currentVersion(){   
 	return "2.0";
 }
@@ -1330,7 +1330,8 @@ String getUserId()
 String getUserUniqueId()
 {
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	return (com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId()) +"";
+	if(userbean != null) return userbean.getUserUniqueId();
+	return null;
 }
 
 String getModuleId()
@@ -1400,7 +1401,12 @@ boolean authorizeDevice()
   	{
   		for(String deviceMission: deviceMissionList )
   		{
-  		     if( userMissionList.contains( deviceMission ) ) return true;
+  		     if( userMissionList.contains( deviceMission ) )
+  		     {
+  		     
+  		     	if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserUniqueId() );
+  		     	if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("Organization") ) ) return true;
+  		     }
   		}
   	}
   	return false;

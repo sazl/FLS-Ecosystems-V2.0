@@ -432,35 +432,27 @@ String getDatasource(){
 	return datasource;
 } 
 
-String getLastRefreshTime(){
-	return lastRefreshTime;  
-}
+String getLastRefreshTime(){ 	return lastRefreshTime; }
 
-String getDescription(){
-	return description; 
-} 
-
+String getDescription(){ 	return description; }
+ 
 void bindData() {
 	Map dataMap = (Map) $ldapplacesdatamodel;
 	
 	if (dataMap != null)
  	{	
  	
- 	$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));
+ 		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));
  		//String typeStr=dataMap.get("type").toString();
  		//String placeType=dataMap.get("type").toString().replaceAll(",.*","");
  		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
- 		System.out.println(" placeType :"+ placeType );
-		
-				
+ 			
 		$artefact.addAttribute("name", dataMap.get("cn"));
 		$artefact.addAttribute("displayName", dataMap.get("displayName"));		
 		
 		$artefact.addAttribute("mission", getMissionFullName( dataMap ) );
 		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
 		$artefact.addAttribute("type", placeType );
-		
-
 		
 		String mailStr=dataMap.get("mail").toString();
 		if(mailStr!=null&&mailStr!=""){
@@ -493,8 +485,6 @@ void bindData() {
 		$artefact.addAttribute("city","<span id=child_PLUSAddress:DELIM: >"+ dataMap.get("locality")+ "</span>");
 		$artefact.addAttribute("country","<span id=child_PLUSAddress:DELIM: >"+ getCountryFullName( dataMap ) + "</span>");
 		
-		
-		
 		$artefact.addAttribute("PLUSGeo-Location",  "-" );
 		$artefact.addAttribute("latitude", "<span id=child_PLUSGeo-Location:DELIM: >"+dataMap.get("coord-latitude")+"</span>");
 		$artefact.addAttribute("longitude","<span id=child_PLUSGeo-Location:DELIM: >"+ dataMap.get("coord-longitude")+"</span>");
@@ -520,23 +510,18 @@ String getCountryFullName(Map map )
          return s;
        }
 }
-String getName() {
-	return $artefact.getAttributeValueAsString("name");
-}
+String getName(){ 	return $artefact.getAttributeValueAsString("name"); }
 
 boolean isValidLocation(){
 	String country =  $artefact.getAttributeValueAsString("Country");
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return com.wfp.utils.RBRegionsUtils.validateLocation(country, userbean.getGroupIds());
 }
-
 void addAttribute(){
 	String contactDtls = com.wfp.utils.CommonUtils.getContactDtls($artefact.getAttributeValueAsString("skype"), null, $artefact.getAttributeValueAsString("ocs"));
 	if(!(contactDtls == null || "".equalsIgnoreCase(contactDtls ))){
 		$artefact.addAttribute("Contact", contactDtls);
-	}
-    
-    
+	}    
 }
 String getURL()
 {
@@ -545,8 +530,7 @@ String getURL()
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	String url = "swf/GeofenceDashboard.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_DZ"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
 	return url;
-}
-   
+}   
 String getMAURL()
 {
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
@@ -556,45 +540,29 @@ String getMAURL()
 
 	return url;
 }
-void fireDashboardRefreshEvent(){
-	fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS);
-}
+void fireDashboardRefreshEvent(){ 	fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS); }
 
-
-String getType() {
-	return $artefact.getAttributeValueAsString("type");
-}
-
-
+String getType() { return $artefact.getAttributeValueAsString("type"); }
 
 boolean authorizePlaces()
 { 
 	if(getType().indexOf("residence") >= 0)
-	{
-		return true ;
-		/*List<String> placesList = getUserPlacesList( getUserId() );		
-		
-		if(placesList!=null&&placesList.size()>0 ) 
-			return placesList.contains( $artefact.getAttributeValueAsString("name") );			
-		return true ; //false; 
-		*/
-	} 
-	
+	{		
+		List<String> placesList = getUserPlacesList( getUserId() );		
+		if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
+		{	if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
+			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return true;						
+		}		
+	} 	
 	return false;
 }
 List<String> getUserMissionList( String userId )
 {
-  if(userMissionsList==null ) userMissionsList= LDAPUtils.getAllMisisons4rUser( userId );		
-	
-	return userMissionsList;
+  return(userMissionsList==null )?LDAPUtils.getAllMisisons4rUser( userId ):userMissionsList;		
 }
 List<String> getUserPlacesList( String userId )
 {
-	if(userPlacesList==null )
-	{		
-		userPlacesList = LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) );
-	} 
-	return userPlacesList;
+	return (userPlacesList==null )? LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) ):userPlacesList;
 }
 String getUserId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
