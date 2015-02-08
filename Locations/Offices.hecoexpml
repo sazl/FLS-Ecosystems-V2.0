@@ -431,8 +431,7 @@
                 <value><![CDATA[import com.wfp.beans.*;
 import com.wfp.utils.*;
 
-String serverRootUrl = "https://sti-dev.globalepic.lu/SIServer/";
-//ServerUtils.getServerBaseUrl();
+String serverRootUrl = getServerContextBaseUrl();
 private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
 private com.enterprisehorizons.magma.datamashup.CacheDataDriver $Cache9driver;
 private com.enterprisehorizons.magma.datamashup.CacheDataDriver $ldapplacesdriver;
@@ -443,113 +442,98 @@ List<String> userMissionsList = null;
 List<String> userPlacesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
+List<String> userOrgList = LDAPWSUtils.getOrganizationByUnit( getUserId() );
 
-String getDatasource(){ 
-	return datasource; 
-} 
- 
-String getLastRefreshTime(){
-	return lastRefreshTime;  
-}
-
-String getDescription(){
-	return description; 
-} 
-
-void bindData() {
-	Map dataMap = (Map) $ldapplacesdatamodel;
-	
+void bindData() 
+{
+	Map dataMap = (Map) $ldapplacesdatamodel;	
 	if (dataMap != null)
  	{
  	
  		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
  		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));		
 		$artefact.addAttribute("name", dataMap.get("cn"));
-		$artefact.addAttribute("displayName", dataMap.get("displayName"));
-		
-		
-	 
+		$artefact.addAttribute("displayName", dataMap.get("displayName"));	 
 		$artefact.addAttribute("mission",getMissionFullName( dataMap ) );
 		$artefact.addAttribute("type", placeType);
-		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
+		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );		
 		String mailStr=dataMap.get("mail").toString();				
-		if(mailStr!=null&&mailStr!=""){
-			$artefact.addAttribute("email", dataMap.get("mail"));
-			}
-		else{
-			$artefact.addAttribute("email","-");
-		}
+		
+		if(mailStr!=null&&mailStr!="") $artefact.addAttribute("email", dataMap.get("mail"));
+		else $artefact.addAttribute("email","-");
 		
 		String mobileStr=dataMap.get("otherPhones").toString();
-		if(mobileStr!=null&&mobileStr!=""){
-			$artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
-			}
-		else{
-			$artefact.addAttribute("mobile","-");
-		}
-	
-		$artefact.addAttribute("description", dataMap.get("description"));
 		
+		if(mobileStr!=null&&mobileStr!="") $artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
+		else $artefact.addAttribute("mobile","-");
+			
+		$artefact.addAttribute("description", dataMap.get("description"));
+				
 		$artefact.addAttribute("PLUSAddress",  "-" );
 		String streetVal=  dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ");
-		if(streetVal!=null&&streetVal!=""){
-			$artefact.addAttribute("address","<span id=child_PLUSAddress:DELIM: >"+ dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ")+ "</span>");
-			}
-		else{
-			$artefact.addAttribute("address","<span id=child_PLUSAddress:DELIM:>- </span>");	
-			}
+		
+		if(streetVal!=null&&streetVal!="")$artefact.addAttribute("address","<span id=child_PLUSAddress:DELIM: >"+ dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ")+ "</span>");
+		else $artefact.addAttribute("address","<span id=child_PLUSAddress:DELIM:>- </span>");	
+		
 		$artefact.addAttribute("city","<span id=child_PLUSAddress:DELIM: >"+ dataMap.get("locality")+ "</span>");
 		$artefact.addAttribute("country","<span id=child_PLUSAddress:DELIM: >"+ getCountryFullName( dataMap )  + "</span>");
-		
-		
-		
 		$artefact.addAttribute("PLUSGeo-Location",  "-" );
 		$artefact.addAttribute("latitude", "<span id=child_PLUSGeo-Location:DELIM: >"+dataMap.get("coord-latitude")+"</span>");
-		$artefact.addAttribute("longitude","<span id=child_PLUSGeo-Location:DELIM: >"+ dataMap.get("coord-longitude")+"</span>");
-				
+		$artefact.addAttribute("longitude","<span id=child_PLUSGeo-Location:DELIM: >"+ dataMap.get("coord-longitude")+"</span>");				
 	}
 		   
 } 
+boolean authorizePlaces()
+{
+	if(getType().indexOf("office") >= 0)
+	{    		
+		List<String> placesList = getUserPlacesList( getUserId() );		
+		if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
+		{	 //System.out.println( LDAPWSUtils.getOrganizationByUnit( getUserId() ) +" :"+ $artefact.getAttributeValueAsString("organisation") );
+			if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
+			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return true;						
+		}		
+	}	
+	return false;
+}
+String getDatasource(){ return datasource; }  
+String getLastRefreshTime(){ return lastRefreshTime; }
+String getDescription(){ 	return description; }
+
 String getMissionFullName(Map map )
 { 
   if( map.get("mission")==null ) return "-";
-  else{
-         String s =missionsMap.get(map.get("mission").toString().toUpperCase()) ;
+  else
+  {     String s =missionsMap.get(map.get("mission").toString().toUpperCase()) ;
          if(s==null) s="-";
          return s;
-       }
+   }
 } 
 String getCountryFullName(Map map )
 { 
   if( map.get("c").toString()==null ) return "-NOT AVAILABLE-";
-  else{
-         String s = countriesMap.get(map.get("c").toString().toUpperCase()) ;
+  else
+  {     String s = countriesMap.get(map.get("c").toString().toUpperCase()) ;
          if(s==null) s="-";
          return s;
-       }
+    }
 }
-String getName() {
-	return $artefact.getAttributeValueAsString("name");
-}
+String getName() { 	return $artefact.getAttributeValueAsString("name"); }
 
 boolean isValidLocation(){
 	String country =  $artefact.getAttributeValueAsString("Country");
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return com.wfp.utils.RBRegionsUtils.validateLocation(country, userbean.getGroupIds());
 }
-
 void addAttribute(){
 	String contactDtls = com.wfp.utils.CommonUtils.getContactDtls($artefact.getAttributeValueAsString("skype"), null, $artefact.getAttributeValueAsString("ocs"));
 	if(!(contactDtls == null || "".equalsIgnoreCase(contactDtls ))){
 		$artefact.addAttribute("Contact", contactDtls);
-	}
-    
-    
+	}    
 }
 String getURL()
 {
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
-	String serverRootUrl = "https://sti-dev.globalepic.lu/SIServer/";//ServerUtils.getServerBaseUrl();
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	String url = "swf/GeofenceDashboard.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_DZ"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
 	return url;
@@ -558,56 +542,33 @@ String getURL()
 String getMAURL()
 {
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
-	String serverRootUrl = "https://sti-dev.globalepic.lu/SIServer/";//ServerUtils.getServerBaseUrl();
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	String url = "serverresources/ManualAlert.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_MA"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
 
 	return url;
 }
-void fireDashboardRefreshEvent(){
-	fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS);
-}
+void fireDashboardRefreshEvent(){ fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS); }
 
+String getType() { 	return $artefact.getAttributeValueAsString("type"); }
 
-String getType() {
-	return $artefact.getAttributeValueAsString("type");
-}
-
-boolean authorizePlaces()
-{
-	if(getType().indexOf("office") >= 0)
-	{    		
-		List<String> placesList = getUserPlacesList( getUserId() );		
-		//System.out.println("getUserId :"+getUserId()+": placesList :" + placesList );
-		if(placesList!=null&&placesList.size()>0 ) 
-			return placesList.contains( $artefact.getAttributeValueAsString("name") );			
-		else return true;
-	}	
-	return false;
-}
+/************************/
 List<String> getUserMissionList( String userId )
 {
   if(userMissionsList==null ) userMissionsList= LDAPUtils.getAllMisisons4rUser( userId );		
-	System.out.println("userMissionsList:"+userMissionsList );
-	return userMissionsList;
+   return userMissionsList;
 }
 List<String> getUserPlacesList( String userId )
 {
 	if(userPlacesList==null )
-	{		
-		userPlacesList = LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) );
-	} 
-	
+		userPlacesList = LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) , userId );
 	return userPlacesList;
 }
-String getUserId(){
+String getUserId()
+{
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	if(userbean != null){
-		return userbean.getUserUniqueId();
-	}
+	if(userbean != null) return userbean.getUserUniqueId();
 	return null;		
 }
-
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }]]></value>

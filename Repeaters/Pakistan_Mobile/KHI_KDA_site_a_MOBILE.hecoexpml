@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="KHI_KDA_site_a_MOBILE">
+    <section name="artefact">
+        <section name="name">
+            <value><![CDATA[KHI_KDA_site_a_MOBILE]]></value>
+        </section>
+        <section name="type">
+            <value><![CDATA[com.enterprisehorizons.magma.designtime.artifact.GeoArtifact]]></value>
+        </section>
+        <section name="cache">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="experiencedef">
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[KHI_KDA_site_a_MOBILE]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="featuretype">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
+                </section>
+                <section name="autozoom">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="params">
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[entrypoint]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[HTMLEcosystem]]></value>
+                        </section>
+                    </section>
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[ecoexpmodel]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[KHI_KDA_site_a_MOBILE.hecoexpml]]></value>
+                        </section>
+                    </section>
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[artefactname]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[KHI_KDA_site_a_MOBILE]]></value>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="blinkrate">
+            <value><![CDATA[1]]></value>
+        </section>
+        <section name="blinkloopcount">
+            <value><![CDATA[2]]></value>
+        </section>
+        <section name="listeners"/>
+        <section name="layout">
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[KHI_KDA_site_a_MOBILE]]></value>
+                </section>
+                <section name="descriptiontype">
+                    <value><![CDATA[json]]></value>
+                </section>
+                <section name="label">
+                    <value><![CDATA[Image]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.GeoImageFeature]]></value>
+                </section>
+                <section name="placemarklocation">
+                    <value><![CDATA[center]]></value>
+                </section>
+                <section name="transparency">
+                    <value><![CDATA[1.0]]></value>
+                </section>
+                <section name="scale">
+                    <value><![CDATA[1.0]]></value>
+                </section>
+                <section name="orientation">
+                    <value><![CDATA[0.0]]></value>
+                </section>
+                <section name="refreshtype">
+                    <value><![CDATA[Never]]></value>
+                </section>
+                <section name="needsauthorization">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="authtype">
+                    <value><![CDATA[Basic]]></value>
+                </section>
+                <section name="resetchildlinks">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="url">
+                    <value><![CDATA[serverresources/FLS/repeaterMaps/Pakistan/Mobile/KHI_KDA_site_a_MOBILE.png]]></value>
+                </section>
+                <section name="generateplacemark">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="placemarklocation">
+                    <value><![CDATA[center]]></value>
+                </section>
+                <section name="placemarkglobalstyleid">
+                    <value><![CDATA[ ]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="scriptor">
+            <section name="body">
+                <value><![CDATA[private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
+private com.enterprisehorizons.magma.datamashup.SimpleDataDriver $simplemashupdriver;
+
+void bindData() {
+	
+    Object[] data = (Object[])$simplemashupdatamodel;
+    $artefact.setBoundingBox(data[0],data[1],data[2],data[3]); 
+
+            
+}
+
+String getName() {
+	return $artefact.getAttributeValueAsString("test");
+}]]></value>
+                <section name="type">
+                    <value><![CDATA[1]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="needsmap">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="showtimeslider">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="timeslidergap">
+            <value><![CDATA[4]]></value>
+        </section>
+        <section name="istimeaware">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="isadddefaultinfowindow">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="legends"/>
+        <section name="datamashups">
+            <section name="datamashup">
+                <value><![CDATA[simplemashup]]></value>
+                <section name="driver">
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.SimpleDataDriver]]></value>
+                </section>
+                <section name="datasource">
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.SimpleDataSource]]></value>
+                    <section name="params">
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[coordinateSeparator]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[ ]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[north]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[25.6474]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[south]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[24.0726]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[east]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[67.91782]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[west]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[66.18219]]></value>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="databinding">
+            <section name="bindingdefinition">
+                <section name="datamashup">
+                    <value><![CDATA[simplemashup]]></value>
+                </section>
+                <section name="script">
+                    <value><![CDATA[bindData()]]></value>
+                    <section name="type">
+                        <value><![CDATA[1]]></value>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section name="reload">
+        <value><![CDATA[true]]></value>
+    </section>
+    <section name="enablelogging">
+        <value><![CDATA[false]]></value>
+    </section>
+    <section name="namespace">
+        <value><![CDATA[]]></value>
+    </section>
+</configuration>

@@ -427,7 +427,7 @@ List<String> userMissionsList = null;
 List<String> userPlacesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
-
+List<String> userOrgList = LDAPWSUtils.getOrganizationByUnit( getUserId() );
 String getDatasource(){
 	return datasource;
 } 

@@ -1034,7 +1034,7 @@ List<String> userProfilesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 List<Lasso> lassoList = LassoUtils.getAllLassos();
 List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
-
+List<String> userOrgList = LDAPWSUtils.getOrganizationByUnit( getUserId() );
 public String currentVersion(){   
 	return "2.0";
 }

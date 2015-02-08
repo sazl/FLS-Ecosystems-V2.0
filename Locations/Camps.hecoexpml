@@ -443,6 +443,7 @@ List<String> userMissionsList = null;
 List<String> userPlacesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
+List<String> userOrgList = LDAPWSUtils.getOrganizationByUnit( getUserId() );
 
 String getDatasource(){ 
 	return datasource;
@@ -491,11 +492,6 @@ void bindData() {
 			$artefact.addAttribute("mobile","-");
 		}
 		
-		
-		
-		//System.out.println("***************Contact for airport "+dataMap.get("otherPhones").toString().replace("|"," "));
-		
-		
 		$artefact.addAttribute("type", placeType);
 		
 		$artefact.addAttribute("mission", missionsMap.get( dataMap.get("mission").toString() ) );
@@ -526,24 +522,19 @@ void bindData() {
 	}
 		   
 } 
-
 String getName() {
 	return $artefact.getAttributeValueAsString("name");
 }
-
 boolean isValidLocation(){
 	String country =  $artefact.getAttributeValueAsString("Country");
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return com.wfp.utils.RBRegionsUtils.validateLocation(country, userbean.getGroupIds());
 }
-
 void addAttribute(){
 	String contactDtls = com.wfp.utils.CommonUtils.getContactDtls($artefact.getAttributeValueAsString("skype"), null, $artefact.getAttributeValueAsString("ocs"));
 	if(!(contactDtls == null || "".equalsIgnoreCase(contactDtls ))){
 		$artefact.addAttribute("Contact", contactDtls);
-	}
-    
-    
+	}    
 }
 String getURL()
 {
@@ -567,49 +558,33 @@ void fireDashboardRefreshEvent(){
 	fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS);
 }
 
-
-String getType() {
-	return $artefact.getAttributeValueAsString("type");
-}
-
-
+String getType() { 	return $artefact.getAttributeValueAsString("type"); }
 
 boolean authorizePlaces()
 { 
 	if(getType().indexOf("CAMP") >=0|| getType().indexOf("camp")>=0 )
 	{
-		return true ;
-		/*List<String> placesList = getUserPlacesList( getUserId() );		
-		
-		if(placesList!=null&&placesList.size()>0 ) 
-			return placesList.contains( $artefact.getAttributeValueAsString("name") );			
-		return true ; //false; 
-		*/
-	} 
-	
+		List<String> placesList = getUserPlacesList( getUserId() );		
+		if( placesList!=null&& placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("id") )  )
+		{
+			if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
+			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return true;			
+		} 
+	}	
 	return false;
 }
 List<String> getUserMissionList( String userId )
-{
-  if(userMissionsList==null ) userMissionsList= LDAPUtils.getAllMisisons4rUser( userId );		
-	
-	return userMissionsList;
+{  	
+	return userMissionsList==null?LDAPUtils.getAllMisisons4rUser( userId ):userMissionsList ;
 }
 List<String> getUserPlacesList( String userId )
-{
-	if(userPlacesList==null )
-	{		
-		userPlacesList = LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) );
-	} 
-	return userPlacesList;
+{	
+	return userPlacesList==null?LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) ):userPlacesList;
 }
+
 String getUserId(){
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	if(userbean != null){
-		return userbean.getUserUniqueId();
-	}
-	return null;		
-}
+com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
+  return userbean != null?userbean.getUserUniqueId():null; }
 
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;

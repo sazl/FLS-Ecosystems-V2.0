@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration name="Airplane Time Tracking">
+<configuration name="Vehicle Time Tracking">
     <section name="artefact">
         <section name="name">
-            <value><![CDATA[Airplane Time Tracking]]></value>
+            <value><![CDATA[VehicleTime Tracking]]></value>
         </section>
         <section name="type">
             <value><![CDATA[com.enterprisehorizons.magma.designtime.artifact.GeoArtifact]]></value>
@@ -241,7 +241,7 @@
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
-                    <value><![CDATA[Airplane Time Tracking]]></value>
+                    <value><![CDATA[VehicleTime Tracking]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -284,7 +284,7 @@
                             <value><![CDATA[ecoexpmodel]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Airplane Time Tracking.hecoexpml]]></value>
+                            <value><![CDATA[Vehicle Time Tracking.hecoexpml]]></value>
                         </section>
                     </section>
                     <section name="param">
@@ -292,7 +292,7 @@
                             <value><![CDATA[artefactname]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Airplane Time Tracking]]></value>
+                            <value><![CDATA[VehicleTime Tracking]]></value>
                         </section>
                     </section>
                 </section>
@@ -598,7 +598,7 @@ String getFullName(com.wfp.security.form.DeviceBean data){
 }
 
 List getData() {
-Object deviceId = getSession().getHttpSession().getAttribute("session_airplane_deviceId");
+Object deviceId = getSession().getHttpSession().getAttribute("session_vehicle_deviceId");
 if( deviceId==null ) deviceId="EMS-DST6E66BF";
 return LDAPWSUtils.getUnitHistorical( deviceId.toString(), "vehicle" ); 
   
