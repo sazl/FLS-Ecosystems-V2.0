@@ -428,6 +428,7 @@ List<String> userPlacesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 List<String> userOrgList = null;
+
 String getDatasource(){
 	return datasource;
 } 
@@ -1199,7 +1200,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[css/images/info-icon.png]]></value>
+                    <value><![CDATA[serverresources/FLS/images/<theme>/info-icon.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>
