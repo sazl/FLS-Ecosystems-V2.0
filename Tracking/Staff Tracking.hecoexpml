@@ -1033,6 +1033,7 @@ Map<String, String> deviceOffsetMap = com.wfp.jobs.LDAPCacheJob.getDeviceOffsetM
 List<String> userProfilesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 List<Lasso> lassoList = LassoUtils.getAllLassos();
+
 List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
 List<String> userOrgList = null;
 Rubberbandregions rubberbandregions = null; 
@@ -2444,16 +2445,16 @@ String getDescription(){ 	return description; }]]></value>
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[900]]></value>
+                    <value><![CDATA[1000]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[500]]></value>
+                    <value><![CDATA[600]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[70]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[200]]></value>
+                    <value><![CDATA[225]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
@@ -2667,7 +2668,7 @@ String getDescription(){ 	return description; }]]></value>
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
+                    <value><![CDATA[serverresources/FLS/images/<theme>/info-icon.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>
