@@ -605,32 +605,46 @@ Map<String, String> deviceOffsetMap = com.wfp.jobs.LDAPCacheJob.getDeviceOffsetM
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 public String serverRootUrl = getServerContextBaseUrl();
 List<String> userProfilesList = null;
-
-public String currentVersion(){   
-	return "5.0";
-}
-public String getAuthor(){   
-	return "Kaleem Mohammed"; 
-}
-public String getChangeLog(){   
-	return "Organization, FullName, popup tabs";
-}
 Rubberbandregions rubberbandregions = null; 
-	long moduleId = 0L;
-static{
-	if(Cache.retrieve("$ALERT_SERVICE$") == null){
+long moduleId = 0L;
+List<String> userOrgList = null;
+static
+{
+	if(Cache.retrieve("$ALERT_SERVICE$") == null)
+	{
 		Cache.store("$ALERT_SERVICE$", new HashMap<String, Object>());
 	}
 }
-		
-void bindData() { 
+boolean authorizeDevice()
+{
+	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
+	try{
+	 if(userProfilesList ==null ) userProfilesList = com.wfp.utils.LDAPUtils.getUserProfilesList( userbean.getUserUniqueId());
+
+	}catch(Exception e){ e.printStackTrace(); }
+	String deviceId = $artefact.getAttributeValueAsString("deviceId"); 
+	List<String> deviceMissionList = getDeviceMissionList(deviceId);
+  	List<String> userMissionList = getUserMissionList( userbean.getUserUniqueId() );
+  	if( userMissionList!=null && deviceMissionList!=null )
+  	{
+  		for(String deviceMission: deviceMissionList )
+  		{
+  		     if( userMissionList.contains( deviceMission ) ) 
+  		     {
+  		     	if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( userbean.getUserUniqueId() );
+  		     	if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return true;
+  		     }
+  		}
+  	}
+  	return false;
+}		
+void bindData()
+{ 
 	try
 	{
-	 	com.wfp.security.form.DeviceBean data = (com.wfp.security.form.DeviceBean )$trackingdatamodel;
-	 	
+	 	com.wfp.security.form.DeviceBean data = (com.wfp.security.form.DeviceBean )$trackingdatamodel;	 	
 	 	if (data != null)
-	 	{
-	 		
+	 	{	 		
 	 		List<String> mList = LDAPUtils.getLDAPUserDtlsMap().get( data.getName() ).getAuthorizedGroupsList();
 	 		if( mList!=null & mList.size()==0 ) mList.add("AE");
 	 		
@@ -648,9 +662,7 @@ void bindData() {
 		 	$artefact.addAttribute("noOfDays",  "<span id=child_PLUSHistorical:DELIM: >"+data.getNoOfDays()+"</span>"  );	
 			if( !data.getTotalWaypoints().equals("1") )
 		 	$artefact.addAttribute("fetchHistory",  "<span id=child_PLUSHistorical:DELIM: ><input onclick=selectAirplane(this) id="+data.getName()+" type=checkbox /></span>"  );
-		 		 
-			 
-			
+		 	
 			//Setting the GMT time
 			$artefact.addAttribute("time",  CommonUtils.parseDate(data.getTime(), IEPICConstants.NEW_PORTAL_DATE_FORMAT )  );  
 			$artefact.addAttribute("ptime", data.getTime()  );
@@ -662,26 +674,22 @@ void bindData() {
 			$artefact.addAttribute("separator", "&nbsp;");
 			$artefact.addAttribute("type", "Airplane");
 			$artefact.addAttribute("source", "Indigo");			
-			 
-		
 			$artefact.addAttribute("contact", "Data Not Available" );
+			
 			//Setting the Missions of the Vehicle  
-			$artefact.addAttribute("mission", getAllMissionFromList( mList ) );	
+			$artefact.addAttribute("mission", LDAPUtils.getAllMissionFromList( mList ) );	
 			$artefact.addAttribute("name", data.getName());	
 			$artefact.addAttribute("deviceId", data.getName() );	
 			//setting the Organization
-			$artefact.addAttribute("organisation", data.getOrganization() );	
-			 
+			$artefact.addAttribute("organisation", data.getOrganization() );			 
 		} 
 	}
 	catch (Exception e){
 		e.printStackTrace();
 	}
 }
-	 
-
-
-void addAttribute(){
+void addAttribute()
+{
 	com.wfp.security.form.LDAPUserBean ldapUserBean = com.wfp.utils.LDAPUtils.getLDAPUserBean(getName());
 	if(ldapUserBean == null){
 		return;
@@ -690,34 +698,8 @@ void addAttribute(){
 		$artefact.addAttribute("owner", ldapUserBean.getCn() +" "+(com.enterprisehorizons.util.StringUtils.isNull(ldapUserBean.getSn())?"":ldapUserBean.getSn()));
 	}
 }
-
-String getName() {
-	return $artefact.getAttributeValueAsString("deviceId");
-}
-
-String getDeviceCaption(){
-	return  $artefact.getAttributeValueAsString("deviceId");
-}
-
-String getIconUrl(){ 
-	return "serverresources/FLS/icons/epic/Tracking_Airplanes_K.png"; 
-}
-String getIconUrl_G(){ 
-	return "serverresources/FLS/icons/epic/Tracking_Airplanes_G.png"; 
-}
-String getIconUrl_C(){ 
-	return "serverresources/FLS/icons/epic/Tracking_Airplanes_C.png";
-}
-String getIconUrl_Y(){ 
-	return "serverresources/FLS/icons/epic/Tracking_Airplanes_Y.png";
-}
-String getIconUrl_B(){ 
-	return "serverresources/FLS/icons/epic/Tracking_Airplanes_K.png";
-}
-String legendURL(){    
-	return "serverresources/FLS/icons/epic/Planes_Legend.png";		
-} 
-boolean isInDangerZone(){
+boolean isInDangerZone()
+{
 	String[] allZones = com.wfp.utils.RBRegionsUtils.getZoneNames($artefact, getUserBean(), getLayerName(), getLayerId(), getLayerName()+"_DZ", "_SZ");
 	String deviceId = $artefact.getAttributeValueAsString("deviceId");	
 	boolean needToAlert = com.wfp.utils.RBRegionsUtils.isDeviceTraced($artefact, allZones, getSessionId(), deviceId);
@@ -725,22 +707,17 @@ boolean isInDangerZone(){
 		//com.wfp.utils.RBRegionsUtils.validateFireEvent(allZones, deviceId, getSessionId());
 	}	
 	//boolean isInUnsafeZone = (!com.enterprisehorizons.util.StringUtils.isNull(dangerZoneName));
-	return (!com.enterprisehorizons.util.StringUtils.isNull(allZones) );		
-	
+	return (!com.enterprisehorizons.util.StringUtils.isNull(allZones) );	
 }
-
-String getDangerZoneName(){
-	String deviceId = $artefact.getAttributeValueAsString("deviceId");
-	
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	
+String getDangerZoneName()
+{
+	String deviceId = $artefact.getAttributeValueAsString("deviceId");	
+	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();	
 	moduleId = RBRegionsUtils.getModuleId(getLayerId());
 	rubberbandregions = RBRegionsUtils.getUserModuleRubberbandregion(userbean.getDomainId(), userbean.getLanguageId(), 
-				userbean.getUserId(), userbean.getUserUniqueId(), moduleId, getLayerName()+"_DZ");
-	
+				userbean.getUserId(), userbean.getUserUniqueId(), moduleId, getLayerName()+"_DZ");	
 	return  com.wfp.utils.RBRegionsUtils.getDanzerZoneName(rubberbandregions, $artefact.getFirstPoint());	
 }
-
 String getStyle()
 {	
 	String stylee ="placemarkstyle";
@@ -756,28 +733,15 @@ String getStyle()
 	}
 	return stylee;
 } 
-
 String getMessage(){ return "Service 32 is moving out of zone"; }
-
 Date getEventDate(){ return new Date(); }
-
-String getEventId(){
-	return $artefact.getAttributeValueAsString("Time");
-}
-
-String getPriority(){
-	return "High";
-}
-
-String getSourceName() {
-	return "WFPHazard.ecoexpml";
-}
-
+String getEventId(){ return $artefact.getAttributeValueAsString("Time");}
+String getPriority(){	return "High"; }
+String getSourceName() { 	return "WFPHazard.ecoexpml"; }
 String getBody(){
 	String ackUrl = "Message: Source Name:"+getSourceName()+"::Event Id:"+getEventId()+"::Event Date: "+getEventDate().getTime()+"::Priority: "+getPriority()+"::Message: "+getMessage() ;
 	return ackUrl; 
 }
-
 String getURL(){
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
 	String serverRootUrl = getServerContextBaseUrl();
@@ -785,7 +749,6 @@ String getURL(){
 	String url = "swf/RBRegionsMsgMapping.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_DZ"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
 	return url;
 }
-
 String getMAURL(){
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
 	String serverRootUrl = getServerContextBaseUrl();
@@ -793,46 +756,35 @@ String getMAURL(){
 	String url = "serverresources/ManualAlert.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_MA"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
 	return url;
 }
-
 String getDomainId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return userbean.getDomainId()+"";
 }
-
 String getLanguageId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return userbean.getLanguageId()+"";
 }
-
 String getUserId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return (com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId()) + "";
 }
-
 String getUserUniqueId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return (com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId()) +"";
 }
-
 String getModuleId(){	
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
 	return moduleId+"";
 }
-
 String getRegionPrefix(){	
 	return getLayerName()+"_MA";
 }
-
-
 String getMySQLQry(){
 	return com.enterprisehorizons.util.URLUtils.encode("select * from (select (case when received_message != ''  then 'Acknowledged' else 'Not Acknowledged' end) as ack_status, received_message, ack_by,received_on, name as region_name, body as actual_message, send_on from epic_alert_service r1 left outer join STI_C_EMAIL_TEMPLATE em on (em.id = r1.template_Id)) r2 where region_name like '%"+getLayerName()+"%'");  
 }
-
 String[][] returnAttributes(){
 	return new String[][]{{"deviceId","java.lang.String","Name","false",""},  {"time","java.lang.String","Time","false",""}	};
 } 
-
-
 String getGroupby(){
 	if(getLayerName().startsWith("Vehicle")){
 		return "name";
@@ -844,45 +796,23 @@ String getGroupby(){
 	
 	return "name";
 }
-
 void fireDashboardRefreshEvent(){
 	fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS);
 }
-
-
-boolean authorizeDevice()
-{
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	try{
-	 if(userProfilesList ==null ) userProfilesList = com.wfp.utils.LDAPUtils.getUserProfilesList( userbean.getUserUniqueId());
-
-	}catch(Exception e){ e.printStackTrace(); }
-	String deviceId = $artefact.getAttributeValueAsString("deviceId"); 
-	List<String> deviceMissionList = getDeviceMissionList(deviceId);
-  	List<String> userMissionList = getUserMissionList( userbean.getUserUniqueId() );
-  	//System.out.println(" userMissionList :" + userMissionList +":deviceMissionList:"+deviceMissionList +" deviceId :"+deviceId  );
-  	if( userMissionList!=null && deviceMissionList!=null )
-  	{
-  		for(String deviceMission: deviceMissionList )
-  		{
-  		     if( userMissionList.contains( deviceMission ) ) return true;
-  		}
-  	}
-  	return false;
-}
 List<String> getDeviceMissionList( String deviceId )
 {
-	return com.wfp.utils.LDAPUtils.getLDAPUserDtlsMap().get(deviceId).getAuthorizedGroupsList();
+	return LDAPUtils.getLDAPUserDtlsMap().get(deviceId).getAuthorizedGroupsList();
 }
 List<String> getUserMissionList( String userId )
 {
 	if(userMissionsList==null )
 	{
-		userMissionsList= com.wfp.utils.LDAPUtils.getAllMisisons4rUser( userId );
+		userMissionsList= LDAPUtils.getAllMisisons4rUser( userId );
 	}
 	return userMissionsList;
 }
-String getAuthorUrl(){	
+String getAuthorUrl()
+{	
 	if(getLayerName().startsWith("Staff")){
 		datasource = datasource+".<br> All <i>trackMe</i> devices are identified as Staff";
 	}else if(getLayerName().startsWith("Vehicle")){
@@ -892,43 +822,21 @@ String getAuthorUrl(){
 	}
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }
-String getDatasource(){ 
-	return datasource;
-} 
-
-
-String getLastRefreshTime(){
-	return lastRefreshTime;
-}
-
-String getDescription(){
-	return description;
-}
-String getAllMissionFromList (List<String> missionList)
-{  
-	if(missionList!=null &&missionList.size()>0 )
-	{	
-		String missions="";
-		Collections.sort( missionList );int i=0;
-		for(String m : missionList )
-		{ 	++i;
-			missions += getMissionFullName( m ) ; 
-			if( i<missionList.size() ) missions+=",";
-			
-		}
-		return missions;
-	}
-	else return "";
-}
-String getMissionFullName(String mission )
-{ 
-  if( mission==null ) return "-";
-  else{
-         String s =missionsMap.get(mission.toUpperCase()) ;
-         if(s==null) s="-";
-         return s;
-       }
-}]]></value>
+String getName() { 	return $artefact.getAttributeValueAsString("deviceId"); }
+String getDeviceCaption(){ 	return  $artefact.getAttributeValueAsString("deviceId"); }
+//Setting ICONS based on Time
+String getIconUrl(){ 	return "serverresources/FLS/icons/epic/Tracking_Airplanes_K.png"; }
+String getIconUrl_G(){ 	return "serverresources/FLS/icons/epic/Tracking_Airplanes_G.png"; }
+String getIconUrl_C(){ 	return "serverresources/FLS/icons/epic/Tracking_Airplanes_C.png"; }
+String getIconUrl_Y(){ 	return "serverresources/FLS/icons/epic/Tracking_Airplanes_Y.png"; }
+String getIconUrl_B(){  	return "serverresources/FLS/icons/epic/Tracking_Airplanes_K.png"; }
+String legendURL(){    	return "serverresources/FLS/icons/epic/Planes_Legend.png"; } 
+public String currentVersion(){   	return "5.0"; }
+public String getAuthor(){  	return "Kaleem Mohammed"; }
+public String getChangeLog(){   	return "Organization, FullName, popup tabs"; }
+String getDatasource(){  return datasource; } 
+String getLastRefreshTime(){ 	return lastRefreshTime; }
+String getDescription(){ 	return description; }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
                 </section>
