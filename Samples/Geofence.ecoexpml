@@ -54,11 +54,6 @@
                 </section>
             </section>
         </section>
-        <section name="globalsearchablefields"/>
-        <section name="globalsearchresultfields"/>
-        <section name="aggregatableattributes"/>
-        <section name="groupableattributes"/>
-        <section name="sortableattributes"/>
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
@@ -82,7 +77,6 @@
                 <section name="autozoom">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevent"/>
                 <section name="autozoom">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -178,7 +172,6 @@
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="blinkstyles"/>
                 <section name="generateplacemark">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -192,7 +185,6 @@
                     <section name="name">
                         <value><![CDATA[placemarkstyle]]></value>
                     </section>
-                    <section name="customstyleproperties"/>
                     <section name="makeasglobalstyle">
                         <value><![CDATA[false]]></value>
                     </section>
@@ -205,14 +197,12 @@
                     <section name="iconscale">
                         <value><![CDATA[1.0]]></value>
                     </section>
-                    <section name="customiconstyleproperties"/>
                     <section name="labelcolorshader">
                         <value><![CDATA[false]]></value>
                     </section>
                     <section name="labelscale">
                         <value><![CDATA[1.0]]></value>
                     </section>
-                    <section name="customlabelstyleproperties"/>
                     <section name="linecolor">
                         <value><![CDATA[#FFFFFF]]></value>
                         <section name="transparency">
@@ -225,7 +215,6 @@
                     <section name="linewidth">
                         <value><![CDATA[2.0]]></value>
                     </section>
-                    <section name="customlinestyleproperties"/>
                     <section name="fillcolor">
                         <section name="script">
                             <value><![CDATA[getGeofenceColor()]]></value>
@@ -240,7 +229,6 @@
                     <section name="fillcolorshader">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="customfillstyleproperties"/>
                     <section name="listtype">
                         <value><![CDATA[ ]]></value>
                     </section>
@@ -481,10 +469,6 @@ void fireDashboardRefreshEvent(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevent"/>
-                <section name="dashboardmetadata"/>
-                <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="datasourcetype">
                         <value><![CDATA[artifact]]></value>
@@ -545,7 +529,6 @@ void fireDashboardRefreshEvent(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -582,13 +565,7 @@ void fireDashboardRefreshEvent(){
                     <section name="isapplytodashboard">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="searchfields"/>
-                    <section name="filtercriteria"/>
                 </section>
-                <section name="dashboardattributes"/>
-                <section name="summaryattributes"/>
-                <section name="groupattributes"/>
-                <section name="summarytabbedviewdashboards"/>
                 <section name="flashparameters">
                     <section name="param">
                         <section name="name">
@@ -833,9 +810,6 @@ void fireDashboardRefreshEvent(){
                             </section>
                         </section>
                     </section>
-                    <section name="dynamicDatasourceTableMetaData"/>
-                    <section name="dynamicDatasourceIndexes"/>
-                    <section name="dynamicDatasourceUpdateColumns"/>
                 </section>
                 <section name="datarendertype">
                     <value><![CDATA[Collection]]></value>
@@ -960,7 +934,6 @@ void fireDashboardRefreshEvent(){
                         <value><![CDATA[1]]></value>
                     </section>
                 </section>
-                <section name="datasourceartifactmappings"/>
             </section>
         </section>
     </section>

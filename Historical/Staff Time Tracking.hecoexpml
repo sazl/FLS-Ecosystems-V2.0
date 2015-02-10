@@ -320,9 +320,6 @@
                 <section name="tessellate">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="placemarklocation">
-                    <value><![CDATA[end]]></value>
-                </section>
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -331,9 +328,6 @@
                 </section>
                 <section name="generateplacemark">
                     <value><![CDATA[true]]></value>
-                </section>
-                <section name="placemarklocation">
-                    <value><![CDATA[end]]></value>
                 </section>
                 <section name="generatelegend">
                     <value><![CDATA[false]]></value>

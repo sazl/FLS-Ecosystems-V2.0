@@ -491,7 +491,8 @@ boolean authorizePlaces()
 		if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
 		{	 //System.out.println( LDAPWSUtils.getOrganizationByUnit( getUserId() ) +" :"+ $artefact.getAttributeValueAsString("organisation") );
 			if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
-			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return true;						
+			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+					return true;						
 		}		
 	}	
 	return false;

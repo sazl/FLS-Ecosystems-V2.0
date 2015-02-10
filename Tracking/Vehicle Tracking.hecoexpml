@@ -775,7 +775,7 @@ void bindData()
 			if( userProfilesList!=null&& userProfilesList.indexOf("admin") >=0  )
 			$artefact.addAttribute("licensePlate", data.getLicensePlate().replace("|","") );			
 			//Setting the Missions of the Vehicle  
-			 $artefact.addAttribute("mission", getAllMissionFromList( mList ));				
+			 $artefact.addAttribute("mission", LDAPUtils.getAllMissionFromList( mList ));				
 			//setting the Organization
 			$artefact.addAttribute("organisation", data.getOrganization() );
 			
@@ -906,22 +906,7 @@ String getDatasource(){   	return datasource; }
 String getLastRefreshTime(){ return lastRefreshTime; }
 
 String getDescription(){ 	return description; }
-String getAllMissionFromList (List<String> missionList)
-{  
-	if(missionList!=null &&missionList.size()>0 )
-	{	
-		String missions="";
-		Collections.sort( missionList );int i=0;
-		for(String m : missionList )
-		{ 	++i;
-			missions += getMissionFullName( m ) ; 
-			if( i<missionList.size() ) missions+=",";
-			
-		}
-		return missions;
-	}
-	else return "";
-}
+
 String getMissionFullName(String mission )
 { 
   if( mission==null ) return "-";
