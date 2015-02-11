@@ -382,7 +382,7 @@
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[]]></value>
+                    <value><![CDATA[yyyy-MM-DD HH:mm:ss]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[]]></value>

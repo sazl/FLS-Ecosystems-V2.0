@@ -722,8 +722,8 @@ boolean authorizeDevice()
 	try
 	{
 	   userProfilesList = getUserProfileList( userbean.getUserUniqueId());
-	   if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( userbean.getUserUniqueId() );
-	   if( ! CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return false;
+	  if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( userbean.getUserUniqueId() );
+	 if( ! CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return false;
   	   
 	}catch(Exception e){  }
 	return LDAPUtils.authorizeDevices($artefact.getAttributeValueAsString("deviceId"), userbean.getUserUniqueId());

@@ -98,8 +98,6 @@
         <section name="isfiltersearchresults">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="searchablefields"/>
-        <section name="aggregatableattributes"/>
         <section name="categories">
             <section name="row">
                 <section name="column">
@@ -181,8 +179,10 @@
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="featuretype">
@@ -276,7 +276,6 @@
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="blinkstyles"/>
                 <section name="style">
                     <section name="name">
                         <value><![CDATA[EsriStyle9]]></value>
@@ -290,7 +289,6 @@
                     <section name="makeasglobalstyle">
                         <value><![CDATA[true]]></value>
                     </section>
-                    <section name="customstyleproperties"/>
                     <section name="isaddsymbol">
                         <value><![CDATA[false]]></value>
                     </section>
@@ -301,7 +299,7 @@
                         <value><![CDATA[esriPMS]]></value>
                     </section>
                     <section name="iconurl">
-                        <value><![CDATA[serverresources/icons/epic/Electrical_G.png]]></value>
+                        <value><![CDATA[serverresources/FLS/icons/epic/Electrical_G.png]]></value>
                     </section>
                     <section name="iconwidth">
                         <value><![CDATA[16]]></value>
@@ -412,16 +410,6 @@ boolean authorize(){ return true; }]]></value>
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="inputdateformat">
-            <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-        </section>
-        <section name="customrange"/>
-        <section name="isshowintervals">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="defaulttimerange">
-            <value><![CDATA[startendtime]]></value>
-        </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[true]]></value>
         </section>
@@ -446,16 +434,13 @@ boolean authorize(){ return true; }]]></value>
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
-                </section>
-                <section name="isshowwindowtoolbar">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Tables]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -487,27 +472,30 @@ boolean authorize(){ return true; }]]></value>
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[900]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[370]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[400]]></value>
+                    <value><![CDATA[100]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -517,18 +505,26 @@ boolean authorize(){ return true; }]]></value>
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.ClientSideTableTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -542,18 +538,10 @@ boolean authorize(){ return true; }]]></value>
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="istimeaware">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="inputdateformat">
-                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-                </section>
-                <section name="customrange"/>
-                <section name="isshowintervals">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="filterdatasourcetype">
@@ -562,9 +550,6 @@ boolean authorize(){ return true; }]]></value>
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
-                <section name="filterfields"/>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -598,8 +583,6 @@ boolean authorize(){ return true; }]]></value>
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
-                <section name="customwindowproperties"/>
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
@@ -702,7 +685,6 @@ boolean authorize(){ return true; }]]></value>
                         </section>
                     </section>
                 </section>
-                <section name="windowinlinefilters"/>
                 <section name="groupattributes">
                     <section name="row">
                         <section name="column">
@@ -710,15 +692,15 @@ boolean authorize(){ return true; }]]></value>
                         </section>
                     </section>
                 </section>
-                <section name="summaryattributes"/>
                 <section name="expandall">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="freezecolumns">
                     <value><![CDATA[1]]></value>
                 </section>
-                <section name="actionbuttons"/>
-                <section name="hyperlinks"/>
+                <section name="createchartfromtable">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="highlighticonurl">
                     <value><![CDATA[/images/highlight.png]]></value>
                 </section>
@@ -728,6 +710,12 @@ boolean authorize(){ return true; }]]></value>
                 <section name="highlightfeaturecount">
                     <value><![CDATA[50]]></value>
                 </section>
+                <section name="usequery">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="numberofpoints">
+                    <value><![CDATA[200]]></value>
+                </section>
             </section>
         </section>
         <section name="datamashups">
@@ -735,10 +723,6 @@ boolean authorize(){ return true; }]]></value>
                 <value><![CDATA[custom]]></value>
                 <section name="driver">
                     <value><![CDATA[com.enterprisehorizons.magma.datamashup.ScriptableDataDriver]]></value>
-                    <section name="metadata"/>
-                    <section name="dynamicDatasourceTableMetaData"/>
-                    <section name="dynamicDatasourceIndexes"/>
-                    <section name="dynamicDatasourceUpdateColumns"/>
                 </section>
                 <section name="datarendertype">
                     <value><![CDATA[Collection]]></value>

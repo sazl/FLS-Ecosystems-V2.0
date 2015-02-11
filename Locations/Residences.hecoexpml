@@ -429,14 +429,18 @@ Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 List<String> userOrgList = null;
 
-String getDatasource(){
-	return datasource;
+boolean authorizePlaces()
+{ 
+	if(getType().indexOf("residence") >= 0)
+	{	List<String> placesList = getUserPlacesList( getUserId() );		
+		if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
+		{	//if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
+			//if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+			return true;						
+		}		
+	} 	
+	return false;
 } 
-
-String getLastRefreshTime(){ 	return lastRefreshTime; }
-
-String getDescription(){ 	return description; }
- 
 void bindData() {
 	Map dataMap = (Map) $ldapplacesdatamodel;
 	
@@ -545,18 +549,7 @@ void fireDashboardRefreshEvent(){ 	fireEvent(com.spacetimeinsight.events.EventCo
 
 String getType() { return $artefact.getAttributeValueAsString("type"); }
 
-boolean authorizePlaces()
-{ 
-	if(getType().indexOf("residence") >= 0)
-	{		
-		List<String> placesList = getUserPlacesList( getUserId() );		
-		if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
-		{	if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
-			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return true;						
-		}		
-	} 	
-	return false;
-}
+
 List<String> getUserMissionList( String userId )
 {
   return(userMissionsList==null )?LDAPUtils.getAllMisisons4rUser( userId ):userMissionsList;		
@@ -572,6 +565,13 @@ String getUserId(){
 	}
 	return null;		
 }
+
+
+String getDatasource(){	return datasource; } 
+
+String getLastRefreshTime(){ 	return lastRefreshTime; }
+
+String getDescription(){ 	return description; }
 
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;

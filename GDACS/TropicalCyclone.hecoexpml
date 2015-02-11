@@ -343,7 +343,7 @@ String getIconUrl(){
 	return "serverresources/FLS/icons/epic/Incident_K.png"; 
 }
 String getIconUrl_G(){ 
-	return "serverresources/FLS/icons/epic/Incident_G.png"; 
+	return "serverresources/FLS/icons/epic/Incident_R.png"; 
 }
 String getIconUrl_C(){ 
 	return "serverresources/FLS/icons/epic/Incident_C.png";
@@ -358,17 +358,9 @@ String getStyle()
 {	
 	String stylee ="placemarkstyle";
 	
-	Date time = (Date) $artefact.getAttributeValue("Updated_Date");
-	
-	if(time!=null )
-	{
-		Date current = Calendar.getInstance().getTime();
-		int hrs = (int)((current.getTime()-time.getTime())/(1000 * 60 * 60 ) );
-		//System.out.println("*****hrs*******"+hrs);
-		if( hrs <6  ) stylee= "latestReported";
-		else if(hrs <24 ) stylee= "lastDayReported";	
-		else if(hrs>23&&hrs <120 ) stylee= "latestReported";		
-	}
+	String title = getName();
+	if( title.indexOf("Red")==0 ) return "latestReported";
+	if( title.indexOf("Orange")==0 ) return "lastDayReported";
 	
 	return stylee;
 } 
