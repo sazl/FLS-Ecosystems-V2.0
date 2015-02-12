@@ -427,26 +427,29 @@ List<String> userMissionsList = null;
 List<String> userPlacesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
-
-String getDatasource(){
-	return datasource; 
-}  
-
-String getLastRefreshTime(){
-	return lastRefreshTime;  
+List<String> userOrgList = null;
+boolean authorizePlaces()
+{ 
+	if(getType().indexOf("warehouse") >= 0)
+	{
+		if( userOrgList == null && getUserId()!=null ) 
+			userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
+		if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+		{ 	List<String> placesList = getUserPlacesList( getUserId() );		
+			if(placesList!=null&&placesList.size()>0 ) 
+					return placesList.contains( $artefact.getAttributeValueAsString("name") );			
+		}
+	} 
+	
+	return false;
 }
-
-String getDescription(){
-	return description; 
-} 
-
 void bindData() {
 	Map dataMap = (Map) $ldapplacesdatamodel;
 	
 	if (dataMap != null)
  	{	
  		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
- 		System.out.println(" placeType :"+ placeType );
+ 		
  		
 		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));		
 		$artefact.addAttribute("name", dataMap.get("cn"));
@@ -454,7 +457,7 @@ void bindData() {
 		
 		$artefact.addAttribute("type", placeType);
 		
-		$artefact.addAttribute("mission", getMissionFullName( dataMap ) );
+		$artefact.addAttribute("mission", LDAPUtils.getMissionFullName( (String)dataMap.get("mission") ) );
 		
 		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
 				String mailStr=dataMap.get("mail").toString();
@@ -496,15 +499,6 @@ void bindData() {
 	}
 
 		   
-} 
-String getMissionFullName(Map map )
-{ 
-  if( map.get("mission")==null ) return "-";
-  else{
-         String s =missionsMap.get(map.get("mission").toString().toUpperCase()) ;
-         if(s==null) s="-";
-         return s;
-       }
 } 
 String getCountryFullName(Map map )
 { 
@@ -561,20 +555,6 @@ String getType() {
 }
 
 
-
-boolean authorizePlaces()
-{ 
-	if(getType().indexOf("warehouse") >= 0)
-	{
-		List<String> placesList = getUserPlacesList( getUserId() );		
-		
-		if(placesList!=null&&placesList.size()>0 ) 
-			return placesList.contains( $artefact.getAttributeValueAsString("name") );			
-		return true;
-	} 
-	
-	return false;
-}
 List<String> getUserMissionList( String userId )
 {
   if(userMissionsList==null ) userMissionsList= LDAPUtils.getAllMisisons4rUser( userId );		
@@ -596,7 +576,9 @@ String getUserId(){
 	}
 	return null;		
 }
-
+String getDatasource(){	return datasource; }
+String getLastRefreshTime(){	return lastRefreshTime;  }
+String getDescription(){ 	return description; } 
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }]]></value>
@@ -1351,7 +1333,7 @@ String getAuthorUrl(){
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
@@ -1461,7 +1443,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1482,7 +1464,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1503,7 +1485,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1524,7 +1506,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1545,7 +1527,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1566,7 +1548,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[100]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1587,7 +1569,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>

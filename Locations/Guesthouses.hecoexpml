@@ -448,17 +448,22 @@ Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 List<String> userOrgList = null;
 
-String getDatasource(){
-	return datasource; 
-} 
-
-String getLastRefreshTime(){
-	return lastRefreshTime;  
+boolean authorizePlaces()
+{ 
+	if(getType().indexOf("guesthouse") >= 0|| getType().indexOf("GUESTHOUSE") >= 0)
+	{
+		
+		if( userOrgList == null && getUserId()!=null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
+		if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+		{
+			List<String> placesList = getUserPlacesList( getUserId() );			
+			if(placesList!=null&&placesList.size()>0 &&placesList.contains( $artefact.getAttributeValueAsString("name") ) )
+				return true;
+							  
+		}	
+	} 	
+	return false;
 }
-
-String getDescription(){
-	return description; 
-} 
 
 void bindData() {
 	Map dataMap = (Map) $ldapplacesdatamodel;
@@ -472,7 +477,7 @@ void bindData() {
 		$artefact.addAttribute("name", dataMap.get("cn"));
 		$artefact.addAttribute("displayName", dataMap.get("displayName"));
 		
-		$artefact.addAttribute("mission", getMissionFullName( dataMap ) );
+		$artefact.addAttribute("mission", LDAPUtils.getMissionFullName( (String)dataMap.get("mission") ) );
 		$artefact.addAttribute("type", placeType.toUpperCase() );
 		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
 		
@@ -516,15 +521,7 @@ void bindData() {
 	}
 		   
 }
-String getMissionFullName(Map map )
-{ 
-  if( map.get("mission")==null ) return "-";
-  else{
-         String s =missionsMap.get(map.get("mission").toString().toUpperCase()) ;
-         if(s==null) s="-";
-         return s;
-       }
-} 
+
 String getCountryFullName(Map map )
 { 
   if( map.get("c").toString()==null ) return "-NOT AVAILABLE-";
@@ -534,16 +531,13 @@ String getCountryFullName(Map map )
          return s;
        }
 }
-String getName() {
-	return $artefact.getAttributeValueAsString("name");
+String getName() {	return $artefact.getAttributeValueAsString("name");
 }
-
 boolean isValidLocation(){
 	String country =  $artefact.getAttributeValueAsString("Country");
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return com.wfp.utils.RBRegionsUtils.validateLocation(country, userbean.getGroupIds());
 }
-
 void addAttribute(){
 	String contactDtls = com.wfp.utils.CommonUtils.getContactDtls($artefact.getAttributeValueAsString("skype"), null, $artefact.getAttributeValueAsString("ocs"));
 	if(!(contactDtls == null || "".equalsIgnoreCase(contactDtls ))){
@@ -578,23 +572,6 @@ void fireDashboardRefreshEvent(){
 String getType() {
 	return $artefact.getAttributeValueAsString("type");
 }
-
-
-
-boolean authorizePlaces()
-{ 
-	if(getType().indexOf("guesthouse") >= 0|| getType().indexOf("GUESTHOUSE") >= 0)
-	{
-		List<String> placesList = getUserPlacesList( getUserId() );			
-		if(placesList!=null&&placesList.size()>0 ) 
-			if( placesList.contains( $artefact.getAttributeValueAsString("name") ) )
-			{
-				if( userOrgList == null && getUserId()!=null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
-				if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) return true; 
-			}	
-	} 	
-	return false;
-}
 List<String> getUserMissionList( String userId )
 {
   if(userMissionsList==null ) userMissionsList= LDAPUtils.getAllMisisons4rUser( userId );		
@@ -617,6 +594,9 @@ String getUserId(){
 	return null;		
 }
 
+String getDatasource(){ return datasource; } 
+String getLastRefreshTime(){ return lastRefreshTime; }
+String getDescription(){ return description; } 
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }]]></value>
@@ -1392,7 +1372,7 @@ String getAuthorUrl(){
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[200]]></value>
+                    <value><![CDATA[220]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>

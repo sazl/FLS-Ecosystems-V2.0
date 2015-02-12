@@ -443,46 +443,6 @@ List<String> userPlacesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 List<String> userOrgList = null;
-
-void bindData() 
-{
-	Map dataMap = (Map) $ldapplacesdatamodel;	
-	if (dataMap != null)
- 	{
- 	
- 		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
- 		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));		
-		$artefact.addAttribute("name", dataMap.get("cn"));
-		$artefact.addAttribute("displayName", dataMap.get("displayName"));	 
-		$artefact.addAttribute("mission",getMissionFullName( dataMap ) );
-		$artefact.addAttribute("type", placeType);
-		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );		
-		String mailStr=dataMap.get("mail").toString();				
-		
-		if(mailStr!=null&&mailStr!="") $artefact.addAttribute("email", dataMap.get("mail"));
-		else $artefact.addAttribute("email","-");
-		
-		String mobileStr=dataMap.get("otherPhones").toString();
-		
-		if(mobileStr!=null&&mobileStr!="") $artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
-		else $artefact.addAttribute("mobile","-");
-			
-		$artefact.addAttribute("description", dataMap.get("description"));
-				
-		$artefact.addAttribute("PLUSAddress",  "-" );
-		String streetVal=  dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ");
-		
-		if(streetVal!=null&&streetVal!="")$artefact.addAttribute("address","<span id=child_PLUSAddress:DELIM: >"+ dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ")+ "</span>");
-		else $artefact.addAttribute("address","<span id=child_PLUSAddress:DELIM:>- </span>");	
-		
-		$artefact.addAttribute("city","<span id=child_PLUSAddress:DELIM: >"+ dataMap.get("locality")+ "</span>");
-		$artefact.addAttribute("country","<span id=child_PLUSAddress:DELIM: >"+ getCountryFullName( dataMap )  + "</span>");
-		$artefact.addAttribute("PLUSGeo-Location",  "-" );
-		$artefact.addAttribute("latitude", "<span id=child_PLUSGeo-Location:DELIM: >"+dataMap.get("coord-latitude")+"</span>");
-		$artefact.addAttribute("longitude","<span id=child_PLUSGeo-Location:DELIM: >"+ dataMap.get("coord-longitude")+"</span>");				
-	}
-		   
-} 
 boolean authorizePlaces()
 {
 	if(getType().indexOf("office") >= 0)
@@ -501,19 +461,54 @@ boolean authorizePlaces()
 	}	
 	return false;
 }
+void bindData() 
+{
+	
+ 		
+      Map dataMap = (Map) $ldapplacesdatamodel; 
+      if (dataMap != null)
+     {
+     
+            String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
+            $artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));           
+            $artefact.addAttribute("name", dataMap.get("cn"));
+            $artefact.addAttribute("displayName", dataMap.get("displayName"));      
+            $artefact.addAttribute("mission",LDAPUtils.getMissionFullName( (String)dataMap.get("mission") ) );
+            $artefact.addAttribute("type", placeType);
+            $artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );        
+            String mailStr=dataMap.get("mail").toString();                    
+            
+            if(mailStr!=null&&mailStr!="") $artefact.addAttribute("email", dataMap.get("mail"));
+            else $artefact.addAttribute("email","-");
+            
+            String mobileStr=dataMap.get("otherPhones").toString();
+            
+            if(mobileStr!=null&&mobileStr!="") $artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
+            else $artefact.addAttribute("mobile","-");
+                  
+            $artefact.addAttribute("description", dataMap.get("description"));
+                        
+            $artefact.addAttribute("PLUSAddress",  "-" );
+            String streetVal=  dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ");
+            
+            if(streetVal!=null&&streetVal!="")$artefact.addAttribute("address", dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," "));
+            else $artefact.addAttribute("address","-");     
+            
+            $artefact.addAttribute("city",dataMap.get("locality"));
+            $artefact.addAttribute("country",getCountryFullName( dataMap ) );
+            $artefact.addAttribute("PLUSGeo-Location",  "-" );
+            $artefact.addAttribute("latitude", dataMap.get("coord-latitude"));
+            $artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+				
+	}
+		   
+} 
+
 String getDatasource(){ return datasource; }  
 String getLastRefreshTime(){ return lastRefreshTime; }
 String getDescription(){ 	return description; }
 
-String getMissionFullName(Map map )
-{ 
-  if( map.get("mission")==null ) return "-";
-  else
-  {     String s =missionsMap.get(map.get("mission").toString().toUpperCase()) ;
-         if(s==null) s="-";
-         return s;
-   }
-} 
+
 String getCountryFullName(Map map )
 { 
   if( map.get("c").toString()==null ) return "-NOT AVAILABLE-";
@@ -1348,7 +1343,7 @@ String getAuthorUrl(){
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
