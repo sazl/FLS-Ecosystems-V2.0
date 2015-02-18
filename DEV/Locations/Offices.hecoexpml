@@ -440,30 +440,36 @@ String datasource = "LDAP";
 String lastRefreshTime = com.wfp.jobs.WarehouseStockExcelJob.getInstance().getLastRefreshTime();
 List<String> userMissionsList = null;
 List<String> userPlacesList = null;
-Map<String,String> countriesMap = null;
+Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 List<String> userOrgList = null;
 
 boolean authorizePlaces()
 {
 	if(getType().indexOf("office") >= 0)
-	{ 	   if( userOrgList == null && getUserId()!=null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
+	{    		
+		
+			 if( userOrgList == null && getUserId()!=null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
 			//System.out.println( getUserId()+" :org:"+ userOrgList +" :"+ $artefact.getAttributeValueAsString("organisation") );
 			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
 			{   List<String> placesList = getUserPlacesList( getUserId() );		
 				if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
 				{
 					return true;
-				}											
+				}
+											
 		}		
 	}	
 	return false;
 }
 void bindData() 
-{	
+{
+	
+ 		
       Map dataMap = (Map) $ldapplacesdatamodel; 
       if (dataMap != null)
-     {     
+     {
+     
             String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
             $artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));           
             $artefact.addAttribute("name", dataMap.get("cn"));
@@ -480,7 +486,7 @@ void bindData()
             
             if(mobileStr!=null&&mobileStr!="") $artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
             else $artefact.addAttribute("mobile","-");
-                   
+                  
             $artefact.addAttribute("description", dataMap.get("description"));
                         
             $artefact.addAttribute("PLUSAddress",  "-" );
@@ -489,31 +495,30 @@ void bindData()
             if(streetVal!=null&&streetVal!="")$artefact.addAttribute("address", dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," "));
             else $artefact.addAttribute("address","-");     
             
-            $artefact.addAttribute("city",dataMap.get("locality")); System.out.println( "countriesMap"+countriesMap );
-            $artefact.addAttribute("country",getCountryFullName(dataMap ) );
-            
+            $artefact.addAttribute("city",dataMap.get("locality"));
+            $artefact.addAttribute("country",getCountryFullName( dataMap ) );
             $artefact.addAttribute("PLUSGeo-Location",  "-" );
             $artefact.addAttribute("latitude", dataMap.get("coord-latitude"));
             $artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+            $artefact.addAttribute("QRcode", "QRcode");
 				
 	}
-		    
+		   
 } 
 
 String getDatasource(){ return datasource; }  
 String getLastRefreshTime(){ return lastRefreshTime; }
 String getDescription(){ 	return description; }
+
+
 String getCountryFullName(Map map )
 { 
- try{if( countriesMap==null ) countriesMap= LDAPUtils.getCountriesMap();
   if( map.get("c").toString()==null ) return "-NOT AVAILABLE-";
   else
-  {     String s = countriesMap.get(map.get("c").toString().toUpperCase() ) ;
-         if(s==null) s=map.get("c").toString();
+  {     String s = countriesMap.get(map.get("c").toString().toUpperCase()) ;
+         if(s==null) s="-";
          return s;
     }
-    }catch(Exception e){}
-    return map.get("c").toString();
 }
 String getName() { 	return $artefact.getAttributeValueAsString("name"); }
 

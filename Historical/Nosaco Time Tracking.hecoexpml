@@ -600,6 +600,8 @@ String getFullName(com.wfp.security.form.DeviceBean data){
 List getData() {
 Object deviceId = getSession().getHttpSession().getAttribute("session_nosaco_deviceId");
 if( deviceId==null ) deviceId="EMS-DST6E66BF";
+
+System.out.println( "deviceId.toString"+ deviceId.toString() );
 return LDAPWSUtils.getUnitHistorical( deviceId.toString(), "vehicle" ); 
   
 }

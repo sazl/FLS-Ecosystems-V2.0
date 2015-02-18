@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration name="Offices">
+<configuration name="Warehouse">
     <section name="artefact">
         <section name="name">
-            <value><![CDATA[Offices]]></value>
+            <value><![CDATA[Warehouse]]></value>
         </section>
         <section name="artifactname">
             <section name="script">
@@ -24,7 +24,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Office ID]]></value>
+                    <value><![CDATA[Warehouse ID]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -56,22 +56,6 @@
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[organisation]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[Organisation]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="column"/>
-                <section name="column"/>
-            </section>
-            <section name="row">
-                <section name="column">
                     <value><![CDATA[mission]]></value>
                 </section>
                 <section name="column">
@@ -88,13 +72,13 @@
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[PLUSAddress]]></value>
+                    <value><![CDATA[organisation]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[PLUSAddress]]></value>
+                    <value><![CDATA[Organisation]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -186,6 +170,22 @@
             </section>
             <section name="row">
                 <section name="column">
+                    <value><![CDATA[mobile]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Phone(s)]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
                     <value><![CDATA[PLUSGeo-Location]]></value>
                 </section>
                 <section name="column">
@@ -193,6 +193,22 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[PLUSGeo-Location]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[PLUSAddress]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[PLUSAddress]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -234,38 +250,6 @@
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[separator]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[&nbsp]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="column"/>
-                <section name="column"/>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[mobile]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[Phone(s)]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="column"/>
-                <section name="column"/>
-            </section>
-            <section name="row">
-                <section name="column">
                     <value><![CDATA[displayName]]></value>
                 </section>
                 <section name="column">
@@ -285,7 +269,7 @@
             <value><![CDATA[true]]></value>
         </section>
         <section name="isindexed">
-            <value><![CDATA[true]]></value>
+            <value><![CDATA[false]]></value>
         </section>
         <section name="isfiltersearchresults">
             <value><![CDATA[true]]></value>
@@ -306,7 +290,7 @@
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
-                    <value><![CDATA[Offices]]></value>
+                    <value><![CDATA[Warehouse]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -352,7 +336,7 @@
                             <value><![CDATA[ecoexpmodel]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Offices.hecoexpml]]></value>
+                            <value><![CDATA[Warehouse.hecoexpml]]></value>
                         </section>
                     </section>
                     <section name="param">
@@ -360,7 +344,7 @@
                             <value><![CDATA[artefactname]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Offices]]></value>
+                            <value><![CDATA[Warehouse]]></value>
                         </section>
                     </section>
                 </section>
@@ -431,7 +415,8 @@
                 <value><![CDATA[import com.wfp.beans.*;
 import com.wfp.utils.*;
 
-String serverRootUrl = getServerContextBaseUrl();
+String serverRootUrl = "https://sti-dev.globalepic.lu/SIServer/";
+//ServerUtils.getServerBaseUrl();
 private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
 private com.enterprisehorizons.magma.datamashup.CacheDataDriver $Cache9driver;
 private com.enterprisehorizons.magma.datamashup.CacheDataDriver $ldapplacesdriver;
@@ -440,97 +425,114 @@ String datasource = "LDAP";
 String lastRefreshTime = com.wfp.jobs.WarehouseStockExcelJob.getInstance().getLastRefreshTime();
 List<String> userMissionsList = null;
 List<String> userPlacesList = null;
-Map<String,String> countriesMap = null;
+Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 List<String> userOrgList = null;
 
 boolean authorizePlaces()
-{
-	if(getType().indexOf("office") >= 0)
-	{ 	   if( userOrgList == null && getUserId()!=null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
-			//System.out.println( getUserId()+" :org:"+ userOrgList +" :"+ $artefact.getAttributeValueAsString("organisation") );
-			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
-			{   List<String> placesList = getUserPlacesList( getUserId() );		
-				if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
-				{
-					return true;
-				}											
-		}		
-	}	
+{ 
+	if(getType().indexOf("warehouse") >= 0)
+	{
+		if( userOrgList == null && getUserId()!=null ) 
+			userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
+		if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+		{ 	List<String> placesList = getUserPlacesList( getUserId() );		
+			if(placesList!=null&&placesList.size()>0 ) 
+					return placesList.contains( $artefact.getAttributeValueAsString("name") );			
+		}
+	} 
+	
 	return false;
 }
-void bindData() 
-{	
-      Map dataMap = (Map) $ldapplacesdatamodel; 
-      if (dataMap != null)
-     {     
-            String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
-            $artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));           
-            $artefact.addAttribute("name", dataMap.get("cn"));
-            $artefact.addAttribute("displayName", dataMap.get("displayName"));      
-            $artefact.addAttribute("mission",LDAPUtils.getMissionFullName( (String)dataMap.get("mission") ) );
-            $artefact.addAttribute("type", placeType);
-            $artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );        
-            String mailStr=dataMap.get("mail").toString();                    
-            
-            if(mailStr!=null&&mailStr!="") $artefact.addAttribute("email", dataMap.get("mail"));
-            else $artefact.addAttribute("email","-");
-            
-            String mobileStr=dataMap.get("otherPhones").toString();
-            
-            if(mobileStr!=null&&mobileStr!="") $artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
-            else $artefact.addAttribute("mobile","-");
-                   
-            $artefact.addAttribute("description", dataMap.get("description"));
-                        
-            $artefact.addAttribute("PLUSAddress",  "-" );
-            String streetVal=  dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ");
-            
-            if(streetVal!=null&&streetVal!="")$artefact.addAttribute("address", dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," "));
-            else $artefact.addAttribute("address","-");     
-            
-            $artefact.addAttribute("city",dataMap.get("locality")); System.out.println( "countriesMap"+countriesMap );
-            $artefact.addAttribute("country",getCountryFullName(dataMap ) );
-            
-            $artefact.addAttribute("PLUSGeo-Location",  "-" );
-            $artefact.addAttribute("latitude", dataMap.get("coord-latitude"));
-            $artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+void bindData() {
+	Map dataMap = (Map) $ldapplacesdatamodel;
+	
+	if (dataMap != null)
+ 	{	
+ 		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
+ 		
+ 		
+		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));		
+		$artefact.addAttribute("name", dataMap.get("cn"));
+		$artefact.addAttribute("displayName", dataMap.get("displayName"));
+		
+		$artefact.addAttribute("type", placeType);
+		
+		$artefact.addAttribute("mission", LDAPUtils.getMissionFullName( (String)dataMap.get("mission") ) );
+		
+		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
+				String mailStr=dataMap.get("mail").toString();
+		if(mailStr!=null&&mailStr!=""){
+			$artefact.addAttribute("email", dataMap.get("mail"));
+			}
+		else{
+			$artefact.addAttribute("email","-");
+		}
+		
+		String mobileStr=dataMap.get("otherPhones").toString();
+		if(mobileStr!=null&&mobileStr!=""){
+			$artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
+			}
+		else{
+			$artefact.addAttribute("mobile","-");
+		}
+		
+		//$artefact.addAttribute("compasId", dataMap.get("compasId"));
+		$artefact.addAttribute("description", dataMap.get("description"));
+		//$artefact.addAttribute("skype", dataMap.get("skype"));
+		//$artefact.addAttribute("ocs", dataMap.get("ocs"));
+		
+		$artefact.addAttribute("PLUSAddress",  "-" );
+		String streetVal=  dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," ");
+		if(streetVal!=null&&streetVal!=""){
+			$artefact.addAttribute("address",dataMap.get("street").toString().replaceAll("[\\t\\n\\r]"," "));
+			}
+		else{
+			$artefact.addAttribute("address","-");	
+			}
+		$artefact.addAttribute("city", dataMap.get("locality"));
+		$artefact.addAttribute("country", getCountryFullName( dataMap ) );
+				
+		$artefact.addAttribute("PLUSGeo-Location",  "-" );
+		$artefact.addAttribute("latitude", dataMap.get("coord-latitude"));
+		$artefact.addAttribute("longitude", dataMap.get("coord-longitude"));
+		$artefact.addAttribute("QRcode", "QRcode");
 				
 	}
-		    
-} 
 
-String getDatasource(){ return datasource; }  
-String getLastRefreshTime(){ return lastRefreshTime; }
-String getDescription(){ 	return description; }
+		   
+} 
 String getCountryFullName(Map map )
 { 
- try{if( countriesMap==null ) countriesMap= LDAPUtils.getCountriesMap();
   if( map.get("c").toString()==null ) return "-NOT AVAILABLE-";
-  else
-  {     String s = countriesMap.get(map.get("c").toString().toUpperCase() ) ;
-         if(s==null) s=map.get("c").toString();
+  else{
+         String s = countriesMap.get(map.get("c").toString().toUpperCase()) ;
+         if(s==null) s="-";
          return s;
-    }
-    }catch(Exception e){}
-    return map.get("c").toString();
+       }
 }
-String getName() { 	return $artefact.getAttributeValueAsString("name"); }
+String getName() {
+	return $artefact.getAttributeValueAsString("name");
+}
 
 boolean isValidLocation(){
 	String country =  $artefact.getAttributeValueAsString("Country");
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return com.wfp.utils.RBRegionsUtils.validateLocation(country, userbean.getGroupIds());
 }
+
 void addAttribute(){
 	String contactDtls = com.wfp.utils.CommonUtils.getContactDtls($artefact.getAttributeValueAsString("skype"), null, $artefact.getAttributeValueAsString("ocs"));
 	if(!(contactDtls == null || "".equalsIgnoreCase(contactDtls ))){
 		$artefact.addAttribute("Contact", contactDtls);
-	}    
+	}
+    
+    
 }
 String getURL()
 {
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
+	String serverRootUrl = "https://sti-dev.globalepic.lu/SIServer/";//ServerUtils.getServerBaseUrl();
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	String url = "swf/GeofenceDashboard.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_DZ"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
 	return url;
@@ -539,32 +541,46 @@ String getURL()
 String getMAURL()
 {
 	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
+	String serverRootUrl = "https://sti-dev.globalepic.lu/SIServer/";//ServerUtils.getServerBaseUrl();
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	String url = "serverresources/ManualAlert.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_MA"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
 
 	return url;
 }
-void fireDashboardRefreshEvent(){ fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS); }
+void fireDashboardRefreshEvent(){
+	fireEvent(com.spacetimeinsight.events.EventConstants.REFRESH_DASHBOARDS);
+}
 
-String getType() { 	return $artefact.getAttributeValueAsString("type"); }
 
-/************************/
+String getType() {
+	return $artefact.getAttributeValueAsString("type");
+}
+
+
 List<String> getUserMissionList( String userId )
 {
   if(userMissionsList==null ) userMissionsList= LDAPUtils.getAllMisisons4rUser( userId );		
-   return userMissionsList;
+	
+	return userMissionsList;
 }
 List<String> getUserPlacesList( String userId )
 {
 	if(userPlacesList==null )
-		userPlacesList = LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) , userId );
+	{		
+		userPlacesList = LDAPWSUtils.getUserPlacesList( getUserMissionList( userId ) );
+	} 
 	return userPlacesList;
 }
-String getUserId()
-{	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	if(userbean != null) return userbean.getUserUniqueId();
+String getUserId(){
+	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
+	if(userbean != null){
+		return userbean.getUserUniqueId();
+	}
 	return null;		
 }
+String getDatasource(){	return datasource; }
+String getLastRefreshTime(){	return lastRefreshTime;  }
+String getDescription(){ 	return description; } 
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }]]></value>
@@ -601,7 +617,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="makeasglobalstyle">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
@@ -613,7 +629,7 @@ String getAuthorUrl(){
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources\FLS\icons\epic\Locations_Offices.png]]></value>
+                    <value><![CDATA[serverresources/FLS/icons/epic/Locations_Warehouses.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -653,7 +669,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/info-icon.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -668,7 +684,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="applicationhelp">
-                    <value><![CDATA[Help_Redirect.html?type=Details&layer=Offices]]></value>
+                    <value><![CDATA[Help_Redirect.html?type=Details&layer=Warehouses]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -813,27 +829,7 @@ String getAuthorUrl(){
                                 </section>
                                 <section name="row">
                                     <section name="column">
-                                    <value><![CDATA[type]]></value>
-                                    </section>
-                                    <section name="column">
-                                    <value><![CDATA[Text]]></value>
-                                    </section>
-                                    <section name="column"/>
-                                    <section name="column"/>
-                                </section>
-                                <section name="row">
-                                    <section name="column">
                                     <value><![CDATA[description]]></value>
-                                    </section>
-                                    <section name="column">
-                                    <value><![CDATA[Text]]></value>
-                                    </section>
-                                    <section name="column"/>
-                                    <section name="column"/>
-                                </section>
-                                <section name="row">
-                                    <section name="column">
-                                    <value><![CDATA[separator]]></value>
                                     </section>
                                     <section name="column">
                                     <value><![CDATA[Text]]></value>
@@ -988,18 +984,6 @@ String getAuthorUrl(){
                             </section>
                         </section>
                     </section>
-                    <section name="row">
-                        <section name="column"/>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column"/>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
                 </section>
                 <section name="highlighticonscale">
                     <value><![CDATA[1.0]]></value>
@@ -1088,7 +1072,7 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[organisation]]></value>
+                            <value><![CDATA[mission]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[Text]]></value>
@@ -1099,7 +1083,7 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[mission]]></value>
+                            <value><![CDATA[organisation]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[Text]]></value>
@@ -1133,6 +1117,17 @@ String getAuthorUrl(){
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[email]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Text]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[mobile]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[Text]]></value>
@@ -1266,7 +1261,7 @@ String getAuthorUrl(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=locations&type=offices]]></value>
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=locations&type=warehouses]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -1301,7 +1296,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="applicationhelp">
-                    <value><![CDATA[Help_Redirect.html?type=List&layer=Offices]]></value>
+                    <value><![CDATA[Help_Redirect.html?type=List&layer=Warehouses]]></value>
                 </section>
                 <section name="showpluginproperties">
                     <value><![CDATA[false]]></value>
@@ -1450,7 +1445,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1471,7 +1466,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[200]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1534,7 +1529,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1576,7 +1571,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[150]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1601,6 +1596,14 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
+                            <value><![CDATA[displayName]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[List]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
                             <value><![CDATA[description]]></value>
                         </section>
                         <section name="column">
@@ -1609,7 +1612,7 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[organisation]]></value>
+                            <value><![CDATA[mission]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[List]]></value>
@@ -1617,7 +1620,7 @@ String getAuthorUrl(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[mission]]></value>
+                            <value><![CDATA[organisation]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[List]]></value>
@@ -1634,14 +1637,6 @@ String getAuthorUrl(){
                     <section name="row">
                         <section name="column">
                             <value><![CDATA[country]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[displayName]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[List]]></value>

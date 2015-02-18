@@ -428,6 +428,7 @@ List<String> userPlacesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
 List<String> userOrgList = null;
+
 boolean authorizePlaces()
 { 
 	if(getType().indexOf("warehouse") >= 0)
