@@ -22,6 +22,9 @@
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="column"/>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -37,6 +40,9 @@
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="column"/>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
         </section>
         <section name="cache">

@@ -98,18 +98,20 @@
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[pubDate]]></value>
+                    <value><![CDATA[Updated_Date]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Reported Time]]></value>
+                    <value><![CDATA[Reported Time (UTC)]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="column"/>
+                <section name="column">
+                    <value><![CDATA[yyyy-MM-dd HH:mm:ss]]></value>
+                </section>
                 <section name="column"/>
             </section>
             <section name="row">
@@ -285,17 +287,9 @@ String description = "Floods are pulled from the following GDAC Geo-RSS feed <i>
 String datasource = "Geo-RSS feed";
 String lastRefreshTime = com.wfp.utils.CommonUtils.getUTCdatetimeAsString();
 
-String getDatasource(){
-	return datasource;
-}
-
-String getLastRefreshTime(){
-	return lastRefreshTime;
-}
-
-String getDescription(){
-	return description;
-}
+String getDatasource(){ 	return datasource; }
+String getLastRefreshTime(){ 	return lastRefreshTime; }
+String getDescription(){ 	return description; }
 
 void bindData() {
 	
@@ -303,27 +297,27 @@ void bindData() {
     String[] attributeNames = data.getAttributeNames();
     $artefact.setCoordinates(data.getCoordinates());
     com.enterprisehorizons.magma.models.util.Coordinate[] c = data.getCoordinates();
- 
     
     String lat=String.valueOf(String.format( "%.5f", c[0].y ));
-    String lon=String.valueOf(String.format( "%.5f", c[0].x ));
-   
-   	$artefact.addAttribute("Latitude",lat );
+    String lon=String.valueOf(String.format( "%.5f", c[0].x ));   
    	
+   	$artefact.addAttribute("Latitude",lat +" / " +lon );   	
     String fls = data.getAttributeValue("Author")!=""?data.getAttributeValue("Author").toString():"FLS";
     $artefact.addAttribute("Author", fls );
-	$artefact.addAttribute("Title", data.getAttributeValue("Title"));
-	
-	
-	$artefact.addAttribute("Link", data.getAttributeValue("Link"));	
-	$artefact.addAttribute("Updated_Date", data.getAttributeValue("pubDate"));	
+	$artefact.addAttribute("Title", data.getAttributeValue("Title"));	
+	$artefact.addAttribute("Link", data.getAttributeValue("Link"));		
 	$artefact.addAttribute("Description", data.getAttributeValue("Description"));
-		
-	System.out.println(""+data.getAttributeValue("pubDate") );
 	
+	String description = (String)data.getAttributeValue("Description");	
+	if(description!=null )
+	{	
+		String dat = description.substring(5,15);		
+		dat = CommonUtils.formatDate( dat, "dd/MM/yyyy", IEPICConstants.NEW_PORTAL_DATE_FORMAT );
+		//System.out.println(dat);
+		$artefact.addAttribute("Updated_Date", dat+"" );	 	 
+	}
 
 }
-
 String formatDate(String date) {
 		
 		//SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy hh:mm:ss"); 
@@ -338,33 +332,25 @@ String formatDate(String date) {
 	}
 
 String getName() { 	return $artefact.getAttributeValueAsString("Title"); }
-
-String getIconUrl(){ 
-	return "serverresources/FLS/icons/epic/Incident_K.png"; 
-}
-String getIconUrl_G(){ 
-	return "serverresources/FLS/icons/epic/Incident_R.png"; 
-}
-String getIconUrl_C(){ 
-	return "serverresources/FLS/icons/epic/Incident_C.png";
-}
-String getIconUrl_Y(){ 
-	return "serverresources/FLS/icons/epic/Incident_Y.png";
-}
-String getIconUrl_B(){ 
-	return "serverresources/FLS/icons/epic/Incident_K.png";
-}
 String getStyle()
 {	
-	String stylee ="placemarkstyle";
-	
+	String stylee ="placemarkstyle";	
 	String title = getName();
 	if( title.indexOf("Red")==0 ) return "latestReported";
-	if( title.indexOf("Orange")==0 ) return "lastDayReported";
-	
+	if( title.indexOf("Orange")==0 ) return "lastDayReported";	
 	return stylee;
-} 
-
+}
+String getIconUrl(){  return "serverresources/FLS/icons/epic/cyclone.png"; }
+String getIconUrl_G(){ 	return "serverresources/FLS/icons/epic/cyclone.png"; }
+String getIconUrl_C(){ 	return "serverresources/FLS/icons/epic/cyclone.png"; }
+String getIconUrl_Y(){ 	return "serverresources/FLS/icons/epic/cyclone.png"; }
+String getIconUrl_B(){ 	return "serverresources/FLS/icons/epic/cyclone.png"; }
+ 
+String getCyclonesURL()
+{
+    String dat = CommonUtils.formatDate( new Date() );
+    return "http://www.gdacs.org/rss.aspx?profile=ARCHIVE&from=2013-01-01&to="+dat.substring(0,10)+"&alertlevel=orange&country=&eventtype=TC";
+}
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }]]></value>
@@ -462,6 +448,12 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#FF8000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
                 </section>
@@ -554,6 +546,12 @@ String getAuthorUrl(){
                         <section name="type">
                             <value><![CDATA[1]]></value>
                         </section>
+                    </section>
+                </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#FF0000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
                     </section>
                 </section>
                 <section name="iconwidth">
@@ -1240,7 +1238,7 @@ String getAuthorUrl(){
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[1000]]></value>
+                    <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[300]]></value>
@@ -1404,7 +1402,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[300]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1435,6 +1433,27 @@ String getAuthorUrl(){
                         </section>
                         <section name="column">
                             <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Updated_Date]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[100]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Descending]]></value>
                         </section>
                         <section name="column"/>
                     </section>
@@ -1571,7 +1590,12 @@ String getAuthorUrl(){
                                 <value><![CDATA[feedUrl]]></value>
                             </section>
                             <section name="value">
-                                <value><![CDATA[http://www.gdacs.org/rss.aspx?profile=ARCHIVE&from=2014-02-11&to=2015-02-11&alertlevel=orange&country=&eventtype=TC]]></value>
+                                <section name="script">
+                                    <value><![CDATA[getCyclonesURL()]]></value>
+                                    <section name="type">
+                                    <value><![CDATA[1]]></value>
+                                    </section>
+                                </section>
                             </section>
                         </section>
                     </section>

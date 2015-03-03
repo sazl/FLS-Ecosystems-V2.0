@@ -15,6 +15,9 @@
         <section name="type">
             <value><![CDATA[com.enterprisehorizons.magma.designtime.artifact.GeoArtifact]]></value>
         </section>
+        <section name="parentartifact">
+            <value><![CDATA[ ]]></value>
+        </section>
         <section name="attributes">
             <section name="row">
                 <section name="column">
@@ -170,7 +173,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Last Seen]]></value>
+                    <value><![CDATA[Incident Reported]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -224,6 +227,22 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[true]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[ptime]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Timestamp(GMT)]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="column"/>
                 <section name="column"/>
@@ -404,22 +423,16 @@ void bindData() {
     $artefact.setCoordinates(data.getCoordinates());
     com.enterprisehorizons.magma.models.util.Coordinate[] c = data.getCoordinates();
     
-    //String lat=String.valueOf(c[0].y);
-    //String lon=String.valueOf(c[0].x);
+    String lat=String.valueOf(c[0].y);
+    String lon=String.valueOf(c[0].x);
     
-    String lat=String.valueOf(String.format( "%.5f", c[0].y ));
-    String lon=String.valueOf(String.format( "%.5f", c[0].x ));
+    //String lat=String.valueOf(String.format( "%.5f", c[0].y ));
+    //String lon=String.valueOf(String.format( "%.5f", c[0].x ));
     
    //System.out.println("****Date*****"+data.getAttributeValue("updated"));
-    
-    //$artefact.addAttribute("PLUSGeo-Location","-");           
-	//$artefact.addAttribute("Latitude","<span id=child_PLUSGeo-Location:DELIM: >"+lat+"</span>" );
-	//$artefact.addAttribute("Longitude","<span id=child_PLUSGeo-Location:DELIM: >"+lon+"</span>");
-	//$artefact.addAttribute("Latitude",lat);
-   	//$artefact.addAttribute("Longitude",lon);
    	
    	$artefact.addAttribute("PLUSIncident_Reported","-");
-   	$artefact.addAttribute("Latitude","<span id=child_PLUSIncident_Reported:DELIM: >"+lat+" / "+lon+"</span>");
+   	$artefact.addAttribute("Latitude",lat+" / "+lon);
    	
     String fls = data.getAttributeValue("Author")!=""?data.getAttributeValue("Author").toString():"FLS";
     $artefact.addAttribute("Author", fls );
@@ -449,9 +462,10 @@ void addAttribute(String desc){
 			{	s = s.replace("Recorded: ","").replace("T"," ").replace("+00:00","");
 				$artefact.addAttribute("Time_Date", CommonUtils.parseDate(s, IEPICConstants.NEW_PORTAL_DATE_FORMAT ) );
 				//System.out.println("Incident Last seen parameter***********"+CommonUtils.parseDate(s, IEPICConstants.NEW_PORTAL_DATE_FORMAT ));
-				System.out.println("Incident Last seen parameter***********"+s);
+				//System.out.println("Incident Last seen parameter***********"+s);
 				$artefact.addAttribute("ptimeLastSeen",s);
-				$artefact.addAttribute("Lastseen",  "<span id=child_PLUSLast_Reported:DELIM: >"+s+"</span>"  );
+				$artefact.addAttribute("ptime",s);
+				$artefact.addAttribute("Lastseen", s);
 						
    
 				String dateParse=CommonUtils.parseDate(s, IEPICConstants.NEW_PORTAL_DATE_FORMAT ).toString();
@@ -463,8 +477,8 @@ void addAttribute(String desc){
 			{ s =s.replace("Image: <a href='","");
 			  int i = s.indexOf( "'><img" ) ;
 			  s = s.substring(0,i);
-			  $artefact.addAttribute("IncidentImage",  s );
-			 
+			  //$artefact.addAttribute("IncidentImage", "<a href=\""+ s+"\" target=_blank > <img src=\""+ s+"\"  width=200 height=200></a>" );
+			 $artefact.addAttribute("IncidentImage", s );
 				//System.out.println( "Image : "+s ); s = s.replace("media/","trackme/media/");
 				$artefact.addAttribute("IncidentLink", "<a href=\""+ s+"\" target=_blank > click</a>" );
 				
@@ -1041,6 +1055,16 @@ String getAuthorUrl(){
                                     <section name="column"/>
                                     <section name="column"/>
                                 </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[ptime]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
                             </section>
                         </section>
                     </section>
@@ -1069,7 +1093,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[css/images/legend.png]]></value>
+                    <value><![CDATA[serverresources/FLS/images/<theme>/legend.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>

@@ -227,7 +227,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[@ Lat / Long]]></value>
+                    <value><![CDATA[Latitude/Longitude]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -1011,7 +1011,6 @@ import com.enterprisehorizons.magma.server.util.ServerUtils;
 import com.spacetimeinsight.db.model.util.*;
 import com.spacetimeinsight.db.config.model.*;
 import com.spacetimeinsight.rubberbandregions.Rubberbandregions;
-import javax.servlet.http.HttpSession;
 import java.text.*;
 import java.util.*;
 import com.wfp.beans.*;
@@ -1022,6 +1021,7 @@ import com.spacetimeinsight.events.SelectUnSelectLayerEvent;
 import com.enterprisehorizons.magma.models.util.Coordinate;
 import com.wfp.db.platform.model.LassoTemplate;
 import com.spacetimeinsight.db.lasso.model.Lasso;
+import javax.servlet.http.HttpSession;
 
 private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
 private com.wfp.custom.datasource.CustomWebServiceDataDriver $trackingdriver;
@@ -1037,17 +1037,17 @@ List<Lasso> lassoList = LassoUtils.getAllLassos();
 HttpSession session= null;
 
 List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
-List<String> userOrgList = null;
-Rubberbandregions rubberbandregions = null; 
-long moduleId = 0L;
-static
+	List<String> userOrgList = null;
+	Rubberbandregions rubberbandregions = null; 
+	long moduleId = 0L;
+	static
 	{
 		if(Cache.retrieve("$ALERT_SERVICE$") == null){
 			Cache.store("$ALERT_SERVICE$", new HashMap<String, Object>());
 		}
 	}
 	boolean authorizeDevice()
-	{	
+	{	 boolean isValid=false;
 		com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 		try
 		{
@@ -1055,24 +1055,27 @@ static
 		 	if( t!=null && t.getYear()>115 ) return false; 
 			if(userProfilesList ==null ) userProfilesList = com.wfp.utils.LDAPUtils.getUserProfilesList( userbean.getUserUniqueId());
 	
-		
 		}catch(Exception e){ }	
 		String deviceId = $artefact.getAttributeValueAsString("deviceId"); 
 		List<String> deviceMissionList = LDAPUtils.getLDAPUserDtlsMap().get(deviceId).getAuthorizedGroupsList();
 	  	List<String> userMissionList = getUserMissionList( userbean.getUserUniqueId() );  	
 	  	if( userMissionList!=null && deviceMissionList!=null )
 	  	{
-	  		for(String deviceMission: deviceMissionList )
+	  		
+	  		for(String deviceMission: deviceMissionList   )
 	  		{
 	  		    if( userMissionList.contains( deviceMission ) )
 	  		     {  		     
 	  		     	if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserUniqueId() );
-	  		     	if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("Organization") ) ) return true;
+	  		     	
+	  		     	if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("Organization") ) ) 
+	  		     	{ isValid= true; return isValid; }
 	  		     }
 	  		}
 	  	}
-	  	return false;
-	}	 
+	  	return isValid;
+	}
+		 
 	void bindData() 
 	{
 		try	
@@ -1080,6 +1083,27 @@ static
 		 	com.wfp.security.form.DeviceBean data = (com.wfp.security.form.DeviceBean )$trackingdatamodel;	 	
 		 	if (data != null)	
 		 	{ 	
+		 		
+		 		if(session==null)session= getEcosystemSession();
+		 		session.setAttribute("staff_description", getDescription1());
+				session.setAttribute("staff_pointOfContact", getPointOfContact());
+				session.setAttribute("staff_pointOfContactMailId", getpointOfContactMailId());
+				session.setAttribute("staff_dataOwner", getDataOwner());
+				session.setAttribute("staff_layerCreationDate", getLayerCreationDate());
+				session.setAttribute("staff_layerAuthor", getLayerAuthor());
+				session.setAttribute("staff_LayerModificationDate", getLayerModificationDate());
+				session.setAttribute("staff_LayerModificationAuthor", getlayerModificationAuthor());
+				
+				session.setAttribute("staff_version", getVersion());
+				session.setAttribute("staff_changelogLink", getChangelogLink());
+				
+				session.setAttribute("staff_dataSourceAndUpdateFrequencyLDAP", getDataSourceAndUpdateFrequencyLDAP());
+				session.setAttribute("staff_dataSourceAndUpdateFrequencyMiddleware", getDataSourceAndUpdateFrequencyMiddleware());
+				session.setAttribute("staff_middlewareDataSourceAndUpdateFrequency", getMiddlewareDataSourceAndUpdateFrequency());
+				session.setAttribute("staff_geographicalReferenceType", getGeographicalReferenceType());
+				session.setAttribute("staff_geographicalRefernceProjectionInformation", getGeographicalRefernceProjectionInformation());
+				
+					
 		 		$artefact.setCoordinates(data.getLatitude(), data.getLongitude());	 							
 				$artefact.addAttribute("title", data.getTitle());//System.out.println( data.getInternalID() );
 				//List<String> internalIdList = data.getInternalID();
@@ -1088,7 +1112,7 @@ static
 											
 				$artefact.addAttribute("deviceId", data.getName());	
 				$artefact.addAttribute("deviceType",LDAPUtils.getDeviceType( data.getName() ) );	
-				$artefact.addAttribute("source", LDAPUtils.getTrackerName( data.getName() ) );	
+				$artefact.addAttribute("source", data.getName() );	
 				
 				$artefact.addAttribute("owner", getFullName(data));
 				$artefact.addAttribute("Organization", data.getOrganization());		
@@ -1099,9 +1123,7 @@ static
 							
 			 	//Setting Mission
 			 	List<String> mList = LDAPUtils.getLDAPUserDtlsMap().get( data.getName() ).getAuthorizedGroupsList();
-			 	//System.out.println(" mList :"+mList );
-			 	$artefact.addAttribute("mission", LDAPUtils.getAllMissionFromList( mList ) );
-			 			 	
+			 	$artefact.addAttribute("mission", LDAPUtils.getAllMissionFromList( mList ) );			 	
 				$artefact.addAttribute("userID", data.getUid()); 
 				//Setting Emails.
 				$artefact.addAttribute("PLUSEmails",  "-" );
@@ -1130,7 +1152,7 @@ static
 			 	$artefact.addAttribute("ptimeLastSeen", data.getTime()  );
 			 	$artefact.addAttribute("pLocalTime", data.getDeviceLocalTime()  );	
 			    $artefact.addAttribute("localTime", CommonUtils.stringDateToDate(data.getDeviceLocalTime()) );		    
-			 	$artefact.addAttribute("Latitude", data.getLatitude()+"/"+data.getLongitude());
+			 	$artefact.addAttribute("Latitude", data.getLatitude()+" / "+data.getLongitude());
 			 	$artefact.addAttribute("LatitudeStr", data.getLatitude() );
 			 	$artefact.addAttribute("LongitudeStr", data.getLongitude() );
 			 	$artefact.addAttribute("Longitude", data.getLongitude());
@@ -1143,8 +1165,7 @@ static
 			 	if( !data.getTotalWaypoints().equals("1") )
 			 	$artefact.addAttribute("fetchHistory", data.getName());
 			 	String city = data.getLocality().replace("[","").replace("]","");
-			 	if(city!=null&&city!="")
-			 	{		 	
+			 	if(city!=null&&city!=""){		 	
 				 	$artefact.addAttribute("PLUSAddress",  "-" );
 				 	$artefact.addAttribute("street", data.getStreet());
 				 	$artefact.addAttribute("city",city.toUpperCase());
@@ -1191,26 +1212,7 @@ static
 				}
 				$artefact.addAttribute("QRcode", "QRcode");
 				$artefact.addAttribute("vCard", "vCard");
-				
-				
-				if(session==null)session= getEcosystemSession();
-		 		session.setAttribute("staff_description", getDescription1());
-				session.setAttribute("staff_pointOfContact", getPointOfContact());
-				session.setAttribute("staff_pointOfContactMailId", getpointOfContactMailId());
-				session.setAttribute("staff_dataOwner", getDataOwner());
-				session.setAttribute("staff_layerCreationDate", getLayerCreationDate());
-				session.setAttribute("staff_layerAuthor", getLayerAuthor());
-				session.setAttribute("staff_LayerModificationDate", getLayerModificationDate());
-				session.setAttribute("staff_LayerModificationAuthor", getlayerModificationAuthor());
-				
-				session.setAttribute("staff_version", getVersion());
-				session.setAttribute("staff_changelogLink", getChangelogLink());
-				
-				session.setAttribute("staff_dataSourceAndUpdateFrequencyLDAP", getDataSourceAndUpdateFrequencyLDAP());
-				session.setAttribute("staff_dataSourceAndUpdateFrequencyMiddleware", getDataSourceAndUpdateFrequencyMiddleware());
-				session.setAttribute("staff_middlewareDataSourceAndUpdateFrequency", getMiddlewareDataSourceAndUpdateFrequency());
-				session.setAttribute("staff_geographicalReferenceType", getGeographicalReferenceType());
-				session.setAttribute("staff_geographicalRefernceProjectionInformation", getGeographicalRefernceProjectionInformation());
+			
 			}  
 		} 
 		catch (Exception e){ 
@@ -1348,6 +1350,34 @@ static
 	{
 		return com.enterprisehorizons.util.URLUtils.encode("select * from (select (case when received_message != ''  then 'Acknowledged' else 'Not Acknowledged' end) as ack_status, received_message, ack_by,received_on, name as region_name, body as actual_message, send_on from epic_alert_service r1 left outer join STI_C_EMAIL_TEMPLATE em on (em.id = r1.template_Id)) r2 where region_name like '%Staff%'");  
 	}
+	
+	 
+	HttpSession getEcosystemSession( ){
+		return getSession().getHttpSession();
+	}
+	
+	String getDescription1(){
+	  return "The staff layer shows the last known position of staff carrying GPS enabled tracking devices such as digital radios, personal trackers or smartphones running a tracking application. The reported locations (waypoints) are stored in the system for up to 100 days, enabling historical tracking. The staff member details such as the job title, organisation, contact numbers and address are also available.";
+	}
+	
+	String getPointOfContact(){return "FITTEST Location Services";}
+	String getpointOfContactMailId(){return "fittest.locationservices@wfp.org";}
+	String getDataOwner(){ return "Clients utilizing Location Services are responsible for the quality of the data entered into the system, hence for the quality of resulting information"; }  
+	
+	String getLayerCreationDate(){ return "2014-11-11 12:30:00"; } 
+	String getLayerAuthor(){ return "Kaleem MOHAMMED"; } 
+	String getLayerModificationDate(){ return "15 February 2015 12:03:28"; } 
+	String getlayerModificationAuthor(){ return "Navya Somasundar"; } 
+	
+	String getVersion(){ return "version 1.2"; } 
+	String getChangelogLink(){ return "http://rm.globalepic.lu/issues/1371"; } 
+	String getDataSourceAndUpdateFrequencyLDAP(){ return "LDAP- Runs every 4 hours"; } 
+	String getDataSourceAndUpdateFrequencyMiddleware(){ return "Middleware - Runs every 5 minutes"; } 
+	
+	String getMiddlewareDataSourceAndUpdateFrequency(){ return " Vismo - Runs every 10 seconds, TrackMe - Runs every 10 seconds, ETC Reporter - Depends on user settings, SmartPTT - Runs every 2 minutes"; } 
+	String getGeographicalReferenceType(){ return "Vector, point"; } 
+	String getGeographicalRefernceProjectionInformation(){ return "WGS84"; } 
+	
 	String getGroupby(){ return "owner"; }
 	void fireDashboardRefreshEvent()
 	{
@@ -1382,8 +1412,8 @@ static
 	}
 	List<String> getUserProfilesList( String userId )
 	{
-		if(userMissionsList==null ) userMissionsList= LDAPUtils.getAllProfiles4rUser( userId );
-		return userMissionsList;
+		if(userProfilesList==null ) userProfilesList= LDAPUtils.getAllProfiles4rUser( userId );
+		return userProfilesList;
 	}
 	String getAuthorUrl()
 	{	
@@ -1393,6 +1423,11 @@ static
 	{
 		return isInDangerZone();
 	}
+	boolean isAdmin()
+	{
+	  if( userProfilesList!=null&& userProfilesList.contains("admin") ) return true;
+	  return false;
+	}
 	String alertMsg()
 	{
 		String status = $artefact.getAttributeValueAsString("ccity");
@@ -1400,47 +1435,12 @@ static
 		String DESCRIPTION = $artefact.getAttributeValueAsString("owner");	
 		return DESCRIPTION+"( "+deviceId+" ) is inside -- active geofence ";
 	}
-	public String currentVersion(){  return "2.0"; }
-	
-	
-	String getAuthor(){ 
-		//Object deviceId = getSession().getHttpSession().getAttribute("session_deviceId");
-	
-	
-	  	return "Kaleem MOHAMMED"; }  
-	
-	
-	
+	String currentVersion(){  return "2.0"; }	
 	String getChangeLog(){  return "Organization, FullName, popup tabs"; }
-	String getDateModified(){  return "2014-11-11 12:30:00"; }
+	String getDateModified(){  return "2015-02-26 12:30:00"; }
 	String getDatasource(){   	return datasource; }
 	String getLastRefreshTime(){ 	return lastRefreshTime; }
-	String getDescription(){ 	return description; }
-	HttpSession getEcosystemSession( ){
-		return getSession().getHttpSession();
-	}
-	
-	String getDescription1(){
-	  return "The staff layer shows the last known position of staff carrying GPS enabled tracking devices such as digital radios, personal trackers or smartphones running a tracking application. The reported locations (waypoints) are stored in the system for up to 100 days, enabling historical tracking. The staff member details such as the job title, organisation, contact numbers and address are also available.";
-	}
-	
-	String getPointOfContact(){return "FITTEST Location Services";}
-	String getpointOfContactMailId(){return "fittest.locationservices@wfp.org";}
-	String getDataOwner(){ return "Clients utilizing Location Services are responsible for the quality of the data entered into the system, hence for the quality of resulting information"; }  
-	
-	String getLayerCreationDate(){ return "2014-11-11 12:30:00"; } 
-	String getLayerAuthor(){ return "Kaleem MOHAMMED"; } 
-	String getLayerModificationDate(){ return "15 February 2015 12:03:28"; } 
-	String getlayerModificationAuthor(){ return "Navya Somasundar"; } 
-	
-	String getVersion(){ return "version 1.2"; } 
-	String getChangelogLink(){ return "http://rm.globalepic.lu/issues/1371"; } 
-	String getDataSourceAndUpdateFrequencyLDAP(){ return "LDAP- Runs every 4 hours"; } 
-	String getDataSourceAndUpdateFrequencyMiddleware(){ return "Middleware - Runs every 5 minutes"; } 
-	
-	String getMiddlewareDataSourceAndUpdateFrequency(){ return " Vismo - Runs every 10 seconds, TrackMe - Runs every 10 seconds, ETC Reporter - Depends on user settings, SmartPTT - Runs every 2 minutes"; } 
-	String getGeographicalReferenceType(){ return "Vector, point"; } 
-	String getGeographicalRefernceProjectionInformation(){ return "WGS84"; }]]></value>
+	String getDescription(){ 	return description; }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
                 </section>
@@ -1809,7 +1809,7 @@ static
                     <value><![CDATA[600]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[400]]></value>
+                    <value><![CDATA[445]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[350]]></value>

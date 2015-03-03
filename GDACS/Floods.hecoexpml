@@ -315,7 +315,7 @@ void bindData() {
     
    	
    	
-   	$artefact.addAttribute("Latitude",lat );
+   	$artefact.addAttribute("Latitude",lat +" / " +lon );
    	
     String fls = data.getAttributeValue("Author")!=""?data.getAttributeValue("Author").toString():"FLS";
     $artefact.addAttribute("Author", fls );
@@ -323,7 +323,17 @@ void bindData() {
 	
 	$artefact.addAttribute("Link", data.getAttributeValue("Link"));
 	
-	$artefact.addAttribute("Updated_Date", data.getAttributeValue("Updated_Date"));
+	
+	
+	String description = (String)data.getAttributeValue("Description");	
+	if(description!=null ){
+	
+		
+		String dat = description.substring(3,13);
+		//System.out.println(dat);
+		$artefact.addAttribute("Updated_Date",  CommonUtils.formatDate( dat, "dd/MM/yyyy", IEPICConstants.NEW_PORTAL_DATE_FORMAT ) );
+		 
+	}	
 	
 	$artefact.addAttribute("Description", data.getAttributeValue("Description"));
 		
@@ -348,19 +358,19 @@ String formatDate(String date) {
 String getName() { 	return $artefact.getAttributeValueAsString("Title"); }
 
 String getIconUrl(){ 
-	return "serverresources/FLS/icons/epic/Incident_K.png"; 
+	return "serverresources/FLS/icons/epic/flood.png"; 
 }
 String getIconUrl_G(){ 
-	return "serverresources/FLS/icons/epic/Incident_R.png"; 
+	return "serverresources/FLS/icons/epic/flood.png"; 
 }
 String getIconUrl_C(){ 
-	return "serverresources/FLS/icons/epic/Incident_C.png";
+	return "serverresources/FLS/icons/epic/flood.png";
 }
 String getIconUrl_Y(){ 
-	return "serverresources/FLS/icons/epic/Incident_Y.png";
+	return "serverresources/FLS/icons/epic/flood.png";
 }
 String getIconUrl_B(){ 
-	return "serverresources/FLS/icons/epic/Incident_K.png";
+	return "serverresources/FLS/icons/epic/flood.png";
 }
 String getStyle()
 {	
@@ -368,11 +378,16 @@ String getStyle()
 	
 	String title = getName();
 	if( title.indexOf("Red")==0 ) return "latestReported";
-	if( title.indexOf("Orange")==0 ) return "lastDayReported";
+	else if( title.indexOf("Orange")==0 ) return "lastDayReported";
+	else if( title.indexOf("Green")==0 ) return "lastWeekReported";
 	
 	return stylee;
 } 
-
+String getFloodsURL()
+{
+    String dat = CommonUtils.formatDate( new Date() ); 
+    return "http://www.gdacs.org/rss.aspx?profile=ARCHIVE&from=2014-08-11&to="+dat.substring(0,10)+"&alertlevel=&country=&eventtype=FL";
+}
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }]]></value>
@@ -470,6 +485,12 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#FF8000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
                 </section>
@@ -517,6 +538,12 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#00FF00]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
                 </section>
@@ -562,6 +589,12 @@ String getAuthorUrl(){
                         <section name="type">
                             <value><![CDATA[1]]></value>
                         </section>
+                    </section>
+                </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#FF0000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
                     </section>
                 </section>
                 <section name="iconwidth">
@@ -1248,7 +1281,7 @@ String getAuthorUrl(){
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[1000]]></value>
+                    <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[300]]></value>
@@ -1433,7 +1466,7 @@ String getAuthorUrl(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[100]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1600,7 +1633,12 @@ String getAuthorUrl(){
                                 <value><![CDATA[feedUrl]]></value>
                             </section>
                             <section name="value">
-                                <value><![CDATA[http://www.gdacs.org/rss.aspx?profile=ARCHIVE&from=2014-08-11&to=2015-02-11&alertlevel=orange&country=&eventtype=FL]]></value>
+                                <section name="script">
+                                    <value><![CDATA[getFloodsURL()]]></value>
+                                    <section name="type">
+                                    <value><![CDATA[1]]></value>
+                                    </section>
+                                </section>
                             </section>
                         </section>
                     </section>
