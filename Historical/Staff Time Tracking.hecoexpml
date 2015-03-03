@@ -67,7 +67,7 @@
                     <value><![CDATA[java.util.Date]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Timestamp-GMT]]></value>
+                    <value><![CDATA[Reported Time(GMT)]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -85,7 +85,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Name]]></value>
+                    <value><![CDATA[Staff Name]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -173,6 +173,22 @@
                 <section name="column"/>
                 <section name="column"/>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[false]]></value>
@@ -183,7 +199,7 @@
         <section name="categories">
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[General]]></value>
+                    <value><![CDATA[Details]]></value>
                 </section>
                 <section name="column">
                     <section name="columntype">
@@ -265,6 +281,16 @@
                         <section name="row">
                             <section name="column">
                                 <value><![CDATA[Phone]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Text]]></value>
+                            </section>
+                            <section name="column"/>
+                            <section name="column"/>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[QRcode]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[Text]]></value>
@@ -604,6 +630,7 @@ void bindData() {
 			$artefact.addAttribute("IM", com.wfp.utils.CommonUtils.getPagerDtls(data.getSkypePager()));
 			$artefact.addAttribute("Mail", com.wfp.utils.CommonUtils.getMailDtls(data.getMail()));
 			$artefact.addAttribute("Phone", com.wfp.utils.CommonUtils.getPhoneDtls(data.getMobilesList()));
+			$artefact.addAttribute("QRcode", "QRcode");
 		} 
 }
 String getFullName(com.wfp.security.form.DeviceBean data){
@@ -883,7 +910,7 @@ String getLineColor(){
                     <value><![CDATA[600]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[400]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[300]]></value>
@@ -1038,7 +1065,7 @@ String getLineColor(){
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[800]]></value>
+                    <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[400]]></value>
@@ -1178,7 +1205,7 @@ String getLineColor(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[200]]></value>
+                            <value><![CDATA[300]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1241,7 +1268,7 @@ String getLineColor(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[300]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>

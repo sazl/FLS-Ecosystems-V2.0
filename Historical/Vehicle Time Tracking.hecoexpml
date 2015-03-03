@@ -173,6 +173,22 @@
                 <section name="column"/>
                 <section name="column"/>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[false]]></value>
@@ -253,6 +269,16 @@
                         <section name="row">
                             <section name="column">
                                 <value><![CDATA[longitude]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Text]]></value>
+                            </section>
+                            <section name="column"/>
+                            <section name="column"/>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[QRcode]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[Text]]></value>
@@ -610,6 +636,7 @@ void bindData() {
 				
 				//setting the Organization
 				$artefact.addAttribute("organisation", data.getOrganization() );
+				$artefact.addAttribute("QRcode", "QRcode");
     				  
 	} 
 }
@@ -890,7 +917,7 @@ String getLineColor(){
                     <value><![CDATA[600]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[300]]></value>
+                    <value><![CDATA[450]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[300]]></value>
