@@ -323,6 +323,7 @@
             <section name="body">
                 <value><![CDATA[import com.wfp.utils.CommonUtils;
 import com.wfp.utils.IEPICConstants;
+import javax.servlet.http.HttpSession;
 
 String serverRootUrl = getServerContextBaseUrl();
 private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
@@ -330,6 +331,7 @@ private com.enterprisehorizons.magma.datamashup.RSSFeedDataDriver $rssfeedmashup
 String description = "Earthquakes are pulled from the following GDAC Geo-RSS feed <i> http://www.gdacs.org/rss.aspx?profile=ARCHIVE&from=2014-08-11&to=2015-02-11&alertlevel=orange&country=&eventtype=FL</i>";
 String datasource = "Geo-RSS feed";
 String lastRefreshTime = com.wfp.utils.CommonUtils.getUTCdatetimeAsString();
+HttpSession session= null;
 
 String getDatasource(){
 	return datasource;
@@ -344,6 +346,25 @@ String getDescription(){
 }
  
 void bindData() {
+
+				if(session==null)session= getEcosystemSession();
+				session.setAttribute("earthquake_description", getDescription1());
+				session.setAttribute("earthquake_pointOfContact", getPointOfContact());
+				session.setAttribute("earthquake_pointOfContactMailId", getpointOfContactMailId());
+				session.setAttribute("earthquake_dataOwner", getDataOwner());
+				session.setAttribute("earthquake_layerCreationDate", getLayerCreationDate());
+				session.setAttribute("earthquake_layerAuthor", getLayerAuthor());
+				session.setAttribute("earthquake_LayerModificationDate", getLayerModificationDate());
+				session.setAttribute("earthquake_LayerModificationAuthor", getlayerModificationAuthor());
+				
+				session.setAttribute("earthquake_version", getVersion());
+				session.setAttribute("earthquake_changelogLink", getChangelogLink());
+				
+				session.setAttribute("earthquake_dataSourceAndUpdateFrequencyLDAP", getDataSourceAndUpdateFrequencyLDAP());
+				session.setAttribute("earthquake_dataSourceAndUpdateFrequencyMiddleware", getDataSourceAndUpdateFrequencyMiddleware());
+				session.setAttribute("earthquake_middlewareDataSourceAndUpdateFrequency", getMiddlewareDataSourceAndUpdateFrequency());
+				session.setAttribute("earthquake_geographicalReferenceType", getGeographicalReferenceType());
+				session.setAttribute("earthquake_geographicalRefernceProjectionInformation", getGeographicalRefernceProjectionInformation());
 	
     com.enterprisehorizons.conversion.rss.RSSFeedRecord data = $rssfeedmashupdatamodel;
     String[] attributeNames = data.getAttributeNames();
@@ -438,7 +459,32 @@ String getStyle()
 
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
-}]]></value>
+}
+	HttpSession getEcosystemSession( ){
+		return getSession().getHttpSession();
+	}
+	
+	String getDescription1(){
+	  return "Earthquakes layer shows the up-to-date information relating to earthquakes around the world.Information is pulled from GDACS live feeds ";
+	}
+	
+	String getPointOfContact(){return "FITTEST Location Services";}
+	String getpointOfContactMailId(){return "fittest.locationservices@wfp.org";}
+	String getDataOwner(){ return " Global Disaster Alert and Coordiation System"; }  
+	
+	String getLayerCreationDate(){ return "2015-02-01 12:30:00"; } 
+	String getLayerAuthor(){ return "Kaleem MOHAMMED"; } 
+	String getLayerModificationDate(){ return "05 Mach 2015 12:03:28"; } 
+	String getlayerModificationAuthor(){ return "Kaleem MOHAMMED"; } 
+	
+	String getVersion(){ return "version 1.2"; } 
+	String getChangelogLink(){ return "-"; } 
+	String getDataSourceAndUpdateFrequencyLDAP(){ return "Live feed"; } 
+	String getDataSourceAndUpdateFrequencyMiddleware(){ return "Live feed"; } 
+	
+	String getMiddlewareDataSourceAndUpdateFrequency(){ return " Vismo - Runs every 10 seconds, TrackMe - Runs every 10 seconds, ETC Reporter - Depends on user settings, SmartPTT - Runs every 2 minutes"; } 
+	String getGeographicalReferenceType(){ return "Vector, point"; } 
+	String getGeographicalRefernceProjectionInformation(){ return "WGS84"; }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
                 </section>
@@ -1261,7 +1307,7 @@ String getAuthorUrl(){
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=events&type=incidents]]></value>
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=gdacs&type=earthquake]]></value>
                 </section>
             </section>
             <section name="folder">
