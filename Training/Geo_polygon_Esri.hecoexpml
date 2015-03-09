@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="Geo_polygon_Esri">
+    <section name="artefact">
+        <section name="name">
+            <value><![CDATA[geo_polygon9]]></value>
+        </section>
+        <section name="type">
+            <value><![CDATA[com.enterprisehorizons.magma.designtime.artifact.GeoArtifact]]></value>
+        </section>
+        <section name="attributes">
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[order]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[order]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[name]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[name]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[latitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[latitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[longitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[longitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Priority]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Priority]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="cache">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="isfiltersearchresults">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="experiencedef">
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[geo_polygon9]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="featuretype">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
+                </section>
+                <section name="autozoom">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="params">
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[entrypoint]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[HTMLEcosystem]]></value>
+                        </section>
+                    </section>
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[ecoexpmodel]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[Geo_polygon_Esri.hecoexpml]]></value>
+                        </section>
+                    </section>
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[artefactname]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[geo_polygon9]]></value>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="blinkrate">
+            <value><![CDATA[1]]></value>
+        </section>
+        <section name="blinkloopcount">
+            <value><![CDATA[2]]></value>
+        </section>
+        <section name="constraints">
+            <section name="constraint">
+                <value><![CDATA[cameraboundary]]></value>
+            </section>
+        </section>
+        <section name="listeners"/>
+        <section name="layout">
+            <section name="folder">
+                <section name="name">
+                    <section name="script">
+                        <value><![CDATA[name]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="descriptiontype">
+                    <value><![CDATA[json]]></value>
+                </section>
+                <section name="label">
+                    <value><![CDATA[Polygon]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.PolygonFeature]]></value>
+                </section>
+                <section name="isruntimeaccessible">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="extrude">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="tessellate">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="globalstyleid">
+                    <section name="script">
+                        <value><![CDATA[getStyle()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="placemarklocation">
+                    <value><![CDATA[center]]></value>
+                </section>
+                <section name="isblink">
+                    <section name="script">
+                        <value><![CDATA[isBlink()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="generateplacemark">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="placemarklocation">
+                    <value><![CDATA[center]]></value>
+                </section>
+                <section name="generatelegend">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="legendname">
+                    <value><![CDATA[Legend]]></value>
+                </section>
+                <section name="style">
+                    <section name="name">
+                        <value><![CDATA[On]]></value>
+                    </section>
+                    <section name="makeasglobalstyle">
+                        <value><![CDATA[true]]></value>
+                    </section>
+                    <section name="iconcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="iconscale">
+                        <value><![CDATA[0.0]]></value>
+                    </section>
+                    <section name="labelcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="labelscale">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                    <section name="linecolor">
+                        <value><![CDATA[#00FF00]]></value>
+                    </section>
+                    <section name="linecolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="fillcolor">
+                        <value><![CDATA[#00FF00]]></value>
+                        <section name="transparency">
+                            <value><![CDATA[0.6]]></value>
+                        </section>
+                    </section>
+                    <section name="fillcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="listtype">
+                        <value><![CDATA[ ]]></value>
+                    </section>
+                    <section name="showhighlightstyles">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="shadertype">
+                        <value><![CDATA[com.enterprisehorizons.magma.models.util.Shader]]></value>
+                    </section>
+                </section>
+                <section name="generatelegend">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="legendname">
+                    <value><![CDATA[Legend]]></value>
+                </section>
+                <section name="style">
+                    <section name="name">
+                        <value><![CDATA[Off]]></value>
+                    </section>
+                    <section name="makeasglobalstyle">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="iconcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="iconscale">
+                        <value><![CDATA[0.0]]></value>
+                    </section>
+                    <section name="labelcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="labelscale">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                    <section name="linecolor">
+                        <value><![CDATA[#FFFF00]]></value>
+                    </section>
+                    <section name="linecolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="fillcolor">
+                        <value><![CDATA[#FFFF00]]></value>
+                        <section name="transparency">
+                            <value><![CDATA[0.6]]></value>
+                        </section>
+                    </section>
+                    <section name="fillcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="showhighlightstyles">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="shadertype">
+                        <value><![CDATA[com.enterprisehorizons.magma.models.util.Shader]]></value>
+                    </section>
+                </section>
+                <section name="generatelegend">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="legendname">
+                    <value><![CDATA[Legend]]></value>
+                </section>
+                <section name="style">
+                    <section name="name">
+                        <value><![CDATA[Failed]]></value>
+                    </section>
+                    <section name="makeasglobalstyle">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="iconcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="iconscale">
+                        <value><![CDATA[0.0]]></value>
+                    </section>
+                    <section name="labelcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="linecolor">
+                        <value><![CDATA[#FF0000]]></value>
+                    </section>
+                    <section name="linecolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="fillcolor">
+                        <value><![CDATA[#FF0000]]></value>
+                        <section name="transparency">
+                            <value><![CDATA[0.6]]></value>
+                        </section>
+                    </section>
+                    <section name="fillcolorshader">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="showhighlightstyles">
+                        <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="shadertype">
+                        <value><![CDATA[com.enterprisehorizons.magma.models.util.Shader]]></value>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="scriptor">
+            <section name="body">
+                <value><![CDATA[private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
+private com.enterprisehorizons.magma.datamashup.ExcelDataDriver $excelfilemashupdriver;
+
+void bindData() {
+	
+}
+
+String getName() {
+	return $artefact.getAttributeValueAsString("Priority");
+}
+boolean isBlink() {
+	if("3.0".equalsIgnoreCase($artefact.getAttributeValueAsString("order"))) {
+		return true;
+	}return false;
+}
+
+String getStyle() {
+	if ("1.0".equalsIgnoreCase($artefact.getAttributeValueAsString("order"))) {
+		return "EsriStyle_ON";
+	} else if("2.0".equalsIgnoreCase($artefact.getAttributeValueAsString("order"))) {
+		return "EsriStyle_OFF";
+	}return "EsriStyle_Failed";
+}]]></value>
+                <section name="type">
+                    <value><![CDATA[1]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="needsmap">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="showtimeslider">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="timeslidergap">
+            <value><![CDATA[4]]></value>
+        </section>
+        <section name="istimeaware">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="isadddefaultinfowindow">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="globalstyle">
+            <section name="style">
+                <value><![CDATA[EsriStyle_Failed]]></value>
+                <section name="name">
+                    <value><![CDATA[EsriStyle_Failed]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="linetype">
+                    <value><![CDATA[esriSLS]]></value>
+                </section>
+                <section name="linestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="linecolor">
+                    <value><![CDATA[#000000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="linewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="linejoinstyle">
+                    <value><![CDATA[bevel]]></value>
+                </section>
+                <section name="linecapstyle">
+                    <value><![CDATA[round]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="filltype">
+                    <value><![CDATA[esriSFS]]></value>
+                </section>
+                <section name="fillstyle">
+                    <value><![CDATA[esriSFSSolid]]></value>
+                </section>
+                <section name="fillcolor">
+                    <value><![CDATA[#FF0000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="filloutlinestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="filloutlinecolor">
+                    <value><![CDATA[#FFFF00]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="filloutlinewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="fillwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="fillxscale">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillyscale">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillxoffset">
+                    <value><![CDATA[0]]></value>
+                </section>
+                <section name="fillyoffset">
+                    <value><![CDATA[0]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="style">
+                <value><![CDATA[EsriStyle_OFF]]></value>
+                <section name="name">
+                    <value><![CDATA[EsriStyle_OFF]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="linetype">
+                    <value><![CDATA[esriSLS]]></value>
+                </section>
+                <section name="linestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="linecolor">
+                    <value><![CDATA[#000000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="linewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="linejoinstyle">
+                    <value><![CDATA[bevel]]></value>
+                </section>
+                <section name="linecapstyle">
+                    <value><![CDATA[round]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="filltype">
+                    <value><![CDATA[esriSFS]]></value>
+                </section>
+                <section name="fillstyle">
+                    <value><![CDATA[esriSFSSolid]]></value>
+                </section>
+                <section name="fillcolor">
+                    <value><![CDATA[#FFFF00]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="filloutlinestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="filloutlinecolor">
+                    <value><![CDATA[#FF0000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="filloutlinewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="fillwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="fillxscale">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillyscale">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillxoffset">
+                    <value><![CDATA[0]]></value>
+                </section>
+                <section name="fillyoffset">
+                    <value><![CDATA[0]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="style">
+                <value><![CDATA[EsriStyle_ON]]></value>
+                <section name="name">
+                    <value><![CDATA[EsriStyle_ON]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="linetype">
+                    <value><![CDATA[esriSLS]]></value>
+                </section>
+                <section name="linestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="linecolor">
+                    <value><![CDATA[#000000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="linewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="linejoinstyle">
+                    <value><![CDATA[bevel]]></value>
+                </section>
+                <section name="linecapstyle">
+                    <value><![CDATA[round]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="filltype">
+                    <value><![CDATA[esriSFS]]></value>
+                </section>
+                <section name="fillstyle">
+                    <value><![CDATA[esriSFSSolid]]></value>
+                </section>
+                <section name="fillcolor">
+                    <value><![CDATA[#00FF00]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="filloutlinestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="filloutlinecolor">
+                    <value><![CDATA[#000000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="filloutlinewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="fillwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="fillxscale">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillyscale">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="fillxoffset">
+                    <value><![CDATA[0]]></value>
+                </section>
+                <section name="fillyoffset">
+                    <value><![CDATA[0]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="legends"/>
+        <section name="datamashups">
+            <section name="datamashup">
+                <value><![CDATA[excelfilemashup]]></value>
+                <section name="driver">
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ExcelDataDriver]]></value>
+                    <section name="metadata">
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[order]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[name]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[latitude]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[longitude]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[coordinates]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Priority]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section name="datarendertype">
+                    <value><![CDATA[2]]></value>
+                </section>
+                <section name="datasource">
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ExcelDataSource]]></value>
+                    <section name="params">
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[coordinatesDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[coordinates]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[orderDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[ ]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[dataTableScope]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[EcosystemSession]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[isStoreAllDatasourceFields]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[true]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[dynamicDatasourceReloadType]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[DROPANDCREATE]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[fileName]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[serverresources/excel/polygons.xls]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[sheetIndex]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[0]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[headerRowIndex]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[0]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[csvFieldSeparator]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[,]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[fileType]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[Excel]]></value>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="databinding">
+            <section name="bindingdefinition">
+                <section name="datamashup">
+                    <value><![CDATA[excelfilemashup]]></value>
+                </section>
+                <section name="script">
+                    <value><![CDATA[]]></value>
+                    <section name="type">
+                        <value><![CDATA[1]]></value>
+                    </section>
+                </section>
+                <section name="datasourceartifactmappings">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[order]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[order]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[name]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[name]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[latitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[latitude]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[longitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[longitude]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Priority]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Priority]]></value>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section name="reload">
+        <value><![CDATA[true]]></value>
+    </section>
+    <section name="enablelogging">
+        <value><![CDATA[false]]></value>
+    </section>
+    <section name="namespace">
+        <value><![CDATA[]]></value>
+    </section>
+</configuration>

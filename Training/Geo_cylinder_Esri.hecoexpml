@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration name="Geo_cylinder_Esri">
+    <section name="artefact">
+        <section name="name">
+            <value><![CDATA[geo_cylinder2]]></value>
+        </section>
+        <section name="type">
+            <value><![CDATA[com.enterprisehorizons.magma.designtime.artifact.GeoArtifact]]></value>
+        </section>
+        <section name="attributes">
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Number]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Number]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Description]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Description]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Date]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.util.Date]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Date]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Customers_impacted]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Customers impacted]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Financial_Liability]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Financial Liability]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Priority]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Priority]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Series]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Series]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="cache">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="isfiltersearchresults">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="experiencedef">
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[geo_cylinder2]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="featuretype">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
+                </section>
+                <section name="autozoom">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="params">
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[entrypoint]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[HTMLEcosystem]]></value>
+                        </section>
+                    </section>
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[ecoexpmodel]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[Geo_cylinder_Esri.hecoexpml]]></value>
+                        </section>
+                    </section>
+                    <section name="param">
+                        <section name="name">
+                            <value><![CDATA[artefactname]]></value>
+                        </section>
+                        <section name="value">
+                            <value><![CDATA[geo_cylinder2]]></value>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="blinkrate">
+            <value><![CDATA[1]]></value>
+        </section>
+        <section name="blinkloopcount">
+            <value><![CDATA[2]]></value>
+        </section>
+        <section name="constraints">
+            <section name="constraint">
+                <value><![CDATA[cameraboundary]]></value>
+            </section>
+        </section>
+        <section name="listeners"/>
+        <section name="layout">
+            <section name="folder">
+                <section name="name">
+                    <section name="script">
+                        <value><![CDATA[Description]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="descriptiontype">
+                    <value><![CDATA[json]]></value>
+                </section>
+                <section name="ispercentage">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="label">
+                    <value><![CDATA[Cylinder]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.geom.ExtrudedArc]]></value>
+                </section>
+                <section name="isruntimeaccessible">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isdefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="altitudeMode">
+                    <value><![CDATA[relativeToGround]]></value>
+                </section>
+                <section name="extrude">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="globalstyleid">
+                    <section name="script">
+                        <value><![CDATA[Priority]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="isblink">
+                    <section name="script">
+                        <value><![CDATA[isBlink()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="height">
+                    <section name="script">
+                        <value><![CDATA[getHeight()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="radius">
+                    <value><![CDATA[150.0]]></value>
+                </section>
+                <section name="startingangle">
+                    <value><![CDATA[0.0]]></value>
+                </section>
+                <section name="endingangle">
+                    <value><![CDATA[360.0]]></value>
+                </section>
+                <section name="generateplacemark">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <section name="script">
+                        <value><![CDATA[Priority]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="descriptiontype">
+                    <value><![CDATA[json]]></value>
+                </section>
+                <section name="label">
+                    <value><![CDATA[Placemark]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.PlacemarkFeature]]></value>
+                </section>
+                <section name="extrude">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="globalstyleid">
+                    <section name="script">
+                        <value><![CDATA[Priority]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="isblink">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="scriptor">
+            <section name="body">
+                <value><![CDATA[private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
+private com.enterprisehorizons.magma.datamashup.ExcelDataDriver $excelfilemashupdriver;
+private static final int SCALE = 5;
+
+void bindData() {
+	
+}
+
+
+double getHeight(){
+	Double customersImpacted = (Double)$artefact.getAttributeValue("Customers_impacted");
+	
+	return customersImpacted * SCALE;
+}
+
+boolean isBlink() {
+	return "High".equalsIgnoreCase($artefact.getAttributeValueAsString("Priority"));
+}]]></value>
+                <section name="type">
+                    <value><![CDATA[1]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="needsmap">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="showtimeslider">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="timeslidergap">
+            <value><![CDATA[4]]></value>
+        </section>
+        <section name="istimeaware">
+            <value><![CDATA[false]]></value>
+        </section>
+        <section name="isadddefaultinfowindow">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="globalstyle">
+            <section name="style">
+                <value><![CDATA[High]]></value>
+                <section name="name">
+                    <value><![CDATA[High]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="iconsymboltype">
+                    <value><![CDATA[esriPMS]]></value>
+                </section>
+                <section name="iconurl">
+                    <value><![CDATA[images/alert.png]]></value>
+                </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#FF0000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="iconwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="iconheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[5]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
+                </section>
+            </section>
+            <section name="style">
+                <value><![CDATA[Low]]></value>
+                <section name="name">
+                    <value><![CDATA[Low]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="iconsymboltype">
+                    <value><![CDATA[esriPMS]]></value>
+                </section>
+                <section name="iconurl">
+                    <value><![CDATA[images/alert.png]]></value>
+                </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#0080FF]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="iconwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="iconheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[5]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
+                </section>
+            </section>
+            <section name="style">
+                <value><![CDATA[Medium]]></value>
+                <section name="name">
+                    <value><![CDATA[Medium]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="iconsymboltype">
+                    <value><![CDATA[esriPMS]]></value>
+                </section>
+                <section name="iconurl">
+                    <value><![CDATA[images/dot.png]]></value>
+                </section>
+                <section name="iconcolor">
+                    <value><![CDATA[#00FF40]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="iconwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="iconheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[5]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="legends">
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[ViewPoint]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.LookAtFeature]]></value>
+                </section>
+                <section name="altitudeMode">
+                    <value><![CDATA[relativeToSeaFloor]]></value>
+                </section>
+                <section name="latitude">
+                    <value><![CDATA[32.70218587330728]]></value>
+                </section>
+                <section name="longitude">
+                    <value><![CDATA[-117.105122300298]]></value>
+                </section>
+                <section name="heading">
+                    <value><![CDATA[-8.61106272768528]]></value>
+                </section>
+                <section name="tilt">
+                    <value><![CDATA[50.0]]></value>
+                </section>
+                <section name="range">
+                    <value><![CDATA[25000.0]]></value>
+                </section>
+            </section>
+        </section>
+        <section name="datamashups">
+            <section name="datamashup">
+                <value><![CDATA[excelfilemashup]]></value>
+                <section name="driver">
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ExcelDataDriver]]></value>
+                    <section name="metadata">
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Number]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Description]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Date]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.util.Date]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Customers impacted]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Financial Liability]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Latitude]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Longitude]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Priority]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Series]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section name="datarendertype">
+                    <value><![CDATA[2]]></value>
+                </section>
+                <section name="datasource">
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ExcelDataSource]]></value>
+                    <section name="params">
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[longitudeDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[Longitude]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[latitudeDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[Latitude]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[orderDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[ ]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[dataTableScope]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[EcosystemSession]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[isStoreAllDatasourceFields]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[true]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[dynamicDatasourceReloadType]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[DROPANDCREATE]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[fileName]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[serverresources/excel/ServiceOrders.xls]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[sheetIndex]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[0]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[headerRowIndex]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[0]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[csvFieldSeparator]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[,]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[fileType]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[Excel]]></value>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="databinding">
+            <section name="bindingdefinition">
+                <section name="datamashup">
+                    <value><![CDATA[excelfilemashup]]></value>
+                </section>
+                <section name="script">
+                    <value><![CDATA[]]></value>
+                    <section name="type">
+                        <value><![CDATA[1]]></value>
+                    </section>
+                </section>
+                <section name="datasourceartifactmappings">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Number]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Number]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Description]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Description]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Date]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Date]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Customers impacted]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Customers_impacted]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Financial Liability]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Financial_Liability]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Priority]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Priority]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Series]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Series]]></value>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section name="reload">
+        <value><![CDATA[true]]></value>
+    </section>
+    <section name="enablelogging">
+        <value><![CDATA[false]]></value>
+    </section>
+    <section name="namespace">
+        <value><![CDATA[]]></value>
+    </section>
+</configuration>

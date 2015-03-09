@@ -179,7 +179,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Latitude]]></value>
+                    <value><![CDATA[Latitude/Longitude]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -285,13 +285,13 @@
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[handheldMaps]]></value>
+                    <value><![CDATA[QRcode]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Handheld Map]]></value>
+                    <value><![CDATA[QRcode]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -301,13 +301,13 @@
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[mobileMaps]]></value>
+                    <value><![CDATA[RepeaterMaps]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Mobile Map]]></value>
+                    <value><![CDATA[Repeater Maps]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -465,6 +465,7 @@
             <section name="body">
                 <value><![CDATA[import com.wfp.beans.*;
 import com.wfp.utils.*;
+import javax.servlet.http.HttpSession;
 
 String serverRootUrl = "https://sti-dev.globalepic.lu/SIServer/";
 //ServerUtils.getServerBaseUrl();
@@ -476,8 +477,15 @@ String datasource = "LDAP";
 String lastRefreshTime = com.wfp.jobs.WarehouseStockExcelJob.getInstance().getLastRefreshTime();
 List<String> userMissionsList = null;
 List<String> userPlacesList = null;
+List<String> userProfilesList = null;
 Map<String,String> countriesMap = LDAPUtils.getCountriesMap();
 Map<String,String> missionsMap = LDAPUtils.getMissionsMap();
+HttpSession session= null;
+
+HttpSession getEcosystemSession( ){
+	return getSession().getHttpSession();
+}
+
 
 String getDatasource(){
 	return datasource; 
@@ -496,7 +504,24 @@ void bindData() {
 	
 	if (dataMap != null)
  	{
- 	
+ 		if(session==null)session= getEcosystemSession();
+ 		session.setAttribute("repeaters_description", getDescription1());
+		session.setAttribute("repeaters_pointOfContact", getPointOfContact());
+		session.setAttribute("repeaters_pointOfContactMailId", getpointOfContactMailId());
+		session.setAttribute("repeaters_dataOwner", getDataOwner());
+		session.setAttribute("repeaters_layerCreationDate", getLayerCreationDate());
+		session.setAttribute("repeaters_layerAuthor", getLayerAuthor());
+		session.setAttribute("repeaters_LayerModificationDate", getLayerModificationDate());
+		session.setAttribute("repeaters_LayerModificationAuthor", getlayerModificationAuthor());
+				
+		session.setAttribute("repeaters_version", getVersion());
+		session.setAttribute("repeaters_changelogLink", getChangelogLink());
+				
+		session.setAttribute("repeaters_dataSourceAndUpdateFrequencyLDAP", getDataSourceAndUpdateFrequencyLDAP());
+		
+		session.setAttribute("repeaters_geographicalReferenceType", getGeographicalReferenceType());
+		session.setAttribute("repeaters_geographicalRefernceProjectionInformation", getGeographicalRefernceProjectionInformation());
+				
  		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
  		System.out.println(" placeType :"+ placeType );
  		
@@ -548,12 +573,17 @@ void bindData() {
 		
 		
 		$artefact.addAttribute("PLUSGeo-Location",  "-" );
-		$artefact.addAttribute("latitude",dataMap.get("coord-latitude"));
-		$artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+		$artefact.addAttribute("latitude",dataMap.get("coord-latitude")+"/"+dataMap.get("coord-longitude"));
+		//$artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+		$artefact.addAttribute("QRcode", "QRcode");
 		
 		$artefact.addAttribute("PLUSCoverage-Maps",  "-" );
-		$artefact.addAttribute("handheldMaps", dataMap.get("cn"));
-		$artefact.addAttribute("mobileMaps",dataMap.get("cn"));
+		//$artefact.addAttribute("handheldMaps", dataMap.get("cn"));
+		//$artefact.addAttribute("mobileMaps",dataMap.get("cn"));
+		if(CommonUtils.isAdmin( getUserProfilesList(getUserId())) )
+			$artefact.addAttribute("RepeaterMaps",dataMap.get("cn")+"*");
+		else
+			$artefact.addAttribute("RepeaterMaps",dataMap.get("cn"));
 				
 	}
 		   
@@ -648,6 +678,15 @@ List<String> getUserPlacesList( String userId )
 	} 
 	return userPlacesList;
 }
+
+
+
+ List<String> getUserProfilesList( String userId )
+ {
+  if(userProfilesList==null ) userProfilesList= LDAPUtils.getAllProfiles4rUser( userId );
+  return userProfilesList;
+ }
+ 
 String getUserId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	if(userbean != null){
@@ -655,7 +694,25 @@ String getUserId(){
 	}
 	return null;		
 }
-
+	String getDescription1(){
+	  return "The repeaters layer shows the location of VHF radio repeaters set up by FITTEST, WFP.";
+	}
+	
+	String getPointOfContact(){return "FITTEST Location Services";}
+	String getpointOfContactMailId(){return "fittest.locationservices@wfp.org";}
+	String getDataOwner(){ return "Clients utilizing Location Services are responsible for the quality of the data entered into the system, hence for the quality of resulting information."; }  
+	
+	String getLayerCreationDate(){ return "2014-11-11 12:30:00"; } 
+	String getLayerAuthor(){ return "Kaleem MOHAMMED"; } 
+	String getLayerModificationDate(){ return "15 February 2015 12:03:28"; } 
+	String getlayerModificationAuthor(){ return "Navya Somasundar"; } 
+	
+	String getVersion(){ return "version 1.2"; } 
+	String getChangelogLink(){ return "http://rm.globalepic.lu/globalepic/issues/1379"; } 
+	String getDataSourceAndUpdateFrequencyLDAP(){ return "LDAP- Runs every 4 hours"; } 
+	
+	String getGeographicalReferenceType(){ return "Vector, point"; } 
+	String getGeographicalRefernceProjectionInformation(){ return "WGS84"; } 
 String getAuthorUrl(){	
 	return serverRootUrl+"/CustomView.jsp?layername="+getLayerName()+"&Datasource ="+datasource+"&Description="+description+"&Last Refresh Time="+lastRefreshTime;
 }]]></value>
@@ -1046,7 +1103,7 @@ String getAuthorUrl(){
                                 </section>
                                 <section name="row">
                                     <section name="column">
-                                    <value><![CDATA[handheldMaps]]></value>
+                                    <value><![CDATA[RepeaterMaps]]></value>
                                     </section>
                                     <section name="column">
                                     <value><![CDATA[Text]]></value>
@@ -1056,7 +1113,7 @@ String getAuthorUrl(){
                                 </section>
                                 <section name="row">
                                     <section name="column">
-                                    <value><![CDATA[mobileMaps]]></value>
+                                    <value><![CDATA[QRcode]]></value>
                                     </section>
                                     <section name="column">
                                     <value><![CDATA[Text]]></value>

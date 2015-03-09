@@ -698,7 +698,7 @@
                                 <value><![CDATA[10]]></value>
                             </section>
                             <section name="column">
-                                <value><![CDATA[#00FF40]]></value>
+                                <value><![CDATA[#0080FF]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[20]]></value>
@@ -712,7 +712,7 @@
                                 <value><![CDATA[20]]></value>
                             </section>
                             <section name="column">
-                                <value><![CDATA[#FF8000]]></value>
+                                <value><![CDATA[#0080FF]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[40]]></value>
@@ -726,10 +726,66 @@
                                 <value><![CDATA[30]]></value>
                             </section>
                             <section name="column">
-                                <value><![CDATA[#FF0000]]></value>
+                                <value><![CDATA[#0080FF]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[50]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[40]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#0080FF]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[60]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[50]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#0080FF]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[70]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[60]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#0080FF]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[80]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[100]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#0080FF]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[110]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[Circle]]></value>
