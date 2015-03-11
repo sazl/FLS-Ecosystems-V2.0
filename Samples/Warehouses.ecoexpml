@@ -172,11 +172,8 @@
                 </section>
             </section>
         </section>
-        <section name="globalsearchablefields"/>
-        <section name="globalsearchresultfields"/>
         <section name="aggregatableattributes"/>
         <section name="groupableattributes"/>
-        <section name="sortableattributes"/>
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
@@ -246,6 +243,9 @@
         </section>
         <section name="constraints">
             <section name="constraint">
+                <value><![CDATA[cameraboundary]]></value>
+            </section>
+            <section name="constraint">
                 <value><![CDATA[visibility]]></value>
                 <section name="script">
                     <value><![CDATA[authorizePlaces()]]></value>
@@ -296,7 +296,6 @@
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="blinkstyles"/>
             </section>
         </section>
         <section name="scriptor">
@@ -416,7 +415,6 @@ String getAuthorUrl(){
                 <section name="name">
                     <value><![CDATA[placemarkstyle]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -432,22 +430,18 @@ String getAuthorUrl(){
                 <section name="iconscale">
                     <value><![CDATA[1.0]]></value>
                 </section>
-                <section name="customiconstyleproperties"/>
                 <section name="labelcolorshader">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="labelscale">
                     <value><![CDATA[0.0]]></value>
                 </section>
-                <section name="customlabelstyleproperties"/>
                 <section name="linecolorshader">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customlinestyleproperties"/>
                 <section name="fillcolorshader">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customfillstyleproperties"/>
                 <section name="showhighlightstyles">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -664,8 +658,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="datasourcetype">
                         <value><![CDATA[datarenderer]]></value>
@@ -772,7 +764,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -809,10 +800,7 @@ String getAuthorUrl(){
                     <section name="isapplytodashboard">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="searchfields"/>
-                    <section name="filtercriteria"/>
                 </section>
-                <section name="dashboardattributes"/>
                 <section name="summaryattributes"/>
                 <section name="groupattributes">
                     <section name="row">
@@ -821,7 +809,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="summarytabbedviewdashboards"/>
                 <section name="flashparameters">
                     <section name="param">
                         <section name="name">
@@ -1153,8 +1140,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="datasourcetype">
                         <value><![CDATA[datarenderer]]></value>
@@ -1269,7 +1254,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -1306,8 +1290,6 @@ String getAuthorUrl(){
                     <section name="isapplytodashboard">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="searchfields"/>
-                    <section name="filtercriteria"/>
                 </section>
                 <section name="dashboardattributes">
                     <section name="row">
@@ -1423,9 +1405,7 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="summaryattributes"/>
                 <section name="groupattributes"/>
-                <section name="summarytabbedviewdashboards"/>
                 <section name="flashparameters">
                     <section name="param">
                         <section name="name">
@@ -1548,8 +1528,6 @@ String getAuthorUrl(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="dashboarddataparameters">
                         <section name="row">
@@ -1571,7 +1549,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -1716,7 +1693,6 @@ String getAuthorUrl(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevent"/>
                 <section name="dashboardmetadata">
                     <section name="row">
                         <section name="column">
@@ -1824,8 +1800,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="datasourcetype">
                         <value><![CDATA[datarenderer]]></value>
@@ -1924,7 +1898,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -1961,8 +1934,6 @@ String getAuthorUrl(){
                     <section name="isapplytodashboard">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="searchfields"/>
-                    <section name="filtercriteria"/>
                 </section>
                 <section name="dimensionattributes">
                     <section name="row">
@@ -2127,10 +2098,6 @@ String getAuthorUrl(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevent"/>
-                <section name="dashboardmetadata"/>
-                <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="datasourcetype">
                         <value><![CDATA[artifact]]></value>
@@ -2191,7 +2158,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -2228,8 +2194,6 @@ String getAuthorUrl(){
                     <section name="isapplytodashboard">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="searchfields"/>
-                    <section name="filtercriteria"/>
                 </section>
                 <section name="dashboardattributes">
                     <section name="row">
@@ -2289,9 +2253,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="summaryattributes"/>
-                <section name="groupattributes"/>
-                <section name="summarytabbedviewdashboards"/>
                 <section name="flashparameters">
                     <section name="param">
                         <section name="name">
@@ -2527,7 +2488,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="datasourcetype">
                         <value><![CDATA[datarenderer]]></value>
@@ -2642,7 +2602,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -2679,10 +2638,7 @@ String getAuthorUrl(){
                     <section name="isapplytodashboard">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="searchfields"/>
-                    <section name="filtercriteria"/>
                 </section>
-                <section name="dashboardattributes"/>
                 <section name="summaryattributes">
                     <section name="row">
                         <section name="column">
@@ -2700,7 +2656,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="summarytabbedviewdashboards"/>
                 <section name="flashparameters">
                     <section name="param">
                         <section name="name">
@@ -3031,8 +2986,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="customdashboardproperties"/>
-                <section name="actionevents"/>
                 <section name="dashboarddata">
                     <section name="datasourcetype">
                         <value><![CDATA[datarenderer]]></value>
@@ -3155,7 +3108,6 @@ String getAuthorUrl(){
                     </section>
                 </section>
                 <section name="search">
-                    <section name="searchdashboardmetadata"/>
                     <section name="searchdatasourcetype">
                         <value><![CDATA[searchartifact]]></value>
                     </section>
@@ -3192,8 +3144,6 @@ String getAuthorUrl(){
                     <section name="isapplytodashboard">
                         <value><![CDATA[false]]></value>
                     </section>
-                    <section name="searchfields"/>
-                    <section name="filtercriteria"/>
                 </section>
                 <section name="dashboardattributes">
                     <section name="row">
@@ -3309,7 +3259,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="summaryattributes"/>
                 <section name="groupattributes">
                     <section name="row">
                         <section name="column">
@@ -3317,7 +3266,6 @@ String getAuthorUrl(){
                         </section>
                     </section>
                 </section>
-                <section name="summarytabbedviewdashboards"/>
                 <section name="flashparameters">
                     <section name="param">
                         <section name="name">
@@ -3584,7 +3532,6 @@ String getAuthorUrl(){
                         <value><![CDATA[1]]></value>
                     </section>
                 </section>
-                <section name="datasourceartifactmappings"/>
             </section>
         </section>
         <section name="runtimeattributes">
