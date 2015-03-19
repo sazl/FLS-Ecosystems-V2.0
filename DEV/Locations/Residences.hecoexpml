@@ -264,6 +264,22 @@
                 <section name="column"/>
                 <section name="column"/>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[true]]></value>
@@ -494,8 +510,8 @@ void bindData() {
 		$artefact.addAttribute("country",getCountryFullName( dataMap ));
 		
 		$artefact.addAttribute("PLUSGeo-Location",  "-" );
-		$artefact.addAttribute("latitude", dataMap.get("coord-latitude"));
-		$artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+		$artefact.addAttribute("latitude", dataMap.get("coord-latitude")+"/"+dataMap.get("coord-longitude") );
+		//$artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
 		$artefact.addAttribute("QRcode", "QRcode");
 				
 	}
@@ -940,6 +956,16 @@ String getAuthorUrl(){
                                 <section name="row">
                                     <section name="column">
                                     <value><![CDATA[longitude]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[QRcode]]></value>
                                     </section>
                                     <section name="column">
                                     <value><![CDATA[Text]]></value>

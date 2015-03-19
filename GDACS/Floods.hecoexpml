@@ -367,10 +367,10 @@ String getIconUrl_C(){
 	return "serverresources/FLS/icons/epic/flood.png";
 }
 String getIconUrl_Y(){ 
-	return "serverresources/FLS/icons/epic/flood.png";
+	return "images/flood.png";
 }
 String getIconUrl_B(){ 
-	return "serverresources/FLS/icons/epic/flood.png";
+	return "images/flood.png";
 }
 String getStyle()
 {	
@@ -1138,7 +1138,7 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[css/images/info-icon.png]]></value>
+                    <value><![CDATA[serverresources/FLS/images/<theme>/info-icon.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>

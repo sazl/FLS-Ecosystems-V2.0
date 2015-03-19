@@ -224,7 +224,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[@Lat/Long]]></value>
+                    <value><![CDATA[Latitude/Longitude]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
