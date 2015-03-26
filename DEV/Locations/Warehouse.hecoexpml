@@ -480,7 +480,7 @@ void bindData() {
 	
 	if (dataMap != null)
  	{	
- 		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
+ 		String placeType=dataMap.get("placeType").toString();
  		 		
 		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));		
 		$artefact.addAttribute("name", dataMap.get("cn"));
@@ -1729,12 +1729,7 @@ String getDashboardWBId(){
             </section>
             <section name="folder">
                 <section name="name">
-                    <section name="script">
-                        <value><![CDATA[compasId]]></value>
-                        <section name="type">
-                            <value><![CDATA[2]]></value>
-                        </section>
-                    </section>
+                    <value><![CDATA[ClientSideTable]]></value>
                 </section>
                 <section name="type">
                     <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
@@ -1969,7 +1964,12 @@ String getDashboardWBId(){
                             <value><![CDATA[warehousenameindex]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[18]]></value>
+                            <section name="script">
+                                <value><![CDATA[compasId]]></value>
+                                <section name="type">
+                                    <value><![CDATA[2]]></value>
+                                </section>
+                            </section>
                         </section>
                     </section>
                     <section name="row">

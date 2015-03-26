@@ -486,8 +486,8 @@ void bindData()
       if (dataMap != null)
      {
      
-            String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","");
-            $artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));           
+ 					String placeType=dataMap.get("placeType").toString();
+ 		           $artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));           
             $artefact.addAttribute("name", dataMap.get("cn"));
             $artefact.addAttribute("displayName", dataMap.get("displayName"));      
             $artefact.addAttribute("mission",LDAPUtils.getMissionFullName( (String)dataMap.get("mission") ) );

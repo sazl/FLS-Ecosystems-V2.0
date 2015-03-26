@@ -450,7 +450,7 @@ void bindData() {
 	
 	if (dataMap != null)
  	{
- 		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","").toUpperCase();
+ 		String placeType=dataMap.get("placeType").toString();
  		
 		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));		
 		$artefact.addAttribute("id", dataMap.get("cn"));
@@ -462,8 +462,8 @@ void bindData() {
 		String mailStr=dataMap.get("mail").toString();
 		$artefact.addAttribute("email", (mailStr!=null&&mailStr!="")?dataMap.get("mail"):"-" );	
 		
-		String mobileStr=dataMap.get("otherPhones").toString();
-		$artefact.addAttribute("mobile", (mobileStr!=null&&mobileStr!="")?dataMap.get("otherPhones").toString().replace("|"," "):"-" );			
+		String mobileStr=dataMap.get("otherPhones")!=null?dataMap.get("otherPhones").toString():"";
+		$artefact.addAttribute("mobile", "-" );			
 		
 		$artefact.addAttribute("type", placeType);		
 		$artefact.addAttribute("mission", missionsMap.get( dataMap.get("mission").toString() ) );

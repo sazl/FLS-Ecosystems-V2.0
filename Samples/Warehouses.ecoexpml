@@ -243,9 +243,6 @@
         </section>
         <section name="constraints">
             <section name="constraint">
-                <value><![CDATA[cameraboundary]]></value>
-            </section>
-            <section name="constraint">
                 <value><![CDATA[visibility]]></value>
                 <section name="script">
                     <value><![CDATA[authorizePlaces()]]></value>
@@ -695,11 +692,14 @@ String getAuthorUrl(){
                             </section>
                         </section>
                         <section name="row">
+                            <section name="column"/>
                             <section name="column">
-                                <value><![CDATA[warehousenameindex]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[18]]></value>
+                                <section name="script">
+                                    <value><![CDATA[getDashboardWHId()]]></value>
+                                    <section name="type">
+                                    <value><![CDATA[1]]></value>
+                                    </section>
+                                </section>
                             </section>
                         </section>
                         <section name="row">
@@ -714,6 +714,10 @@ String getAuthorUrl(){
                                     </section>
                                 </section>
                             </section>
+                        </section>
+                        <section name="row">
+                            <section name="column"/>
+                            <section name="column"/>
                         </section>
                         <section name="row">
                             <section name="column">

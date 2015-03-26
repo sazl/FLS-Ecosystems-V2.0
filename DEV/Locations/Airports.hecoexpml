@@ -336,7 +336,7 @@
                     <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
                 </section>
                 <section name="autozoom">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="params">
                     <section name="param">
@@ -460,7 +460,7 @@ void bindData() {
 	
 	if (dataMap != null)
  	{
- 		String placeType=dataMap.get("type").toString().replaceAll(",.*","").replaceAll(".*=","").toUpperCase();
+ 		String placeType=dataMap.get("placeType").toString();
  		
 		$artefact.setCoordinates(dataMap.get("coord-latitude"), dataMap.get("coord-longitude"));		
 		$artefact.addAttribute("id", dataMap.get("cn"));
@@ -482,7 +482,7 @@ void bindData() {
 			$artefact.addAttribute("email","-");
 		}
 		
-		String mobileStr=dataMap.get("otherPhones").toString();
+		String mobileStr=(String)dataMap.get("otherPhones");
 		if(mobileStr!=null&&mobileStr!=""){
 			$artefact.addAttribute("mobile", dataMap.get("otherPhones").toString().replace("|"," "));
 			}
@@ -496,7 +496,7 @@ void bindData() {
 		
 		
 		$artefact.addAttribute("type", placeType);
-		
+		if(  dataMap.get("mission")!=null )
 		$artefact.addAttribute("mission", missionsMap.get( dataMap.get("mission").toString() ) );
 		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
 		//$artefact.addAttribute("compasId", dataMap.get("compasId"));

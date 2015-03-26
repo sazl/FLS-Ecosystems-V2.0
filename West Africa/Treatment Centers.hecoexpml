@@ -530,8 +530,6 @@
         <section name="isindexed">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="aggregatableattributes"/>
-        <section name="categories"/>
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
@@ -549,8 +547,10 @@
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowlassofilteringoverride">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="featuretype">
@@ -658,7 +658,6 @@
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="blinkstyles"/>
                 <section name="infowindowid">
                     <value><![CDATA[Details]]></value>
                 </section>
@@ -740,16 +739,6 @@ return true;
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
-        <section name="inputdateformat">
-            <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-        </section>
-        <section name="customrange"/>
-        <section name="isshowintervals">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="defaulttimerange">
-            <value><![CDATA[startendtime]]></value>
-        </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[false]]></value>
         </section>
@@ -768,7 +757,6 @@ return true;
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -816,7 +804,6 @@ return true;
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -864,7 +851,6 @@ return true;
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="customstyleproperties"/>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -920,7 +906,7 @@ return true;
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -929,7 +915,7 @@ return true;
                     <value><![CDATA[Forms]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_tabbedviewwindow.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -949,7 +935,6 @@ return true;
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[650]]></value>
                 </section>
@@ -957,12 +942,11 @@ return true;
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="isinfowindow">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -972,7 +956,9 @@ return true;
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -982,18 +968,26 @@ return true;
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.TabbedViewTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1007,11 +1001,10 @@ return true;
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="showindatafilter">
+                <section name="showInDataFilter">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="showfilterpluginproperties">
@@ -1038,7 +1031,6 @@ return true;
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
                 <section name="categories">
                     <section name="row">
                         <section name="column">
@@ -1403,7 +1395,7 @@ return true;
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -1412,7 +1404,7 @@ return true;
                     <value><![CDATA[Tables]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_clientsidetable.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -1444,12 +1436,11 @@ return true;
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[370]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[400]]></value>
@@ -1457,14 +1448,18 @@ return true;
                 <section name="windowleft">
                     <value><![CDATA[240]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -1474,7 +1469,6 @@ return true;
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.ClientSideTableTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -1484,11 +1478,20 @@ return true;
                 <section name="dynamicdatasourceoptimizequery">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1502,22 +1505,11 @@ return true;
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="istimeaware">
                     <value><![CDATA[false]]></value>
-                </section>
-                <section name="inputdateformat">
-                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-                </section>
-                <section name="customrange"/>
-                <section name="isshowintervals">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="defaulttimerange">
-                    <value><![CDATA[startendtime]]></value>
                 </section>
                 <section name="filterdatasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1525,9 +1517,6 @@ return true;
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
-                <section name="filterfields"/>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1561,20 +1550,16 @@ return true;
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
-                <section name="customwindowproperties"/>
-                <section name="columndetails"/>
-                <section name="windowinlinefilters"/>
                 <section name="groupattributes"/>
-                <section name="summaryattributes"/>
                 <section name="expandall">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="freezecolumns">
                     <value><![CDATA[1]]></value>
                 </section>
-                <section name="actionbuttons"/>
-                <section name="hyperlinks"/>
+                <section name="createchartfromtable">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="highlighticonurl">
                     <value><![CDATA[/images/highlight.png]]></value>
                 </section>
@@ -1583,6 +1568,12 @@ return true;
                 </section>
                 <section name="highlightfeaturecount">
                     <value><![CDATA[50]]></value>
+                </section>
+                <section name="usequery">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="numberofpoints">
+                    <value><![CDATA[200]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -1645,7 +1636,7 @@ return true;
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[images/windows/icon_xychart.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_xychart.png]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>
@@ -1654,7 +1645,7 @@ return true;
                     <value><![CDATA[Charts]]></value>
                 </section>
                 <section name="windowgroupiconurl">
-                    <value><![CDATA[images/windows/icon_xychart.png]]></value>
+                    <value><![CDATA[css/images/<theme>/icon_xychart.png]]></value>
                 </section>
                 <section name="isreloadconfiguration">
                     <value><![CDATA[false]]></value>
@@ -1686,27 +1677,30 @@ return true;
                 <section name="windowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="windowcomponentparameters"/>
                 <section name="windowwidth">
                     <value><![CDATA[900]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[350]]></value>
+                    <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[150]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[350]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
-                <section name="actionevents"/>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="windowmetadata"/>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
                 </section>
@@ -1716,18 +1710,23 @@ return true;
                 <section name="datatransformer">
                     <value><![CDATA[com.spacetimeinsight.renderer.window.transform.XYChartDataTransformer]]></value>
                 </section>
-                <section name="windowdataparameters"/>
                 <section name="hasgeographicdata">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="dynamicdatasourceoptimizequery">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="inputdata"/>
-                <section name="rprocessworkspaceid"/>
-                <section name="editableparameters"/>
                 <section name="donotloadbydefault">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="loadlastrun">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1741,18 +1740,10 @@ return true;
                 <section name="iscamerasensitive">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="refreshonevents"/>
                 <section name="isrefreshonlasso">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="istimeaware">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="inputdateformat">
-                    <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
-                </section>
-                <section name="customrange"/>
-                <section name="isshowintervals">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="filterdatasourcetype">
@@ -1761,9 +1752,6 @@ return true;
                 <section name="filterdatarenderer">
                     <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
                 </section>
-                <section name="filterdatasourceparameters"/>
-                <section name="filterfields"/>
-                <section name="defaultfilter"/>
                 <section name="applydefaultfilter">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1797,22 +1785,18 @@ return true;
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
-                <section name="filterwindowcomponentparameters"/>
-                <section name="customwindowproperties"/>
                 <section name="isshowcharttitle">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="charttitle">
                     <value><![CDATA[FITTEST Location Services]]></value>
                 </section>
-                <section name="charttitleproperties"/>
                 <section name="isshowsecondarycharttitle">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="secondarycharttitle">
                     <value><![CDATA[EBOLA Treatment Centers]]></value>
                 </section>
-                <section name="secondarycharttitleproperties"/>
                 <section name="showlegend">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1828,15 +1812,12 @@ return true;
                 <section name="embeddedlegendvalign">
                     <value><![CDATA[bottom]]></value>
                 </section>
-                <section name="embeddedlegendproperties"/>
                 <section name="isshowtooltip">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="issharedtooltip">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="tooltipattributes"/>
-                <section name="tooltipproperties"/>
                 <section name="isshowdatalabels">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1846,15 +1827,12 @@ return true;
                 <section name="datalabelshalign">
                     <value><![CDATA[center]]></value>
                 </section>
-                <section name="datalabelproperties"/>
                 <section name="showtable">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="tablesizeinchartwindow">
                     <value><![CDATA[30]]></value>
                 </section>
-                <section name="charttablecolumns"/>
-                <section name="charttablerowseries"/>
                 <section name="charttype">
                     <value><![CDATA[ColumnChart]]></value>
                 </section>
@@ -1887,10 +1865,6 @@ return true;
                 <section name="seriesin">
                     <value><![CDATA[Column]]></value>
                 </section>
-                <section name="defaultseriescolors"/>
-                <section name="defaultseriesproperties"/>
-                <section name="seriesevents"/>
-                <section name="chartevents"/>
                 <section name="coloraxismin">
                     <value><![CDATA[0.0]]></value>
                 </section>
@@ -1900,15 +1874,12 @@ return true;
                 <section name="coloraxismaxcolor">
                     <value><![CDATA[#0000FF]]></value>
                 </section>
-                <section name="coloraxisproperties"/>
                 <section name="xaxisposition">
                     <value><![CDATA[bottom]]></value>
                 </section>
                 <section name="xaxistype">
-                    <value><![CDATA[category]]></value>
+                    <value><![CDATA[linear]]></value>
                 </section>
-                <section name="xaxiscategories"/>
-                <section name="xaxisdateformat"/>
                 <section name="xaxisshowgridlines">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1918,13 +1889,9 @@ return true;
                 <section name="xaxisshowtitle">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="xaxistitleproperties"/>
                 <section name="xaxisshowlabels">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="xaxislabelproperties"/>
-                <section name="xaxisbands"/>
-                <section name="xaxislimits"/>
                 <section name="xaxisreverseorder">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1934,16 +1901,12 @@ return true;
                 <section name="xaxisshowminorticks">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="xaxisevents"/>
-                <section name="xaxisproperties"/>
                 <section name="yaxisposition">
                     <value><![CDATA[left]]></value>
                 </section>
                 <section name="yaxistype">
                     <value><![CDATA[linear]]></value>
                 </section>
-                <section name="yaxiscategories"/>
-                <section name="yaxisdateformat"/>
                 <section name="yaxisshowgridlines">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -1953,13 +1916,9 @@ return true;
                 <section name="yaxisshowtitle">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="yaxistitleproperties"/>
                 <section name="yaxisshowlabels">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="yaxislabelproperties"/>
-                <section name="yaxisbands"/>
-                <section name="yaxislimits"/>
                 <section name="yaxisreverseorder">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1969,12 +1928,9 @@ return true;
                 <section name="yaxisshowminorticks">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="yaxisevents"/>
-                <section name="yaxisproperties"/>
                 <section name="isaddmultipleyaxis">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="multiyaxisproperties"/>
             </section>
         </section>
         <section name="datamashups">
@@ -2192,9 +2148,6 @@ return true;
                             </section>
                         </section>
                     </section>
-                    <section name="dynamicDatasourceTableMetaData"/>
-                    <section name="dynamicDatasourceIndexes"/>
-                    <section name="dynamicDatasourceUpdateColumns"/>
                 </section>
                 <section name="datarendertype">
                     <value><![CDATA[2]]></value>
