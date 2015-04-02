@@ -448,6 +448,22 @@
                     <value><![CDATA[]]></value>
                 </section>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[true]]></value>
@@ -551,7 +567,7 @@
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="infowindowid">
-                    <value><![CDATA[TabbedView6]]></value>
+                    <value><![CDATA[Details]]></value>
                 </section>
             </section>
         </section>
@@ -589,8 +605,9 @@ void bindData() {
 	$artefact.addAttribute("VISITDATE", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "VISITDATE", false)));
 	$artefact.addAttribute("FEATSOURCE", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "FEATSOURCE", false)));
 	$artefact.addAttribute("ATTRSOURCE", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "ATTRSOURCE", false)));
+	//$artefact.addAttribute("QRcode", "QRcode");		
 
-
+ 
             
 }
 
@@ -685,7 +702,7 @@ String getName() {
         <section name="legends">
             <section name="folder">
                 <section name="name">
-                    <value><![CDATA[TabbedView6]]></value>
+                    <value><![CDATA[Details]]></value>
                 </section>
                 <section name="type">
                     <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
@@ -898,6 +915,16 @@ String getName() {
                                 <section name="row">
                                     <section name="column">
                                     <value><![CDATA[PIER_MAT]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[QRcode]]></value>
                                     </section>
                                     <section name="column">
                                     <value><![CDATA[Text]]></value>
