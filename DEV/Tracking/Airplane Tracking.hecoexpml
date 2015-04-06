@@ -474,7 +474,7 @@
                     <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
                 </section>
                 <section name="autozoom">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="timesensitive">
                     <value><![CDATA[true]]></value>
@@ -514,9 +514,6 @@
             <value><![CDATA[2]]></value>
         </section>
         <section name="constraints">
-            <section name="constraint">
-                <value><![CDATA[cameraboundary]]></value>
-            </section>
             <section name="constraint">
                 <value><![CDATA[visibility]]></value>
                 <section name="script">

@@ -336,7 +336,7 @@
                     <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
                 </section>
                 <section name="autozoom">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="params">
                     <section name="param">
