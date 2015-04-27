@@ -730,12 +730,6 @@ return true;
         <section name="needsmap">
             <value><![CDATA[true]]></value>
         </section>
-        <section name="showtimeslider">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="timeslidergap">
-            <value><![CDATA[4]]></value>
-        </section>
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
@@ -956,8 +950,14 @@ return true;
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -981,12 +981,6 @@ return true;
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -1454,11 +1448,17 @@ return true;
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1485,12 +1485,6 @@ return true;
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -1695,11 +1689,20 @@ return true;
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowprint">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1720,12 +1723,6 @@ return true;
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -1869,10 +1866,10 @@ return true;
                     <value><![CDATA[0.0]]></value>
                 </section>
                 <section name="coloraxismincolor">
-                    <value><![CDATA[#FFFFFF]]></value>
+                    <value><![CDATA[#41D757]]></value>
                 </section>
                 <section name="coloraxismaxcolor">
-                    <value><![CDATA[#0000FF]]></value>
+                    <value><![CDATA[#1209FB]]></value>
                 </section>
                 <section name="xaxisposition">
                     <value><![CDATA[bottom]]></value>

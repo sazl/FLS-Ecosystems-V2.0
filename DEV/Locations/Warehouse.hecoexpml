@@ -611,12 +611,6 @@ String getDashboardWBId(){
         <section name="needsmap">
             <value><![CDATA[true]]></value>
         </section>
-        <section name="showtimeslider">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="timeslidergap">
-            <value><![CDATA[4]]></value>
-        </section>
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
@@ -663,7 +657,48 @@ String getDashboardWBId(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>
@@ -741,8 +776,14 @@ String getDashboardWBId(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -766,12 +807,6 @@ String getDashboardWBId(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -1301,8 +1336,8 @@ String getDashboardWBId(){
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[]]></value>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -1402,11 +1437,17 @@ String getDashboardWBId(){
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1430,12 +1471,6 @@ String getDashboardWBId(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -1817,6 +1852,9 @@ String getDashboardWBId(){
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -1825,6 +1863,9 @@ String getDashboardWBId(){
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowmetadata">
                     <section name="row">
@@ -2002,12 +2043,6 @@ String getDashboardWBId(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -2197,6 +2232,9 @@ String getDashboardWBId(){
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[true]]></value>
                 </section>
@@ -2205,6 +2243,9 @@ String getDashboardWBId(){
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowmetadata">
                     <section name="row">
@@ -2462,12 +2503,6 @@ String getDashboardWBId(){
                 <section name="isshared">
                     <value><![CDATA[true]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -2643,6 +2678,9 @@ String getDashboardWBId(){
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -2651,6 +2689,9 @@ String getDashboardWBId(){
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowmetadata">
                     <section name="row">
@@ -2831,12 +2872,6 @@ String getDashboardWBId(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -3025,11 +3060,17 @@ String getDashboardWBId(){
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowmetadata">
                     <section name="row">
@@ -3308,12 +3349,6 @@ String getDashboardWBId(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">

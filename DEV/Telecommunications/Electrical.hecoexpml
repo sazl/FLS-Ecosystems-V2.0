@@ -443,12 +443,6 @@ boolean authorize(){ return true; }]]></value>
         <section name="needsmap">
             <value><![CDATA[true]]></value>
         </section>
-        <section name="showtimeslider">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="timeslidergap">
-            <value><![CDATA[4]]></value>
-        </section>
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
         </section>
@@ -523,8 +517,14 @@ boolean authorize(){ return true; }]]></value>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -548,12 +548,6 @@ boolean authorize(){ return true; }]]></value>
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -784,8 +778,8 @@ boolean authorize(){ return true; }]]></value>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[]]></value>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -868,7 +862,7 @@ boolean authorize(){ return true; }]]></value>
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[400]]></value>
+                    <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
                     <value><![CDATA[300]]></value>
@@ -877,7 +871,7 @@ boolean authorize(){ return true; }]]></value>
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[220]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
@@ -885,11 +879,17 @@ boolean authorize(){ return true; }]]></value>
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -913,12 +913,6 @@ boolean authorize(){ return true; }]]></value>
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">

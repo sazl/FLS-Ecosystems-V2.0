@@ -966,9 +966,6 @@
                     <section name="name">
                         <value><![CDATA[Cluster6]]></value>
                     </section>
-                    <section name="type">
-                        <value><![CDATA[com.enterprisehorizons.magma.models.ClusterFeature]]></value>
-                    </section>
                     <section name="clusterstyleproperties">
                         <section name="row">
                             <section name="column">
@@ -1190,7 +1187,7 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
 	  		     	if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserUniqueId() );
 	  		     	
 	  		     	if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("Organization") ) ) 
-	  		     	{ isValid= true; return isValid; }
+	  		     	{ isValid= true;  }
 	  		     }
 	  		}
 	  	}
@@ -1556,9 +1553,9 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
 		String DESCRIPTION = $artefact.getAttributeValueAsString("owner");	
 		return DESCRIPTION+"( "+deviceId+" ) is inside -- active geofence ";
 	}
-	String currentVersion(){  return "2.0"; }	
+	String currentVersion(){  return "2.1"; }	
 	String getChangeLog(){  return "Organization, FullName, popup tabs"; }
-	String getDateModified(){  return "2015-02-26 12:30:00"; }
+	String getDateModified(){  return "2015-04-26 12:30:00"; }
 	String getDatasource(){   	return datasource; }
 	String getLastRefreshTime(){ 	return lastRefreshTime; }
 	String getDescription(){ 	return description; }]]></value>
@@ -1569,12 +1566,6 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
         </section>
         <section name="needsmap">
             <value><![CDATA[true]]></value>
-        </section>
-        <section name="showtimeslider">
-            <value><![CDATA[true]]></value>
-        </section>
-        <section name="timeslidergap">
-            <value><![CDATA[4]]></value>
         </section>
         <section name="istimeaware">
             <value><![CDATA[true]]></value>
@@ -1589,7 +1580,7 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
             <value><![CDATA[MM/dd/yyyy hh:mm:ss tt]]></value>
         </section>
         <section name="isshowintervals">
-            <value><![CDATA[false]]></value>
+            <value><![CDATA[true]]></value>
         </section>
         <section name="defaulttimerange">
             <value><![CDATA[startendtime]]></value>
@@ -1612,6 +1603,21 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
         </section>
         <section name="isapplydefaulttimefilter">
             <value><![CDATA[false]]></value>
+        </section>
+        <section name="showtimeslider">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="timesliderendtime">
+            <value><![CDATA[time]]></value>
+        </section>
+        <section name="showrecords">
+            <value><![CDATA[AllRecords]]></value>
+        </section>
+        <section name="displayinterval">
+            <value><![CDATA[1]]></value>
+        </section>
+        <section name="intervalunit">
+            <value><![CDATA[Days]]></value>
         </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[false]]></value>
@@ -1667,7 +1673,54 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelcolor">
+                    <value><![CDATA[#FF0000]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1714,7 +1767,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1761,7 +1855,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1808,7 +1943,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1824,6 +2000,9 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 </section>
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="layerzindex">
+                    <value><![CDATA[99]]></value>
                 </section>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
@@ -1855,7 +2034,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[baseline]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>
@@ -1953,8 +2173,14 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1978,12 +2204,6 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -2565,8 +2785,8 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[]]></value>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -2821,8 +3041,8 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[]]></value>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -2925,11 +3145,17 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -2953,12 +3179,6 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -3274,64 +3494,7 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                         <section name="column"/>
                     </section>
                 </section>
-                <section name="windowinlinefilters">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[owner]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[title]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Organization]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[mission]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[time]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Date]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[localTime]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Date]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[deviceId]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                </section>
+                <section name="windowinlinefilters"/>
                 <section name="summaryattributes"/>
                 <section name="expandall">
                     <value><![CDATA[true]]></value>
@@ -3454,8 +3617,8 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[]]></value>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>

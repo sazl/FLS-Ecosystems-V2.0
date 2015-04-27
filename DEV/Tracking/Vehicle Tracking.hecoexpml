@@ -634,9 +634,9 @@
             <section name="folder">
                 <section name="name">
                     <section name="script">
-                        <value><![CDATA[getDeviceCaption()]]></value>
+                        <value><![CDATA[vehicleID]]></value>
                         <section name="type">
-                            <value><![CDATA[1]]></value>
+                            <value><![CDATA[2]]></value>
                         </section>
                     </section>
                 </section>
@@ -825,6 +825,7 @@ void bindData()
 		e.printStackTrace();
 	}
 }
+
 List<String>  getUserProfileList( String userId )
 {
  return (userProfilesList ==null )? LDAPUtils.getUserProfilesList( userId ):userProfilesList;
@@ -833,7 +834,7 @@ List<String> getDeviceMissionList( String deviceId )
 {
 	return com.wfp.utils.LDAPUtils.getLDAPUserDtlsMap().get(deviceId).getAuthorizedGroupsList();
 }
-String getName() { 	return $artefact.getAttributeValueAsString("deviceId"); }
+String getName() { 	return $artefact.getAttributeValueAsString("vehicleID"); }
 public String currentVersion(){  	return "2.0"; }
 public String getAuthor(){ 	return "Kaleem Mohammed"; }
 public String getChangeLog(){  	return "Organization, FullName, popup tabs"; }
@@ -868,10 +869,8 @@ if( getStyle().equalsIgnoreCase("latestReported") ) return "200";
 else return "100";
 }
 boolean isInDangerZone(){
-	String[] allZones = com.wfp.utils.RBRegionsUtils.getZoneNames($artefact, getUserBean(), getLayerName(), getLayerId(), getLayerName()+"_DZ", "_SZ");
-	String deviceId = $artefact.getAttributeValueAsString("deviceId");	
-	boolean needToAlert = com.wfp.utils.RBRegionsUtils.isDeviceTraced($artefact, allZones, getSessionId(), deviceId);
-	return (!com.enterprisehorizons.util.StringUtils.isNull(allZones) );
+	
+	return false;
 }
 String getDangerZoneName(){
 	String deviceId = $artefact.getAttributeValueAsString("deviceId");
@@ -983,14 +982,41 @@ String getMissionFullName(String mission )
         <section name="needsmap">
             <value><![CDATA[true]]></value>
         </section>
-        <section name="showtimeslider">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="timeslidergap">
-            <value><![CDATA[4]]></value>
-        </section>
         <section name="istimeaware">
-            <value><![CDATA[false]]></value>
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="datefield">
+            <value><![CDATA[time]]></value>
+        </section>
+        <section name="datefieldformat">
+            <value><![CDATA[YYYY-MM-DD HH:mm:ss]]></value>
+        </section>
+        <section name="inputdateformat">
+            <value><![CDATA[ddd, MMM dd, yyyy  hh:mm:ss tt]]></value>
+        </section>
+        <section name="isshowintervals">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="defaulttimerange">
+            <value><![CDATA[startendtime]]></value>
+        </section>
+        <section name="isapplydefaulttimefilter">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="showtimeslider">
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="timesliderendtime">
+            <value><![CDATA[time]]></value>
+        </section>
+        <section name="showrecords">
+            <value><![CDATA[AllRecords]]></value>
+        </section>
+        <section name="displayinterval">
+            <value><![CDATA[1]]></value>
+        </section>
+        <section name="intervalunit">
+            <value><![CDATA[Days]]></value>
         </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[false]]></value>
@@ -1068,6 +1094,9 @@ String getMissionFullName(String mission )
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="layerzindex">
+                    <value><![CDATA[88]]></value>
+                </section>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1098,7 +1127,48 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1114,6 +1184,9 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="layerzindex">
+                    <value><![CDATA[86]]></value>
                 </section>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
@@ -1145,7 +1218,48 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1161,6 +1275,9 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="layerzindex">
+                    <value><![CDATA[89]]></value>
                 </section>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
@@ -1192,7 +1309,48 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1208,6 +1366,9 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="layerzindex">
+                    <value><![CDATA[81]]></value>
                 </section>
                 <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
@@ -1239,7 +1400,40 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>
@@ -1317,8 +1511,14 @@ String getMissionFullName(String mission )
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1342,12 +1542,6 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -1843,11 +2037,17 @@ String getMissionFullName(String mission )
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowmetadata">
                     <section name="row">
@@ -1980,12 +2180,6 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -2160,8 +2354,8 @@ String getMissionFullName(String mission )
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[]]></value>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -2258,8 +2452,8 @@ String getMissionFullName(String mission )
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[]]></value>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -2362,11 +2556,17 @@ String getMissionFullName(String mission )
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -2390,12 +2590,6 @@ String getMissionFullName(String mission )
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -2688,80 +2882,7 @@ String getMissionFullName(String mission )
                         <section name="column"/>
                     </section>
                 </section>
-                <section name="windowinlinefilters">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[vehicleID]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[description]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[licensePlate]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[deviceId]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[organisation]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[mission]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[noOfDays]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[totalWaypoints]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[List]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[ptime]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Date]]></value>
-                        </section>
-                    </section>
-                </section>
+                <section name="windowinlinefilters"/>
                 <section name="expandall">
                     <value><![CDATA[false]]></value>
                 </section>
