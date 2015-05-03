@@ -1432,6 +1432,7 @@ String alertMsg()
 	String DESCRIPTION = $artefact.getAttributeValueAsString("owner");	
 	return DESCRIPTION+"( "+deviceId+" ) is inside -- active geofence ";
 }
+
 public String currentVersion(){  return "2.0"; }
 String getAuthor(){   	return "Kaleem MOHAMMED"; }  
 String getChangeLog(){  return "Organization, FullName, popup tabs"; }
