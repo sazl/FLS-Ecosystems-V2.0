@@ -473,7 +473,7 @@ String getAuthorUrl(){
                 </section>
                 <section name="iconurl">
                     <section name="script">
-                        <value><![CDATA[getIconUrl_C()]]></value>
+                        <value><![CDATA[getIconUrl_Y()]]></value>
                         <section name="type">
                             <value><![CDATA[1]]></value>
                         </section>
@@ -579,7 +579,7 @@ String getAuthorUrl(){
                 </section>
                 <section name="iconurl">
                     <section name="script">
-                        <value><![CDATA[getIconUrl_G()]]></value>
+                        <value><![CDATA[getIconUrl_Y()]]></value>
                         <section name="type">
                             <value><![CDATA[1]]></value>
                         </section>

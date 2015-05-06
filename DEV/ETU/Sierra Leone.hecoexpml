@@ -297,7 +297,7 @@
                     <value><![CDATA[com.enterprisehorizons.magma.models.HTMLSimpleFeature]]></value>
                 </section>
                 <section name="autozoom">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="params">
                     <section name="param">
@@ -495,7 +495,7 @@ String getName() {
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="labelxoffset">
-                    <value><![CDATA[5]]></value>
+                    <value><![CDATA[10]]></value>
                 </section>
                 <section name="labelfontfamily">
                     <value><![CDATA[Arial]]></value>
