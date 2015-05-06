@@ -1499,6 +1499,124 @@
                 <section name="infowindowid">
                     <value><![CDATA[Details]]></value>
                 </section>
+                <section name="clustergroup"/>
+                <section name="folder">
+                    <section name="name">
+                        <value><![CDATA[Cluster6]]></value>
+                    </section>
+                    <section name="clusterstyleproperties">
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[10]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#FF8000]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[20]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[20]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#FF8000]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[40]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[30]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#FF8000]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[50]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[40]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#FF8000]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[60]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[50]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#FF8000]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[70]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[60]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#FF8000]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[80]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[100]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[#FF8000]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[110]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Circle]]></value>
+                            </section>
+                        </section>
+                    </section>
+                    <section name="clustertolerance">
+                        <value><![CDATA[100]]></value>
+                    </section>
+                    <section name="clusterminimumzoom">
+                        <value><![CDATA[12]]></value>
+                    </section>
+                    <section name="starburstmaxcount">
+                        <value><![CDATA[9]]></value>
+                    </section>
+                    <section name="starburstspokelength">
+                        <value><![CDATA[40]]></value>
+                    </section>
+                </section>
             </section>
         </section>
         <section name="scriptor">
@@ -1588,40 +1706,7 @@ String getName() {
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="labelsymboltype">
-                    <value><![CDATA[esriTS]]></value>
-                </section>
-                <section name="labelverticalalignment">
-                    <value><![CDATA[middle]]></value>
-                </section>
-                <section name="labelhorizontalalignment">
-                    <value><![CDATA[left]]></value>
-                </section>
-                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
-                </section>
-                <section name="labelkerning">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="labelxoffset">
-                    <value><![CDATA[10]]></value>
-                </section>
-                <section name="labelfontfamily">
-                    <value><![CDATA[Arial]]></value>
-                </section>
-                <section name="labelfontsize">
-                    <value><![CDATA[10]]></value>
-                </section>
-                <section name="labelfontstyle">
-                    <value><![CDATA[normal]]></value>
-                </section>
-                <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
-                </section>
-                <section name="labelfontdecoration">
-                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>
