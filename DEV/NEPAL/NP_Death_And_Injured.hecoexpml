@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration name="Level2_Boundaries">
+<configuration name="NP_Death_And_Injured">
     <section name="artefact">
         <section name="name">
-            <value><![CDATA[Level2_Boundaries]]></value>
+            <value><![CDATA[NP_Death_And_Injured]]></value>
         </section>
         <section name="type">
             <value><![CDATA[com.enterprisehorizons.magma.designtime.artifact.GeoArtifact]]></value>
@@ -10,296 +10,342 @@
         <section name="attributes">
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[OBJECTID]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.Integer]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[OBJECTID]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[ACID]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[ACID]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[ACNAME]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[ACNAME]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[AC_OTHER_N]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[AC_OTHER_N]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[ISLAND]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[ISLAND]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[PROVINCE]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[PROVINCE]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[FEMALES]]></value>
+                    <value><![CDATA[DIST_ID]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[FEMALES]]></value>
+                    <value><![CDATA[DIST_ID]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[MALES]]></value>
+                    <value><![CDATA[DISTRICT]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[DISTRICT]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[ZONE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[ZONE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[REG_CODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[REG_CODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[ZONE_CODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[ZONE_CODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[OCHA_PCODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[OCHA_PCODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[HLCIT_CODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[HLCIT_CODE]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Total_Household]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[MALES]]></value>
+                    <value><![CDATA[Total Household]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[TOTAL]]></value>
+                    <value><![CDATA[Total_Population]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[TOTAL]]></value>
+                    <value><![CDATA[Total Population]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[HH_COUNT]]></value>
+                    <value><![CDATA[Deaths]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[HH_COUNT]]></value>
+                    <value><![CDATA[Deaths]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
-            </section>
-            <section name="row">
                 <section name="column">
-                    <value><![CDATA[ORIG_FID]]></value>
+                    <value><![CDATA[]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[java.lang.Integer]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[ORIG_FID]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[Shape_Leng]]></value>
+                    <value><![CDATA[Injured]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Shape_Leng]]></value>
+                    <value><![CDATA[Injured]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[Shape_Area]]></value>
+                    <value><![CDATA[GovtBuild_Damage]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Shape_Area]]></value>
+                    <value><![CDATA[GovtBuild_Damage]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[adm0code]]></value>
+                    <value><![CDATA[GovtBuild_PartDamage]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[GovtBuild_PartDamage]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[PublicBuild_Damage]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[PublicBuild_Damage]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[PublicBuild_PartDamage]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[PublicBuild_PartDamage]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Displaced_Females]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[adm0code]]></value>
+                    <value><![CDATA[Displaced_Females]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
                 <section name="column">
-                    <value><![CDATA[adm0label]]></value>
+                    <value><![CDATA[Displaced_Males]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[adm0label]]></value>
+                    <value><![CDATA[Displaced_Males]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[adm1code]]></value>
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
+                    <value><![CDATA[]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[adm1code]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[adm1label]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[adm1label]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[adm2code]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[adm2code]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[adm2label]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[adm2label]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[adm3code]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[adm3code]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="row">
-                <section name="column">
-                    <value><![CDATA[adm3label]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[java.lang.String]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[adm3label]]></value>
-                </section>
-                <section name="column">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
         </section>
@@ -312,7 +358,7 @@
         <section name="experiencedef">
             <section name="folder">
                 <section name="name">
-                    <value><![CDATA[Level2_Boundaries]]></value>
+                    <value><![CDATA[NP_Death_And_Injured]]></value>
                 </section>
                 <section name="isperiodicrefresh">
                     <value><![CDATA[false]]></value>
@@ -355,7 +401,7 @@
                             <value><![CDATA[ecoexpmodel]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Level2_Boundaries.hecoexpml]]></value>
+                            <value><![CDATA[NP_Death_And_Injured.hecoexpml]]></value>
                         </section>
                     </section>
                     <section name="param">
@@ -363,7 +409,7 @@
                             <value><![CDATA[artefactname]]></value>
                         </section>
                         <section name="value">
-                            <value><![CDATA[Level2_Boundaries]]></value>
+                            <value><![CDATA[NP_Death_And_Injured]]></value>
                         </section>
                     </section>
                 </section>
@@ -380,7 +426,7 @@
             <section name="folder">
                 <section name="name">
                     <section name="script">
-                        <value><![CDATA[ISLAND]]></value>
+                        <value><![CDATA[DISTRICT]]></value>
                         <section name="type">
                             <value><![CDATA[2]]></value>
                         </section>
@@ -390,68 +436,36 @@
                     <value><![CDATA[json]]></value>
                 </section>
                 <section name="label">
-                    <value><![CDATA[Polygon]]></value>
+                    <value><![CDATA[Placemark]]></value>
                 </section>
                 <section name="type">
-                    <value><![CDATA[com.enterprisehorizons.magma.models.PolygonFeature]]></value>
+                    <value><![CDATA[com.enterprisehorizons.magma.models.PlacemarkFeature]]></value>
                 </section>
                 <section name="extrude">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="tessellate">
-                    <value><![CDATA[false]]></value>
-                </section>
                 <section name="globalstyleid">
-                    <value><![CDATA[polygonstyle]]></value>
+                    <value><![CDATA[placemarkesristyle]]></value>
                 </section>
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="generateplacemark">
-                    <value><![CDATA[false]]></value>
+                <section name="infowindowid">
+                    <value><![CDATA[Details]]></value>
                 </section>
             </section>
         </section>
         <section name="scriptor">
             <section name="body">
                 <value><![CDATA[private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
-private com.enterprisehorizons.magma.datamashup.ShapeFileDataDriver $shapefilemashupdriver;
+private com.enterprisehorizons.magma.datamashup.ExcelDataDriver $excelfilemashupdriver;
 
 void bindData() {
 	
-    com.enterprisehorizons.conversion.shp.ShapeFileRecord data = $shapefilemashupdatamodel;
-    String[] attributeNames = $shapefilemashupdriver.getMetaData();
-    //$artefact.setAttributeNames(attributeNames);
-    //$artefact.setAttributeValues($shapefilemashupdatamodel.getAttributeValues());
-    $artefact.setCoordinates(data.getCoordinates());
-    $artefact.addAttribute("OBJECTID", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "OBJECTID", false)));
-	$artefact.addAttribute("ACID", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "ACID", false)));
-	$artefact.addAttribute("ACNAME", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "ACNAME", false)));
-	$artefact.addAttribute("AC_OTHER_N", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "AC_OTHER_N", false)));
-	$artefact.addAttribute("ISLAND", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "ISLAND", false)));
-	$artefact.addAttribute("PROVINCE", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "PROVINCE", false)));
-	$artefact.addAttribute("FEMALES", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "FEMALES", false)));
-	$artefact.addAttribute("MALES", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "MALES", false)));
-	$artefact.addAttribute("TOTAL", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "TOTAL", false)));
-	$artefact.addAttribute("HH_COUNT", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "HH_COUNT", false)));
-	$artefact.addAttribute("ORIG_FID", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "ORIG_FID", false)));
-	$artefact.addAttribute("Shape_Leng", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "Shape_Leng", false)));
-	$artefact.addAttribute("Shape_Area", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "Shape_Area", false)));
-	$artefact.addAttribute("adm0code", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm0code", false)));
-	$artefact.addAttribute("adm0label", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm0label", false)));
-	$artefact.addAttribute("adm1code", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm1code", false)));
-	$artefact.addAttribute("adm1label", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm1label", false)));
-	$artefact.addAttribute("adm2code", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm2code", false)));
-	$artefact.addAttribute("adm2label", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm2label", false)));
-	$artefact.addAttribute("adm3code", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm3code", false)));
-	$artefact.addAttribute("adm3label", data.getAttributeValueObject(ArrayUtils.getMatchedIndex(attributeNames, "adm3label", false)));
-
-
-            
 }
 
 String getName() {
-	return $artefact.getAttributeValueAsString("ISLAND");
+	return $artefact.getAttributeValueAsString("DISTRICT");
 }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
@@ -465,47 +479,220 @@ String getName() {
             <value><![CDATA[false]]></value>
         </section>
         <section name="isadddefaultinfowindow">
-            <value><![CDATA[true]]></value>
+            <value><![CDATA[false]]></value>
         </section>
         <section name="globalstyle">
             <section name="style">
-                <value><![CDATA[polygonstyle]]></value>
+                <value><![CDATA[placemarkesristyle]]></value>
                 <section name="name">
-                    <value><![CDATA[polygonstyle]]></value>
+                    <value><![CDATA[placemarkesristyle]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="makeasglobalstyle">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="iconcolorshader">
+                <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="labelcolorshader">
-                    <value><![CDATA[false]]></value>
+                <section name="isaddicon">
+                    <value><![CDATA[true]]></value>
                 </section>
-                <section name="labelscale">
-                    <value><![CDATA[1.0]]></value>
+                <section name="iconsymboltype">
+                    <value><![CDATA[esriPMS]]></value>
                 </section>
-                <section name="linecolorshader">
-                    <value><![CDATA[false]]></value>
+                <section name="iconurl">
+                    <value><![CDATA[serverresources/FLS/icons/epic/people_dead_32px_icon_bluebox.png]]></value>
                 </section>
-                <section name="fillcolor">
-                    <value><![CDATA[#804040]]></value>
+                <section name="iconwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="iconheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="linetype">
+                    <value><![CDATA[esriSLS]]></value>
+                </section>
+                <section name="linestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="linecolor">
+                    <value><![CDATA[#000000]]></value>
                     <section name="transparency">
                         <value><![CDATA[1.0]]></value>
                     </section>
                 </section>
-                <section name="fillcolorshader">
+                <section name="linewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="linejoinstyle">
+                    <value><![CDATA[bevel]]></value>
+                </section>
+                <section name="linecapstyle">
+                    <value><![CDATA[round]]></value>
+                </section>
+                <section name="isaddfill">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="showhighlightstyles">
+                <section name="isaddlabel">
                     <value><![CDATA[false]]></value>
-                </section>
-                <section name="shadertype">
-                    <value><![CDATA[com.enterprisehorizons.magma.models.util.Shader]]></value>
                 </section>
             </section>
         </section>
         <section name="legends">
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[Details]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[TabbedView]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#Tabbed_View_Window/About_Tabbed_View_Window.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Forms]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerTabbedViewWindow]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[window/tabbed/com.spacetimeinsight.viewer.window.tabbedViewWindow]]></value>
+                </section>
+                <section name="windowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="windowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[500]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowtop">
+                    <value><![CDATA[300]]></value>
+                </section>
+                <section name="windowleft">
+                    <value><![CDATA[200]]></value>
+                </section>
+                <section name="isinfowindow">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="hidefrombusinessviewmenu">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isattributelink">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="datasourcetype">
+                    <value><![CDATA[Artifact]]></value>
+                </section>
+                <section name="datafetcher">
+                    <value><![CDATA[com.spacetimeinsight.renderer.window.data.ArtifactDataFetcher]]></value>
+                </section>
+                <section name="datatransformer">
+                    <value><![CDATA[com.spacetimeinsight.renderer.window.transform.TabbedViewTransformer]]></value>
+                </section>
+                <section name="hasgeographicdata">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="dynamicdatasourceoptimizequery">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="donotloadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isbackground">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isshared">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="showInDataFilter">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showfilterpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="filterwindowpluginname">
+                    <value><![CDATA[siViewerClientSideTable]]></value>
+                </section>
+                <section name="filterwindowpluginjsfile">
+                    <value><![CDATA[dataFilter/com.spacetimeinsight.viewer.ui.dataFilter]]></value>
+                </section>
+                <section name="filterwindowdrawerpluginname">
+                    <value><![CDATA[siViewerClientSideTableDrawer]]></value>
+                </section>
+                <section name="filterwindowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="filterwindowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="filterwindowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="filterwindowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="highlighticonscale">
+                    <value><![CDATA[1.0]]></value>
+                </section>
+            </section>
             <section name="folder">
                 <section name="name">
                     <value><![CDATA[List]]></value>
@@ -568,13 +755,21 @@ String getName() {
                     <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[300]]></value>
+                    <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[200]]></value>
+                    <value><![CDATA[220]]></value>
+                </section>
+                <section name="order">
+                    <section name="script">
+                        <value><![CDATA[Deaths]]></value>
+                        <section name="type">
+                            <value><![CDATA[2]]></value>
+                        </section>
+                    </section>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
@@ -678,7 +873,7 @@ String getName() {
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[OBJECTID]]></value>
+                            <value><![CDATA[DISTRICT]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -699,7 +894,7 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[ACID]]></value>
+                            <value><![CDATA[ZONE]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -720,7 +915,7 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[ACNAME]]></value>
+                            <value><![CDATA[Total_Household]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -741,7 +936,7 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[ISLAND]]></value>
+                            <value><![CDATA[Total_Population]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -762,7 +957,28 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[PROVINCE]]></value>
+                            <value><![CDATA[Deaths]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[0]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Descending]]></value>
+                        </section>
+                        <section name="column"/>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Injured]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -783,7 +999,7 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[FEMALES]]></value>
+                            <value><![CDATA[GovtBuild_Damage]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -804,7 +1020,7 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[MALES]]></value>
+                            <value><![CDATA[GovtBuild_PartDamage]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -825,7 +1041,7 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[TOTAL]]></value>
+                            <value><![CDATA[PublicBuild_Damage]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -846,7 +1062,7 @@ String getName() {
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[HH_COUNT]]></value>
+                            <value><![CDATA[PublicBuild_PartDamage]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
@@ -889,6 +1105,71 @@ String getName() {
                 </section>
                 <section name="numberofpoints">
                     <value><![CDATA[200]]></value>
+                </section>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[DataFilter6]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[DataFilter]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#Chart_Window/Chart_Types/Using_Data_Filter_Window.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Data Filters]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerDataFilter]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[dataFilter/com.spacetimeinsight.viewer.ui.dataFilter]]></value>
+                </section>
+                <section name="windowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="windowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[100]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[100]]></value>
+                </section>
+                <section name="filterdatasourcetype">
+                    <value><![CDATA[Artifact]]></value>
+                </section>
+                <section name="filterdatarenderer">
+                    <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
+                </section>
+                <section name="applydefaultfilter">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="filterdynamicdatasourceoptimizequery">
+                    <value><![CDATA[true]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -1064,13 +1345,13 @@ String getName() {
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="charttitle">
-                    <value><![CDATA[Vanuata]]></value>
+                    <value><![CDATA[NEPAL EARTHQUAKE]]></value>
                 </section>
                 <section name="isshowsecondarycharttitle">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="secondarycharttitle">
-                    <value><![CDATA[Population By Island]]></value>
+                    <value><![CDATA[Casualties and Injured]]></value>
                 </section>
                 <section name="showlegend">
                     <value><![CDATA[false]]></value>
@@ -1115,12 +1396,12 @@ String getName() {
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="xfield">
-                    <value><![CDATA[ISLAND]]></value>
+                    <value><![CDATA[DISTRICT]]></value>
                 </section>
                 <section name="chartseries">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[FEMALES]]></value>
+                            <value><![CDATA[Deaths]]></value>
                         </section>
                         <section name="column"/>
                         <section name="column">
@@ -1129,14 +1410,16 @@ String getName() {
                         <section name="column">
                             <value><![CDATA[0]]></value>
                         </section>
-                        <section name="column"/>
+                        <section name="column">
+                            <value><![CDATA[#FF0000]]></value>
+                        </section>
                         <section name="column">
                             <value><![CDATA[]]></value>
                         </section>
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[MALES]]></value>
+                            <value><![CDATA[Injured]]></value>
                         </section>
                         <section name="column"/>
                         <section name="column">
@@ -1145,23 +1428,9 @@ String getName() {
                         <section name="column">
                             <value><![CDATA[0]]></value>
                         </section>
-                        <section name="column"/>
                         <section name="column">
-                            <value><![CDATA[]]></value>
+                            <value><![CDATA[#000000]]></value>
                         </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[TOTAL]]></value>
-                        </section>
-                        <section name="column"/>
-                        <section name="column">
-                            <value><![CDATA[true]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[0]]></value>
-                        </section>
-                        <section name="column"/>
                         <section name="column">
                             <value><![CDATA[]]></value>
                         </section>
@@ -1235,104 +1504,6 @@ String getName() {
                 </section>
                 <section name="isaddmultipleyaxis">
                     <value><![CDATA[false]]></value>
-                </section>
-            </section>
-            <section name="folder">
-                <section name="name">
-                    <value><![CDATA[Data source]]></value>
-                </section>
-                <section name="type">
-                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
-                </section>
-                <section name="windowshowbreadcrumbs">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="windowtype">
-                    <value><![CDATA[URL]]></value>
-                </section>
-                <section name="viewerhelp">
-                    <value><![CDATA[#URL_Window/About__URL_Window.htm]]></value>
-                </section>
-                <section name="loadbydefault">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="windowiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
-                </section>
-                <section name="windowgroupname">
-                    <value><![CDATA[Forms]]></value>
-                </section>
-                <section name="windowgroupiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
-                </section>
-                <section name="isreloadconfiguration">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="showpluginproperties">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="windowpluginname">
-                    <value><![CDATA[siViewerUrlWindow]]></value>
-                </section>
-                <section name="windowpluginjsfile">
-                    <value><![CDATA[window/url/com.spacetimeinsight.viewer.ui.urlWindow]]></value>
-                </section>
-                <section name="windowtoolbarpluginname">
-                    <value><![CDATA[siViewerWindowToolBar]]></value>
-                </section>
-                <section name="windowtoolbarpluginjsfile">
-                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
-                </section>
-                <section name="windowfooterpluginname">
-                    <value><![CDATA[siViewerFooter]]></value>
-                </section>
-                <section name="windowfooterpluginjsfile">
-                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
-                </section>
-                <section name="windowwidth">
-                    <value><![CDATA[1100]]></value>
-                </section>
-                <section name="windowheight">
-                    <value><![CDATA[500]]></value>
-                </section>
-                <section name="windowtop">
-                    <value><![CDATA[70]]></value>
-                </section>
-                <section name="windowleft">
-                    <value><![CDATA[220]]></value>
-                </section>
-                <section name="hidefrombusinessviewmenu">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="allowcopy">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="isattributelink">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="isnestedwindow">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="refreshonbusinessviewrefresh">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="isperiodicrefresh">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="periodicrefreshrateunits">
-                    <value><![CDATA[Seconds]]></value>
-                </section>
-                <section name="isrefreshoncameramove">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="iscamerasensitive">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="isrefreshonlasso">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="windowurl">
-                    <value><![CDATA[https://www.humanitarianresponse.info/operations/vanuatu/dataset/vanuatu-admin-level-2-boundaries]]></value>
                 </section>
             </section>
             <section name="folder">
@@ -1430,67 +1601,19 @@ String getName() {
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=vanuatu&type=provinces]]></value>
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=nepal&type=deadinjured]]></value>
                 </section>
             </section>
         </section>
         <section name="datamashups">
             <section name="datamashup">
-                <value><![CDATA[shapefilemashup]]></value>
+                <value><![CDATA[excelfilemashup]]></value>
                 <section name="driver">
-                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ShapeFileDataDriver]]></value>
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ExcelDataDriver]]></value>
                     <section name="metadata">
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[OBJECTID]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.Integer]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[ACID]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[ACNAME]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[AC_OTHER_N]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[ISLAND]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[PROVINCE]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[FEMALES]]></value>
+                                <value><![CDATA[DIST_ID]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.Double]]></value>
@@ -1498,7 +1621,15 @@ String getName() {
                         </section>
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[MALES]]></value>
+                                <value><![CDATA[DISTRICT]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[LATITUDE]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.Double]]></value>
@@ -1506,7 +1637,7 @@ String getName() {
                         </section>
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[TOTAL]]></value>
+                                <value><![CDATA[LONGITUDE]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.Double]]></value>
@@ -1514,7 +1645,47 @@ String getName() {
                         </section>
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[HH_COUNT]]></value>
+                                <value><![CDATA[ZONE]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[REG_CODE]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[ZONE_CODE]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[OCHA_PCODE]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[HLCIT_CODE]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.String]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Total Household]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.Double]]></value>
@@ -1522,15 +1693,7 @@ String getName() {
                         </section>
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[ORIG_FID]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.Integer]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[Shape_Leng]]></value>
+                                <value><![CDATA[Total Population]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.Double]]></value>
@@ -1538,7 +1701,7 @@ String getName() {
                         </section>
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[Shape_Area]]></value>
+                                <value><![CDATA[Deaths]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.Double]]></value>
@@ -1546,7 +1709,47 @@ String getName() {
                         </section>
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[adm0code]]></value>
+                                <value><![CDATA[Injured]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[GovtBuild_Damage]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[GovtBuild_PartDamage]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[PublicBuild_Damage]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[PublicBuild_PartDamage]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[java.lang.Double]]></value>
+                            </section>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Displaced_Females]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.String]]></value>
@@ -1554,55 +1757,7 @@ String getName() {
                         </section>
                         <section name="row">
                             <section name="column">
-                                <value><![CDATA[adm0label]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[adm1code]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[adm1label]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[adm2code]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[adm2label]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[adm3code]]></value>
-                            </section>
-                            <section name="column">
-                                <value><![CDATA[java.lang.String]]></value>
-                            </section>
-                        </section>
-                        <section name="row">
-                            <section name="column">
-                                <value><![CDATA[adm3label]]></value>
+                                <value><![CDATA[Displaced_Males]]></value>
                             </section>
                             <section name="column">
                                 <value><![CDATA[java.lang.String]]></value>
@@ -1614,8 +1769,32 @@ String getName() {
                     <value><![CDATA[2]]></value>
                 </section>
                 <section name="datasource">
-                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ShapeFileDataSource]]></value>
+                    <value><![CDATA[com.enterprisehorizons.magma.datamashup.ExcelDataSource]]></value>
                     <section name="params">
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[longitudeDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[LONGITUDE]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[latitudeDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[LATITUDE]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[orderDataElement]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[ ]]></value>
+                            </section>
+                        </section>
                         <section name="param">
                             <section name="name">
                                 <value><![CDATA[isStoreAllDatasourceFields]]></value>
@@ -1637,7 +1816,39 @@ String getName() {
                                 <value><![CDATA[fileName]]></value>
                             </section>
                             <section name="value">
-                                <value><![CDATA[serverresources/FLS/Shapefiles/Level2_Boundaries/vut_admn_adm3_py_s3_AreaCouncils_pcodes]]></value>
+                                <value><![CDATA[serverresources/FLS/datasources/Nepal/Dead_Injured/Nepal-Official_Death_by_district.xls]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[sheetIndex]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[0]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[headerRowIndex]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[0]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[csvFieldSeparator]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[,]]></value>
+                            </section>
+                        </section>
+                        <section name="param">
+                            <section name="name">
+                                <value><![CDATA[fileType]]></value>
+                            </section>
+                            <section name="value">
+                                <value><![CDATA[Excel]]></value>
                             </section>
                         </section>
                     </section>
@@ -1647,12 +1858,150 @@ String getName() {
         <section name="databinding">
             <section name="bindingdefinition">
                 <section name="datamashup">
-                    <value><![CDATA[shapefilemashup]]></value>
+                    <value><![CDATA[excelfilemashup]]></value>
                 </section>
                 <section name="script">
-                    <value><![CDATA[bindData()]]></value>
+                    <value><![CDATA[]]></value>
                     <section name="type">
                         <value><![CDATA[1]]></value>
+                    </section>
+                </section>
+                <section name="datasourceartifactmappings">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[DIST_ID]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[DIST_ID]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[DISTRICT]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[DISTRICT]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[ZONE]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[ZONE]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[REG_CODE]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[REG_CODE]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[ZONE_CODE]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[ZONE_CODE]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[OCHA_PCODE]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[OCHA_PCODE]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[HLCIT_CODE]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[HLCIT_CODE]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Total Household]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Total_Household]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Total Population]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Total_Population]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Deaths]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Deaths]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Injured]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Injured]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[GovtBuild_Damage]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[GovtBuild_Damage]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[GovtBuild_PartDamage]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[GovtBuild_PartDamage]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[PublicBuild_Damage]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[PublicBuild_Damage]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[PublicBuild_PartDamage]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[PublicBuild_PartDamage]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Displaced_Females]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Displaced_Females]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Displaced_Males]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Displaced_Males]]></value>
+                        </section>
                     </section>
                 </section>
             </section>

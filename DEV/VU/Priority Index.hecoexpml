@@ -1287,7 +1287,7 @@ return s;
             </section>
             <section name="folder">
                 <section name="name">
-                    <value><![CDATA[Data source]]></value>
+                    <value><![CDATA[Metadata]]></value>
                 </section>
                 <section name="type">
                     <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
@@ -1305,7 +1305,7 @@ return s;
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
+                    <value><![CDATA[serverresources/FLS/images/<theme>/info-icon.png]]></value>
                 </section>
                 <section name="windowgroupname">
                     <value><![CDATA[Forms]]></value>
@@ -1338,16 +1338,16 @@ return s;
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[1100]]></value>
+                    <value><![CDATA[800]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[500]]></value>
+                    <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[70]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[220]]></value>
+                    <value><![CDATA[200]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
@@ -1380,7 +1380,7 @@ return s;
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="windowurl">
-                    <value><![CDATA[https://nlrc.cartodb.com/u/redcross-sims/viz/d35dfa40-ce7a-11e4-a728-0e018d66dc29/public_map]]></value>
+                    <value><![CDATA[ge/viewer/Metadata/metadata.jsp?layer=vanuatu&type=povertyindex]]></value>
                 </section>
             </section>
         </section>

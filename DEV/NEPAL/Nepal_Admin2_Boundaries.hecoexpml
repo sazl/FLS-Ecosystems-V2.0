@@ -360,7 +360,7 @@ String getName() {
                     <value><![CDATA[solid]]></value>
                 </section>
                 <section name="linecolor">
-                    <value><![CDATA[#000000]]></value>
+                    <value><![CDATA[#800000]]></value>
                     <section name="transparency">
                         <value><![CDATA[1.0]]></value>
                     </section>
