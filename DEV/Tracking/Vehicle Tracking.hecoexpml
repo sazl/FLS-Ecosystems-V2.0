@@ -872,36 +872,8 @@ boolean isInDangerZone(){
 	
 	return false;
 }
-String getDangerZoneName(){
-	String deviceId = $artefact.getAttributeValueAsString("deviceId");
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	moduleId = RBRegionsUtils.getModuleId(getLayerId());
-	rubberbandregions = RBRegionsUtils.getUserModuleRubberbandregion(userbean.getDomainId(), userbean.getLanguageId(), 
-				userbean.getUserId(), userbean.getUserUniqueId(), moduleId, getLayerName()+"_DZ");	
-	return  com.wfp.utils.RBRegionsUtils.getDanzerZoneName(rubberbandregions, $artefact.getFirstPoint());	
-}
-String getURL(){
-	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
-	String serverRootUrl = getServerContextBaseUrl();
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	String url = "swf/RBRegionsMsgMapping.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_DZ"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
-	return url;
-}
-String getMAURL(){
-	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
-	String serverRootUrl = getServerContextBaseUrl();
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	String url = "serverresources/ManualAlert.swf?domainId="+userbean.getDomainId()+"&languageId="+userbean.getLanguageId()+"&userId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId())+"&userUniqueId="+(com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId())+"&moduleId="+moduleId+"&regionPrefix="+getLayerName()+"_MA"+"&serverUrl="+com.enterprisehorizons.util.URLUtils.encode(serverRootUrl);
-	return url;
-}
-String getDomainId(){
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	return userbean.getDomainId()+"";
-}
-String getLanguageId(){
-	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
-	return userbean.getLanguageId()+"";
-}
+
+
 String getUserId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return (com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserId())?"":userbean.getUserId()) + "";
@@ -910,16 +882,7 @@ String getUserUniqueId(){
 	com.spacetimeinsight.security.bean.UserBean userbean =  getUserBean();
 	return (com.enterprisehorizons.util.StringUtils.isNull(userbean.getUserUniqueId())?"":userbean.getUserUniqueId()) +"";
 }
-String getModuleId(){	
-	long moduleId = RBRegionsUtils.getModuleId(getLayerId());
-	return moduleId+"";
-}
-String getRegionPrefix(){	
-	return getLayerName()+"_MA";
-}
-String getMySQLQry(){
-	return com.enterprisehorizons.util.URLUtils.encode("select * from (select (case when received_message != ''  then 'Acknowledged' else 'Not Acknowledged' end) as ack_status, received_message, ack_by,received_on, name as region_name, body as actual_message, send_on from epic_alert_service r1 left outer join STI_C_EMAIL_TEMPLATE em on (em.id = r1.template_Id)) r2 where region_name like '%"+getLayerName()+"%'");  
-}
+
 String[][] returnAttributes(){
 	return new String[][]{{"deviceId","java.lang.String","Name","false",""}, {"Fleet","java.lang.String","Fleet","false",""},
 		  {"Unit","java.lang.String","Unit","false",""}, {"callSign","java.lang.String","Call Sign","false",""}, 

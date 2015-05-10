@@ -1775,7 +1775,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1825,7 +1866,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1875,7 +1957,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1925,7 +2048,48 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[baseline]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>
@@ -2000,7 +2164,7 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[600]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[475]]></value>
+                    <value><![CDATA[425]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[350]]></value>
