@@ -695,7 +695,7 @@ void bindData()
 			//Setting the LocalTime
 			$artefact.addAttribute("localTime", CommonUtils.stringDateToDate(data.getDeviceLocalTime()) );
 			
-			$artefact.addAttribute("type", getAType() );
+			$artefact.addAttribute("type", data.getVehicleType() ); 
 			$artefact.addAttribute("source", data.getName());			
 			$artefact.addAttribute("contact", "Data Not Available" );
 			
@@ -713,13 +713,7 @@ void bindData()
 		e.printStackTrace();
 	}
 }
-String getAType()
-{
-  String d = $artefact.getAttributeValueAsString("description");
-  if( d!=null&&d.indexOf("Helicopter")>=0) return "Helicopter";
-  else return "Airplane";
 
-}
 void addAttribute()
 {
 	com.wfp.security.form.LDAPUserBean ldapUserBean = com.wfp.utils.LDAPUtils.getLDAPUserBean(getName());
@@ -730,17 +724,7 @@ void addAttribute()
 		$artefact.addAttribute("owner", ldapUserBean.getCn() +" "+(com.enterprisehorizons.util.StringUtils.isNull(ldapUserBean.getSn())?"":ldapUserBean.getSn()));
 	}
 }
-boolean isInDangerZone()
-{
-	String[] allZones = com.wfp.utils.RBRegionsUtils.getZoneNames($artefact, getUserBean(), getLayerName(), getLayerId(), getLayerName()+"_DZ", "_SZ");
-	String deviceId = $artefact.getAttributeValueAsString("deviceId");	
-	boolean needToAlert = com.wfp.utils.RBRegionsUtils.isDeviceTraced($artefact, allZones, getSessionId(), deviceId);
-	if(needToAlert){
-		//com.wfp.utils.RBRegionsUtils.validateFireEvent(allZones, deviceId, getSessionId());
-	}	
-	//boolean isInUnsafeZone = (!com.enterprisehorizons.util.StringUtils.isNull(dangerZoneName));
-	return (!com.enterprisehorizons.util.StringUtils.isNull(allZones) );	
-}
+
 String getDangerZoneName()
 {
 	String deviceId = $artefact.getAttributeValueAsString("deviceId");	
@@ -754,12 +738,11 @@ String getStyle()
 {	
 	String stylee =getStyleName();
 	//if(isInDangerZone()) stylee= "blinkerstyle";
-	
-	if( getAType().equalsIgnoreCase("Helicopter") ) return "Helicopter";
-	
+	String type = $artefact.getAttributeValueAsString("type");	
+	if( type!=null&&type.equalsIgnoreCase("helicopter") ) return "Helicopter";	
 	return stylee;
 } 
-String getStyleName(){
+String getStyleName(){ 
 	Date time = (Date) $artefact.getAttributeValue("time");	
 	if(time!=null )
 	{
@@ -771,12 +754,13 @@ String getStyleName(){
 	}
 	return "placemarkstyle";
 }
-String getColorName(){
-  String styleName=getStyleName();
-  if( styleName.equalsIgnoreCase("") ) return "green";
-  else  if( styleName.equalsIgnoreCase("") ) return "cyan";
-  else  if( styleName.equalsIgnoreCase("") ) return "yellow";
-  else return "black";
+String getHIcon(){
+  String styleName=getStyleName();System.out.println(styleName);
+  String hURL="serverresources/FLS/data/icons/epic/";
+  if( styleName.equalsIgnoreCase("latestReported") ) return hURL+"Helicopter_K.png";
+  else  if( styleName.equalsIgnoreCase("lastDayReported") )return hURL+"Helicopter_C.png";
+  else  if( styleName.equalsIgnoreCase("lastWeekReported") ) return hURL+"Helicopter_Y.png";
+  else  return hURL+"Helicopter_K.png";
 }
 String getMessage(){ return "Service 32 is moving out of zone"; }
 Date getEventDate(){ return new Date(); }
@@ -952,17 +936,6 @@ HttpSession getEcosystemSession( ){
                 </section>
                 <section name="iconurl">
                     <value><![CDATA[serverresources/FLS/icons/epic/Helicopter_G.png]]></value>
-                </section>
-                <section name="iconcolor">
-                    <section name="script">
-                        <value><![CDATA[getColorName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
-                    <section name="transparency">
-                        <value><![CDATA[1.0]]></value>
-                    </section>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
