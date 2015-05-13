@@ -481,7 +481,7 @@ String getName() {
                     <value><![CDATA[650]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[400]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[300]]></value>

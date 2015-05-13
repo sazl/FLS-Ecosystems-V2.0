@@ -268,6 +268,102 @@
                     <value><![CDATA[]]></value>
                 </section>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[InternetIcon]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[InternetIcon]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Latitude_of_City]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Latitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Longitude_of_City]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Longitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[PLUSGeo-Location]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[PLUSGeo-Location]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[PLUSQRCode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[PLUSLocation-As-QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[true]]></value>
@@ -365,7 +461,12 @@
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="globalstyleid">
-                    <value><![CDATA[placemarkesristyle]]></value>
+                    <section name="script">
+                        <value><![CDATA[getStyle()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
                 </section>
                 <section name="isblink">
                     <value><![CDATA[false]]></value>
@@ -381,11 +482,27 @@
 private com.enterprisehorizons.magma.datamashup.ExcelDataDriver $excelfilemashupdriver;
 
 void bindData() {
-	
+	$artefact.addAttribute("InternetIcon", "serverresources/FLS/icons/epic/Internet.png");
+	$artefact.addAttribute("QRcode", "QRcode"); 
+	$artefact.addAttribute("PLUSGeo-Location",  "-" );	
+	$artefact.addAttribute("PLUSQRCode", "PLUSQRCode");
+		
 }
 
 String getName() {
 	return $artefact.getAttributeValueAsString("Site");
+}
+
+String getStyle() {
+	return $artefact.getAttributeValueAsString("Internet");
+	
+}
+void addAttribute(){
+		$artefact.addAttribute("QRcode", "QRcode");
+		$artefact.addAttribute("PLUSQRCode", "PLUSQRCode");
+	$artefact.addAttribute("PLUSGeo-Location",  "-" );	
+		$artefact.addAttribute("InternetIcon", "serverresources/FLS/icons/epic/Internet.png");
+	
 }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
@@ -403,9 +520,9 @@ String getName() {
         </section>
         <section name="globalstyle">
             <section name="style">
-                <value><![CDATA[placemarkesristyle]]></value>
+                <value><![CDATA[Planned]]></value>
                 <section name="name">
-                    <value><![CDATA[placemarkesristyle]]></value>
+                    <value><![CDATA[Planned]]></value>
                 </section>
                 <section name="viewertype">
                     <value><![CDATA[Esri]]></value>
@@ -426,7 +543,49 @@ String getName() {
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources/FLS/icons/epic/etc_bluebox.png]]></value>
+                    <value><![CDATA[serverresources/FLS/icons/epic/etc_Y.png]]></value>
+                </section>
+                <section name="iconwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="iconheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[false]]></value>
+                </section>
+            </section>
+            <section name="style">
+                <value><![CDATA[Provided]]></value>
+                <section name="name">
+                    <value><![CDATA[Provided]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="iconsymboltype">
+                    <value><![CDATA[esriPMS]]></value>
+                </section>
+                <section name="iconurl">
+                    <value><![CDATA[serverresources/FLS/icons/epic/etc_G.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -608,6 +767,222 @@ String getName() {
                 </section>
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="categories">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Details]]></value>
+                        </section>
+                        <section name="column">
+                            <section name="columntype">
+                                <value><![CDATA[table]]></value>
+                            </section>
+                            <section name="table">
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Site]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[City_Town]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Service_Providers]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Internet]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Phone_Voice]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Radio]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Coordination_Hub]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Logistics_Hub]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[ICT_Helpdesk]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Information_Management]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Radio_Training]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Assessment_Mission]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Radio_Programming]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[InternetIcon]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Image]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Location]]></value>
+                        </section>
+                        <section name="column">
+                            <section name="columntype">
+                                <value><![CDATA[table]]></value>
+                            </section>
+                            <section name="table">
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[PLUSGeo-Location]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Latitude_of_City]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[Longitude_of_City]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[PLUSQRCode]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                                <section name="row">
+                                    <section name="column">
+                                    <value><![CDATA[QRcode]]></value>
+                                    </section>
+                                    <section name="column">
+                                    <value><![CDATA[Text]]></value>
+                                    </section>
+                                    <section name="column"/>
+                                    <section name="column"/>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
                 </section>
                 <section name="highlighticonscale">
                     <value><![CDATA[1.0]]></value>
@@ -1352,6 +1727,21 @@ String getName() {
                         </section>
                         <section name="column">
                             <value><![CDATA[Longitude_of_City]]></value>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="runtimeattributes">
+            <section name="attributegroup">
+                <section name="name">
+                    <value><![CDATA[Attribute9]]></value>
+                </section>
+                <section name="attributes">
+                    <section name="script">
+                        <value><![CDATA[addAttribute()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
                         </section>
                     </section>
                 </section>

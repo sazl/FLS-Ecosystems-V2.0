@@ -1076,150 +1076,6 @@ String getAuthorUrl(){
             </section>
             <section name="folder">
                 <section name="name">
-                    <value><![CDATA[Search]]></value>
-                </section>
-                <section name="type">
-                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
-                </section>
-                <section name="windowshowbreadcrumbs">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="windowtype">
-                    <value><![CDATA[DataFilter]]></value>
-                </section>
-                <section name="viewerhelp">
-                    <value><![CDATA[#Chart_Window/Chart_Types/Using_Data_Filter_Window.htm]]></value>
-                </section>
-                <section name="loadbydefault">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="windowiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
-                </section>
-                <section name="windowgroupname">
-                    <value><![CDATA[Data Filters]]></value>
-                </section>
-                <section name="windowgroupiconurl">
-                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
-                </section>
-                <section name="isreloadconfiguration">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="showpluginproperties">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="windowpluginname">
-                    <value><![CDATA[siViewerDataFilter]]></value>
-                </section>
-                <section name="windowpluginjsfile">
-                    <value><![CDATA[dataFilter/com.spacetimeinsight.viewer.ui.dataFilter]]></value>
-                </section>
-                <section name="windowtoolbarpluginname">
-                    <value><![CDATA[siViewerWindowToolBar]]></value>
-                </section>
-                <section name="windowtoolbarpluginjsfile">
-                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
-                </section>
-                <section name="windowwidth">
-                    <value><![CDATA[100]]></value>
-                </section>
-                <section name="windowheight">
-                    <value><![CDATA[100]]></value>
-                </section>
-                <section name="filterdatasourcetype">
-                    <value><![CDATA[Artifact]]></value>
-                </section>
-                <section name="filterdatarenderer">
-                    <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
-                </section>
-                <section name="filterfields">
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Author]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Title]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Description]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Link]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Updated_Date]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Latitude]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                    <section name="row">
-                        <section name="column">
-                            <value><![CDATA[Longitude]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[Text]]></value>
-                        </section>
-                        <section name="column">
-                            <value><![CDATA[]]></value>
-                        </section>
-                    </section>
-                </section>
-                <section name="applydefaultfilter">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="filterdynamicdatasourceoptimizequery">
-                    <value><![CDATA[true]]></value>
-                </section>
-            </section>
-            <section name="folder">
-                <section name="name">
                     <value><![CDATA[Metadata]]></value>
                 </section>
                 <section name="type">
@@ -1658,6 +1514,71 @@ String getAuthorUrl(){
                 </section>
                 <section name="numberofpoints">
                     <value><![CDATA[200]]></value>
+                </section>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[DataFilter]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[DataFilter]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#Chart_Window/Chart_Types/Using_Data_Filter_Window.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Data Filters]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_data_filter.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerDataFilter]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[dataFilter/com.spacetimeinsight.viewer.ui.dataFilter]]></value>
+                </section>
+                <section name="windowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="windowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[100]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[100]]></value>
+                </section>
+                <section name="filterdatasourcetype">
+                    <value><![CDATA[Artifact]]></value>
+                </section>
+                <section name="filterdatarenderer">
+                    <value><![CDATA[com.spacetimeinsight.renderer.filter.ArtifactFilterInputRenderer]]></value>
+                </section>
+                <section name="applydefaultfilter">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="filterdynamicdatasourceoptimizequery">
+                    <value><![CDATA[true]]></value>
                 </section>
             </section>
         </section>

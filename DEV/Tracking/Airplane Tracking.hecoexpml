@@ -752,19 +752,32 @@ String getDangerZoneName()
 }
 String getStyle()
 {	
-	String stylee ="placemarkstyle";
+	String stylee =getStyleName();
 	//if(isInDangerZone()) stylee= "blinkerstyle";
+	
+	if( getAType().equalsIgnoreCase("Helicopter") ) return "Helicopter";
+	
+	return stylee;
+} 
+String getStyleName(){
 	Date time = (Date) $artefact.getAttributeValue("time");	
 	if(time!=null )
 	{
 		Date current = Calendar.getInstance().getTime();
 		int hrs = (int)((current.getTime()-time.getTime())/(1000 * 60 * 60 ) );
-		if( hrs <6  ) stylee= "latestReported";
-		else if(hrs <24 ) stylee= "lastDayReported";	
-		else if(hrs>23&&hrs <120 ) stylee= "lastWeekReported";		
+		if( hrs <6  ) return "latestReported";
+		else if(hrs <24 ) return "lastDayReported";	
+		else if(hrs>23&&hrs <120 ) return "lastWeekReported";		
 	}
-	return stylee;
-} 
+	return "placemarkstyle";
+}
+String getColorName(){
+  String styleName=getStyleName();
+  if( styleName.equalsIgnoreCase("") ) return "green";
+  else  if( styleName.equalsIgnoreCase("") ) return "cyan";
+  else  if( styleName.equalsIgnoreCase("") ) return "yellow";
+  else return "black";
+}
 String getMessage(){ return "Service 32 is moving out of zone"; }
 Date getEventDate(){ return new Date(); }
 String getEventId(){ return $artefact.getAttributeValueAsString("Time");}
@@ -912,6 +925,103 @@ HttpSession getEcosystemSession( ){
         </section>
         <section name="globalstyle">
             <section name="style">
+                <value><![CDATA[Helicopter]]></value>
+                <section name="name">
+                    <value><![CDATA[Helicopter]]></value>
+                </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="makeasglobalstyle">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="layerzindex">
+                    <value><![CDATA[99]]></value>
+                </section>
+                <section name="isaddsymbol">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddicon">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="iconsymboltype">
+                    <value><![CDATA[esriPMS]]></value>
+                </section>
+                <section name="iconurl">
+                    <value><![CDATA[serverresources/FLS/icons/epic/Helicopter_G.png]]></value>
+                </section>
+                <section name="iconcolor">
+                    <section name="script">
+                        <value><![CDATA[getColorName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="iconwidth">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="iconheight">
+                    <value><![CDATA[16]]></value>
+                </section>
+                <section name="isaddline">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddfill">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
+                </section>
+            </section>
+            <section name="style">
                 <value><![CDATA[blinkerstyle]]></value>
                 <section name="name">
                     <value><![CDATA[blinkerstyle]]></value>
@@ -1016,7 +1126,48 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1066,7 +1217,48 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1116,7 +1308,48 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
             <section name="style">
@@ -1166,7 +1399,48 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labeltext">
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[12]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>
