@@ -417,7 +417,12 @@
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="label">
-                    <value><![CDATA[Placemark]]></value>
+                    <section name="script">
+                        <value><![CDATA[getName()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
                 </section>
                 <section name="type">
                     <value><![CDATA[com.enterprisehorizons.magma.models.PlacemarkFeature]]></value>

@@ -982,7 +982,7 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[10]]></value>
+                    <value><![CDATA[8]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
@@ -1131,7 +1131,7 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[12]]></value>
+                    <value><![CDATA[8]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
@@ -1222,7 +1222,7 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[12]]></value>
+                    <value><![CDATA[8]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
@@ -1313,7 +1313,7 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[12]]></value>
+                    <value><![CDATA[8]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
@@ -1404,7 +1404,7 @@ HttpSession getEcosystemSession( ){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[12]]></value>
+                    <value><![CDATA[8]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
