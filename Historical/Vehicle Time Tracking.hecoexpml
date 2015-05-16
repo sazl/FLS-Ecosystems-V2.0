@@ -522,12 +522,7 @@
                         <value><![CDATA[solid]]></value>
                     </section>
                     <section name="linecolor">
-                        <section name="script">
-                            <value><![CDATA[getLineColor()]]></value>
-                            <section name="type">
-                                <value><![CDATA[1]]></value>
-                            </section>
-                        </section>
+                        <value><![CDATA[#0080FF]]></value>
                         <section name="transparency">
                             <value><![CDATA[1.0]]></value>
                         </section>
@@ -545,59 +540,7 @@
                         <value><![CDATA[false]]></value>
                     </section>
                     <section name="isaddlabel">
-                        <value><![CDATA[true]]></value>
-                    </section>
-                    <section name="labelsymboltype">
-                        <value><![CDATA[esriTS]]></value>
-                    </section>
-                    <section name="labeltext">
-                        <section name="script">
-                            <value><![CDATA[owner]]></value>
-                            <section name="type">
-                                <value><![CDATA[2]]></value>
-                            </section>
-                        </section>
-                    </section>
-                    <section name="labelcolor">
-                        <section name="script">
-                            <value><![CDATA[getLineColor()]]></value>
-                            <section name="type">
-                                <value><![CDATA[1]]></value>
-                            </section>
-                        </section>
-                        <section name="transparency">
-                            <value><![CDATA[1.0]]></value>
-                        </section>
-                    </section>
-                    <section name="labelverticalalignment">
-                        <value><![CDATA[middle]]></value>
-                    </section>
-                    <section name="labelhorizontalalignment">
-                        <value><![CDATA[left]]></value>
-                    </section>
-                    <section name="labelisrighttoleft">
                         <value><![CDATA[false]]></value>
-                    </section>
-                    <section name="labelkerning">
-                        <value><![CDATA[true]]></value>
-                    </section>
-                    <section name="labelxoffset">
-                        <value><![CDATA[5]]></value>
-                    </section>
-                    <section name="labelfontfamily">
-                        <value><![CDATA[Arial]]></value>
-                    </section>
-                    <section name="labelfontsize">
-                        <value><![CDATA[12]]></value>
-                    </section>
-                    <section name="labelfontstyle">
-                        <value><![CDATA[normal]]></value>
-                    </section>
-                    <section name="labelfontweight">
-                        <value><![CDATA[normal]]></value>
-                    </section>
-                    <section name="labelfontdecoration">
-                        <value><![CDATA[none]]></value>
                     </section>
                 </section>
             </section>
@@ -722,12 +665,6 @@ String getLineColor(){
         </section>
         <section name="needsmap">
             <value><![CDATA[true]]></value>
-        </section>
-        <section name="showtimeslider">
-            <value><![CDATA[false]]></value>
-        </section>
-        <section name="timeslidergap">
-            <value><![CDATA[4]]></value>
         </section>
         <section name="istimeaware">
             <value><![CDATA[false]]></value>
@@ -934,8 +871,14 @@ String getLineColor(){
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -959,12 +902,6 @@ String getLineColor(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
@@ -1089,11 +1026,17 @@ String getLineColor(){
                 <section name="allowcopy">
                     <value><![CDATA[true]]></value>
                 </section>
+                <section name="allowsaveas">
+                    <value><![CDATA[true]]></value>
+                </section>
                 <section name="isattributelink">
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isnestedwindow">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="datasourcetype">
                     <value><![CDATA[Artifact]]></value>
@@ -1117,12 +1060,6 @@ String getLineColor(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isshared">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
-                    <value><![CDATA[true]]></value>
-                </section>
-                <section name="loadlastrun">
                     <value><![CDATA[true]]></value>
                 </section>
                 <section name="isperiodicrefresh">
