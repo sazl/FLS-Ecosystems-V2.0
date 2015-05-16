@@ -327,7 +327,7 @@ String getName() {
                     <value><![CDATA[esriSLS]]></value>
                 </section>
                 <section name="linestyle">
-                    <value><![CDATA[solid]]></value>
+                    <value><![CDATA[shortdashdotdot]]></value>
                 </section>
                 <section name="linecolor">
                     <value><![CDATA[#00FFFF]]></value>
@@ -336,7 +336,7 @@ String getName() {
                     </section>
                 </section>
                 <section name="linewidth">
-                    <value><![CDATA[1]]></value>
+                    <value><![CDATA[2]]></value>
                 </section>
                 <section name="linejoinstyle">
                     <value><![CDATA[bevel]]></value>
