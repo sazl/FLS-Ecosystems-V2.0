@@ -309,7 +309,40 @@
                         <value><![CDATA[false]]></value>
                     </section>
                     <section name="isaddlabel">
+                        <value><![CDATA[true]]></value>
+                    </section>
+                    <section name="labelsymboltype">
+                        <value><![CDATA[esriTS]]></value>
+                    </section>
+                    <section name="labelverticalalignment">
+                        <value><![CDATA[middle]]></value>
+                    </section>
+                    <section name="labelhorizontalalignment">
+                        <value><![CDATA[left]]></value>
+                    </section>
+                    <section name="labelisrighttoleft">
                         <value><![CDATA[false]]></value>
+                    </section>
+                    <section name="labelkerning">
+                        <value><![CDATA[true]]></value>
+                    </section>
+                    <section name="labelxoffset">
+                        <value><![CDATA[5]]></value>
+                    </section>
+                    <section name="labelfontfamily">
+                        <value><![CDATA[Arial]]></value>
+                    </section>
+                    <section name="labelfontsize">
+                        <value><![CDATA[12]]></value>
+                    </section>
+                    <section name="labelfontstyle">
+                        <value><![CDATA[normal]]></value>
+                    </section>
+                    <section name="labelfontweight">
+                        <value><![CDATA[normal]]></value>
+                    </section>
+                    <section name="labelfontdecoration">
+                        <value><![CDATA[none]]></value>
                     </section>
                 </section>
                 <section name="generatelegend">

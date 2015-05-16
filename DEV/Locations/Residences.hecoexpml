@@ -453,15 +453,14 @@ List<String> userOrgList = null;
 boolean authorizePlaces()
 { 
 	if(getType().indexOf("residence") >= 0)
-	{	/*List<String> placesList = getUserPlacesList( getUserId() );		
-		if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
-		{	//if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
-			//if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
-			return true;						
-		}*/
-		if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
-		 if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
-			return true;						
+	{	List<String> placesList = getUserPlacesList( getUserId() );		
+			if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );
+			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+			{
+				if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
+				return true;						
+			}
+							
 	} 	
 	return false;
 } 

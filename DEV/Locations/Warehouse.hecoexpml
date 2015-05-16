@@ -469,13 +469,13 @@ boolean authorizePlaces()
 { 
 	if(getType().indexOf("warehouse") >= 0)
 	{
-		if( userOrgList == null && getUserId()!=null ) 
-			userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
-		if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
-		{ 	List<String> placesList = getUserPlacesList( getUserId() );		
+		List<String> placesList = getUserPlacesList( getUserId() );		
 			if(placesList!=null&&placesList.size()>0 ) 
 					return placesList.contains( $artefact.getAttributeValueAsString("name") );			
-		}
+		//if( userOrgList == null && getUserId()!=null ) 
+		//userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
+		//if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+		
 	} 
 	
 	return false;
@@ -662,7 +662,40 @@ String getDashboardWBId(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[8]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>

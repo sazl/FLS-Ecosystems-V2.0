@@ -224,7 +224,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Latitude]]></value>
+                    <value><![CDATA[Latitude/Longitude]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -243,7 +243,7 @@
                     <value><![CDATA[Longitude]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="column"/>
                 <section name="column"/>
@@ -453,15 +453,15 @@ List<String> userOrgList = null;
 boolean authorizePlaces()
 {	if(getType().indexOf("CAMP") >=0|| getType().indexOf("camp")>=0 )
 	{
-		List<String> placesList = getUserPlacesList( getUserId() );	
-		if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );		
-		boolean isOrgMatches= CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ;
-		if( isOrgMatches )
-		{  
-			if( placesList!=null&& placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("id") )  )
-			{		
-				 return true;			
-			} 
+		List<String> placesList = getUserPlacesList( getUserId() );
+			
+		if( placesList!=null&& placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("id") )  )
+		{
+				if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );		
+				boolean isOrgMatches= CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ;
+				if( isOrgMatches ) return true;	
+				else return false;
+				
 	  	} 
 	}	
 	return false;
@@ -505,9 +505,9 @@ void bindData() {
 		$artefact.addAttribute("country",countriesMap.get(dataMap.get("c").toString().toUpperCase() ) );		
 		
 		$artefact.addAttribute("PLUSGeo-Location",  "-" );
-		$artefact.addAttribute("latitude", dataMap.get("coord-latitude"));
-		$artefact.addAttribute("longitude",dataMap.get("coord-longitude"));	
-		$artefact.addAttribute("QRcode", "QRcode");			
+		$artefact.addAttribute("latitude", dataMap.get("coord-latitude")+"/"+dataMap.get("coord-longitude") );
+           // $artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+          $artefact.addAttribute("QRcode", "QRcode");			
 	}
 		   
 }
@@ -618,7 +618,40 @@ String getAuthorUrl(){
                     <value><![CDATA[false]]></value>
                 </section>
                 <section name="isaddlabel">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelsymboltype">
+                    <value><![CDATA[esriTS]]></value>
+                </section>
+                <section name="labelverticalalignment">
+                    <value><![CDATA[middle]]></value>
+                </section>
+                <section name="labelhorizontalalignment">
+                    <value><![CDATA[left]]></value>
+                </section>
+                <section name="labelisrighttoleft">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="labelkerning">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="labelxoffset">
+                    <value><![CDATA[10]]></value>
+                </section>
+                <section name="labelfontfamily">
+                    <value><![CDATA[Arial]]></value>
+                </section>
+                <section name="labelfontsize">
+                    <value><![CDATA[8]]></value>
+                </section>
+                <section name="labelfontstyle">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontweight">
+                    <value><![CDATA[normal]]></value>
+                </section>
+                <section name="labelfontdecoration">
+                    <value><![CDATA[none]]></value>
                 </section>
             </section>
         </section>

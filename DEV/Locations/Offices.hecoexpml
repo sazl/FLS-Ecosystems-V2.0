@@ -208,7 +208,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[Latitude]]></value>
+                    <value><![CDATA[Latitude/Longitude]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -476,18 +476,15 @@ boolean authorizePlaces()
 	{    		
 		
 			 if( userOrgList == null && getUserId()!=null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId().trim() );
-			//System.out.println(":"+ getUserMissionList( getUserId()  ));
-			if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
-			{  	 List<String> placesList = getUserPlacesList( getUserId() );
-				 //System.out.println( ""+placesList.size() );			
-				if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
+			  List<String> placesList = getUserPlacesList( getUserId() );
+			 // System.out.println( placesList.size() );
+			 if(placesList!=null&&placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("name") ) )
 				{ 
-					//System.out.println( placesList.size() );
 					return true;
 				}
-											
-			}
-			else return false;		
+			//System.out.println(":"+ getUserMissionList( getUserId()  ));
+			//if( CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ) 
+			//else return false;		
 	}	
 	return false;
 }
@@ -527,8 +524,8 @@ void bindData()
             $artefact.addAttribute("city",dataMap.get("locality"));
             $artefact.addAttribute("country",getCountryFullName( dataMap ) );
             $artefact.addAttribute("PLUSGeo-Location",  "-" );
-            $artefact.addAttribute("latitude", dataMap.get("coord-latitude"));
-            $artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
+            $artefact.addAttribute("latitude", dataMap.get("coord-latitude")+"/"+dataMap.get("coord-longitude") );
+           // $artefact.addAttribute("longitude",dataMap.get("coord-longitude"));
             $artefact.addAttribute("QRcode", "QRcode");
 				
 	}

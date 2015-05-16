@@ -1149,7 +1149,7 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
 		String deviceId = $artefact.getAttributeValueAsString("deviceId"); 
 		List<String> deviceMissionList = LDAPUtils.getLDAPUserDtlsMap().get(deviceId).getAuthorizedGroupsList();
 	  	List<String> userMissionList = getUserMissionList( userbean.getUserUniqueId() );  	
-	  	if( userMissionList!=null && deviceMissionList!=null )
+	  	if(  userMissionList!=null && deviceMissionList!=null )
 	  	{
 	  		
 	  		for(String deviceMission: deviceMissionList   )
@@ -1752,14 +1752,6 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
                 </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
-                </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
                 </section>
@@ -1842,14 +1834,6 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 </section>
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
-                </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
                 </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
@@ -1934,14 +1918,6 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
                 </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
-                </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
                 </section>
@@ -2025,14 +2001,6 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
                 </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
-                </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[baseline]]></value>
                 </section>
@@ -2100,7 +2068,7 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[css/images/<theme>/icon_tabbedviewwindow.png]]></value>
                 </section>
                 <section name="windowcustomjsurl">
-                    <value><![CDATA[js/htmlViewerModuleLevel.js]]></value>
+                    <value><![CDATA[ ]]></value>
                 </section>
                 <section name="isshowwindowtoolbar">
                     <value><![CDATA[true]]></value>

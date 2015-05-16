@@ -972,7 +972,19 @@ String getMissionFullName(String mission )
             <value><![CDATA[false]]></value>
         </section>
         <section name="showtimeslider">
-            <value><![CDATA[false]]></value>
+            <value><![CDATA[true]]></value>
+        </section>
+        <section name="timesliderendtime">
+            <value><![CDATA[time]]></value>
+        </section>
+        <section name="showrecords">
+            <value><![CDATA[AllRecords]]></value>
+        </section>
+        <section name="displayinterval">
+            <value><![CDATA[1]]></value>
+        </section>
+        <section name="intervalunit">
+            <value><![CDATA[Days]]></value>
         </section>
         <section name="isadddefaultinfowindow">
             <value><![CDATA[false]]></value>
@@ -1088,14 +1100,6 @@ String getMissionFullName(String mission )
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
                 </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
-                </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
                 </section>
@@ -1178,14 +1182,6 @@ String getMissionFullName(String mission )
                 </section>
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
-                </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
                 </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
