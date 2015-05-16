@@ -327,13 +327,13 @@
                         <value><![CDATA[true]]></value>
                     </section>
                     <section name="labelxoffset">
-                        <value><![CDATA[5]]></value>
+                        <value><![CDATA[10]]></value>
                     </section>
                     <section name="labelfontfamily">
                         <value><![CDATA[Arial]]></value>
                     </section>
                     <section name="labelfontsize">
-                        <value><![CDATA[12]]></value>
+                        <value><![CDATA[8]]></value>
                     </section>
                     <section name="labelfontstyle">
                         <value><![CDATA[normal]]></value>

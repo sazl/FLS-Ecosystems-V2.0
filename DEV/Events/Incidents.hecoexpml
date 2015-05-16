@@ -701,14 +701,6 @@ String getAuthorUrl(){
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
                 </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
-                </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
                 </section>
@@ -788,14 +780,6 @@ String getAuthorUrl(){
                 </section>
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
-                </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
                 </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
@@ -877,14 +861,6 @@ String getAuthorUrl(){
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
                 </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
-                </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
                 </section>
@@ -964,14 +940,6 @@ String getAuthorUrl(){
                 </section>
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
-                </section>
-                <section name="labeltext">
-                    <section name="script">
-                        <value><![CDATA[getName()]]></value>
-                        <section name="type">
-                            <value><![CDATA[1]]></value>
-                        </section>
-                    </section>
                 </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
