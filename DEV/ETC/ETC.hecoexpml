@@ -21,6 +21,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -34,6 +40,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -49,6 +61,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -62,6 +80,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -77,6 +101,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -90,6 +120,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -105,6 +141,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -118,6 +160,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -133,6 +181,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -147,6 +201,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -160,6 +220,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -175,6 +241,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -188,6 +260,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -203,6 +281,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -216,6 +300,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -231,6 +321,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -244,6 +340,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -259,6 +361,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -272,6 +380,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -287,6 +401,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -300,6 +420,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -315,6 +441,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -328,6 +460,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -343,6 +481,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -356,6 +500,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -371,6 +521,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -384,6 +540,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -399,6 +561,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -412,6 +580,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
             <section name="row">
@@ -427,6 +601,12 @@
                 <section name="column">
                     <value><![CDATA[false]]></value>
                 </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
             </section>
             <section name="row">
                 <section name="column">
@@ -440,6 +620,12 @@
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[]]></value>
                 </section>
             </section>
         </section>
@@ -520,9 +706,9 @@
             <section name="folder">
                 <section name="name">
                     <section name="script">
-                        <value><![CDATA[Site]]></value>
+                        <value><![CDATA[getName()]]></value>
                         <section name="type">
-                            <value><![CDATA[2]]></value>
+                            <value><![CDATA[1]]></value>
                         </section>
                     </section>
                 </section>
@@ -559,7 +745,7 @@ void bindData() {
 }
 
 String getName() {
-	return $artefact.getAttributeValueAsString("Site");
+	return $artefact.getAttributeValueAsString("Site")+" ( "+$artefact.getAttributeValueAsString("District")+" )";
 }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
@@ -660,13 +846,13 @@ String getName() {
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1012,6 +1198,104 @@ String getName() {
                 </section>
                 <section name="numberofpoints">
                     <value><![CDATA[200]]></value>
+                </section>
+            </section>
+            <section name="folder">
+                <section name="name">
+                    <value><![CDATA[Legend]]></value>
+                </section>
+                <section name="type">
+                    <value><![CDATA[com.enterprisehorizons.magma.models.WindowCanvasFeature]]></value>
+                </section>
+                <section name="windowshowbreadcrumbs">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowtype">
+                    <value><![CDATA[URL]]></value>
+                </section>
+                <section name="viewerhelp">
+                    <value><![CDATA[#URL_Window/About__URL_Window.htm]]></value>
+                </section>
+                <section name="loadbydefault">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowiconurl">
+                    <value><![CDATA[serverresources/FLS/images/<theme>/legend.png]]></value>
+                </section>
+                <section name="windowgroupname">
+                    <value><![CDATA[Forms]]></value>
+                </section>
+                <section name="windowgroupiconurl">
+                    <value><![CDATA[css/images/<theme>/icon_urlwindow.png]]></value>
+                </section>
+                <section name="isreloadconfiguration">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="showpluginproperties">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="windowpluginname">
+                    <value><![CDATA[siViewerUrlWindow]]></value>
+                </section>
+                <section name="windowpluginjsfile">
+                    <value><![CDATA[window/url/com.spacetimeinsight.viewer.ui.urlWindow]]></value>
+                </section>
+                <section name="windowtoolbarpluginname">
+                    <value><![CDATA[siViewerWindowToolBar]]></value>
+                </section>
+                <section name="windowtoolbarpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.windowToolBar]]></value>
+                </section>
+                <section name="windowfooterpluginname">
+                    <value><![CDATA[siViewerFooter]]></value>
+                </section>
+                <section name="windowfooterpluginjsfile">
+                    <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
+                </section>
+                <section name="windowwidth">
+                    <value><![CDATA[730]]></value>
+                </section>
+                <section name="windowheight">
+                    <value><![CDATA[400]]></value>
+                </section>
+                <section name="windowtop">
+                    <value><![CDATA[100]]></value>
+                </section>
+                <section name="windowleft">
+                    <value><![CDATA[400]]></value>
+                </section>
+                <section name="hidefrombusinessviewmenu">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="allowcopy">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isattributelink">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isnestedwindow">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="refreshonbusinessviewrefresh">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isperiodicrefresh">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="periodicrefreshrateunits">
+                    <value><![CDATA[Seconds]]></value>
+                </section>
+                <section name="isrefreshoncameramove">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="iscamerasensitive">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="isrefreshonlasso">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="windowurl">
+                    <value><![CDATA[serverresources/FLS/icons/epic/legend_etc_services.html?type=etcservices]]></value>
                 </section>
             </section>
             <section name="folder">

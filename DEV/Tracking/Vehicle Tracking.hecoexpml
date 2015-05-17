@@ -1119,13 +1119,13 @@ String getMissionFullName(String mission )
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1202,13 +1202,13 @@ String getMissionFullName(String mission )
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1285,13 +1285,13 @@ String getMissionFullName(String mission )
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1368,13 +1368,13 @@ String getMissionFullName(String mission )
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>

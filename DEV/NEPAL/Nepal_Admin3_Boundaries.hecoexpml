@@ -389,6 +389,7 @@ void bindData() {
 
             
 }
+ 
 
 String getName() {
 	return $artefact.getAttributeValueAsString("DISTRICT");
@@ -413,29 +414,50 @@ String getName() {
                 <section name="name">
                     <value><![CDATA[polygonstyle]]></value>
                 </section>
+                <section name="viewertype">
+                    <value><![CDATA[Esri]]></value>
+                </section>
+                <section name="isaddaslayer">
+                    <value><![CDATA[false]]></value>
+                </section>
                 <section name="makeasglobalstyle">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="isaddsymbol">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="iconcolorshader">
+                <section name="isaddicon">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="labelcolorshader">
+                <section name="isaddline">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="linetype">
+                    <value><![CDATA[esriSLS]]></value>
+                </section>
+                <section name="linestyle">
+                    <value><![CDATA[solid]]></value>
+                </section>
+                <section name="linecolor">
+                    <value><![CDATA[#008080]]></value>
+                    <section name="transparency">
+                        <value><![CDATA[1.0]]></value>
+                    </section>
+                </section>
+                <section name="linewidth">
+                    <value><![CDATA[1]]></value>
+                </section>
+                <section name="linejoinstyle">
+                    <value><![CDATA[bevel]]></value>
+                </section>
+                <section name="linecapstyle">
+                    <value><![CDATA[round]]></value>
+                </section>
+                <section name="isaddfill">
                     <value><![CDATA[false]]></value>
                 </section>
-                <section name="labelscale">
-                    <value><![CDATA[1.0]]></value>
-                </section>
-                <section name="linecolorshader">
+                <section name="isaddlabel">
                     <value><![CDATA[false]]></value>
-                </section>
-                <section name="fillcolorshader">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="showhighlightstyles">
-                    <value><![CDATA[false]]></value>
-                </section>
-                <section name="shadertype">
-                    <value><![CDATA[com.enterprisehorizons.magma.models.util.Shader]]></value>
                 </section>
             </section>
         </section>

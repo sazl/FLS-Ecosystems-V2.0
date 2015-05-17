@@ -16,7 +16,7 @@
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[id]]></value>
+                    <value><![CDATA[ID]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -56,7 +56,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[zone]]></value>
+                    <value><![CDATA[Zone]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -76,7 +76,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[district]]></value>
+                    <value><![CDATA[District]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -96,7 +96,7 @@
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[population]]></value>
+                    <value><![CDATA[Population]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -116,7 +116,7 @@
                     <value><![CDATA[java.lang.Double]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[pga_value]]></value>
+                    <value><![CDATA[PGA_VALUE]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -136,7 +136,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[severity_class]]></value>
+                    <value><![CDATA[SEVERITY]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -176,7 +176,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[reg_code]]></value>
+                    <value><![CDATA[REG_CODE]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -216,7 +216,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[ocha_pcode]]></value>
+                    <value><![CDATA[OCHA_CODE]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
@@ -612,9 +612,9 @@
             <section name="folder">
                 <section name="name">
                     <section name="script">
-                        <value><![CDATA[district]]></value>
+                        <value><![CDATA[getLabel()]]></value>
                         <section name="type">
-                            <value><![CDATA[2]]></value>
+                            <value><![CDATA[1]]></value>
                         </section>
                     </section>
                 </section>
@@ -662,6 +662,9 @@ void bindData() {
 
 String getName() {
 	return $artefact.getAttributeValueAsString("district");
+}
+String getLabel() { 
+	return $artefact.getAttributeValueAsString("district")+" ( "+$artefact.getAttributeValueAsString("population")+" )";
 }
 String getSeverity() {
 	return $artefact.getAttributeValueAsString("severity_class").trim();
@@ -723,13 +726,7 @@ String getWidth() {
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources/FLS/icons/epic/people_affected_population_32px_icon_bluebox.png]]></value>
-                </section>
-                <section name="iconcolor">
-                    <value><![CDATA[#C0C0C0]]></value>
-                    <section name="transparency">
-                        <value><![CDATA[1.0]]></value>
-                    </section>
+                    <value><![CDATA[serverresources/FLS/icons/epic/Affected_Population_G.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -770,6 +767,9 @@ String getWidth() {
                 <section name="labelsymboltype">
                     <value><![CDATA[esriTS]]></value>
                 </section>
+                <section name="labelbgcolor">
+                    <value><![CDATA[#FFFFFF]]></value>
+                </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
                 </section>
@@ -789,13 +789,13 @@ String getWidth() {
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -828,13 +828,7 @@ String getWidth() {
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources/FLS/icons/epic/people_affected_population_32px_icon_bluebox.png]]></value>
-                </section>
-                <section name="iconcolor">
-                    <value><![CDATA[#FF8080]]></value>
-                    <section name="transparency">
-                        <value><![CDATA[1.0]]></value>
-                    </section>
+                    <value><![CDATA[serverresources/FLS/icons/epic/Affected_Population_Y.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -855,10 +849,13 @@ String getWidth() {
                     <value><![CDATA[esriTS]]></value>
                 </section>
                 <section name="labelcolor">
-                    <value><![CDATA[#804000]]></value>
+                    <value><![CDATA[#000000]]></value>
                     <section name="transparency">
                         <value><![CDATA[1.0]]></value>
                     </section>
+                </section>
+                <section name="labelbgcolor">
+                    <value><![CDATA[#FFFFFF]]></value>
                 </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
@@ -879,13 +876,13 @@ String getWidth() {
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -918,13 +915,7 @@ String getWidth() {
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources/FLS/icons/epic/people_affected_population_32px_icon_bluebox.png]]></value>
-                </section>
-                <section name="iconcolor">
-                    <value><![CDATA[#800000]]></value>
-                    <section name="transparency">
-                        <value><![CDATA[1.0]]></value>
-                    </section>
+                    <value><![CDATA[serverresources/FLS/icons/epic/Affected_Population_M.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -945,10 +936,13 @@ String getWidth() {
                     <value><![CDATA[esriTS]]></value>
                 </section>
                 <section name="labelcolor">
-                    <value><![CDATA[#FF8000]]></value>
+                    <value><![CDATA[#000000]]></value>
                     <section name="transparency">
                         <value><![CDATA[1.0]]></value>
                     </section>
+                </section>
+                <section name="labelbgcolor">
+                    <value><![CDATA[#FFFFFF]]></value>
                 </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
@@ -969,13 +963,13 @@ String getWidth() {
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1008,13 +1002,7 @@ String getWidth() {
                     <value><![CDATA[esriPMS]]></value>
                 </section>
                 <section name="iconurl">
-                    <value><![CDATA[serverresources/FLS/icons/epic/people_affected_population_32px_icon_bluebox.png]]></value>
-                </section>
-                <section name="iconcolor">
-                    <value><![CDATA[#FF0000]]></value>
-                    <section name="transparency">
-                        <value><![CDATA[1.0]]></value>
-                    </section>
+                    <value><![CDATA[serverresources/FLS/icons/epic/Affected_Population_R.png]]></value>
                 </section>
                 <section name="iconwidth">
                     <value><![CDATA[16]]></value>
@@ -1035,10 +1023,13 @@ String getWidth() {
                     <value><![CDATA[esriTS]]></value>
                 </section>
                 <section name="labelcolor">
-                    <value><![CDATA[#FF0000]]></value>
+                    <value><![CDATA[#000000]]></value>
                     <section name="transparency">
                         <value><![CDATA[1.0]]></value>
                     </section>
+                </section>
+                <section name="labelbgcolor">
+                    <value><![CDATA[#FFFFFF]]></value>
                 </section>
                 <section name="labelverticalalignment">
                     <value><![CDATA[middle]]></value>
@@ -1059,13 +1050,13 @@ String getWidth() {
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1396,6 +1387,192 @@ String getWidth() {
                 <section name="filterwindowfooterpluginjsfile">
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
+                <section name="columndetails">
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[id]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[100]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[zone]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[150]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[district]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[200]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[population]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[150]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Descending]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[severity_class]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[200]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[pga_value]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[100]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[reg_code]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[100]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[ocha_pcode]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[TextAndHtml]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[100]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[false]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[None]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Center]]></value>
+                        </section>
+                    </section>
+                </section>
                 <section name="expandall">
                     <value><![CDATA[false]]></value>
                 </section>
@@ -1578,10 +1755,10 @@ String getWidth() {
                     <value><![CDATA[305]]></value>
                 </section>
                 <section name="windowtop">
-                    <value><![CDATA[300]]></value>
+                    <value><![CDATA[100]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[200]]></value>
+                    <value><![CDATA[700]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>

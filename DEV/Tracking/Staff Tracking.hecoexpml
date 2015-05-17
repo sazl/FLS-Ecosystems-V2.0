@@ -1688,13 +1688,13 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[12]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1771,13 +1771,13 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[10]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1854,13 +1854,13 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[10]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -1937,13 +1937,13 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[10]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -2020,13 +2020,13 @@ List<LassoTemplate> templateList = LassoUtils.getAllLassoTemplates();
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[10]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>

@@ -457,10 +457,11 @@ boolean authorizePlaces()
 			
 		if( placesList!=null&& placesList.size()>0 && placesList.contains( $artefact.getAttributeValueAsString("id") )  )
 		{
-				if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );		
-				boolean isOrgMatches= CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ;
-				if( isOrgMatches ) return true;	
-				else return false;
+				//if( userOrgList == null ) userOrgList= LDAPWSUtils.getOrganizationByUnit( getUserId() );		
+				//boolean isOrgMatches= CommonUtils.isOrgMatches( userOrgList , $artefact.getAttributeValueAsString("organisation") ) ;
+				//if( isOrgMatches ) return true;	
+				//else return false;
+				return true;	
 				
 	  	} 
 	}	
@@ -487,7 +488,7 @@ void bindData() {
 		$artefact.addAttribute("mobile", "-" );			
 		
 		$artefact.addAttribute("type", placeType);		
-		$artefact.addAttribute("mission", missionsMap.get( dataMap.get("mission").toString() ) );
+		if( missionsMap!=null&&dataMap.get("mission")!=null)$artefact.addAttribute("mission", missionsMap.get( dataMap.get("mission").toString() ) );
 		$artefact.addAttribute("organisation", LDAPUtils.getOrgMap().get( dataMap.get("o") )  );
 		
 		//$artefact.addAttribute("compasId", dataMap.get("compasId"));		
@@ -642,13 +643,13 @@ String getAuthorUrl(){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>

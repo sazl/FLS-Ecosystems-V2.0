@@ -765,7 +765,7 @@ String getLineColor(){
                     <value><![CDATA[#Using_Client_Side_Table.htm]]></value>
                 </section>
                 <section name="loadbydefault">
-                    <value><![CDATA[true]]></value>
+                    <value><![CDATA[false]]></value>
                 </section>
                 <section name="windowiconurl">
                     <value><![CDATA[css/images/<theme>/icon_clientsidetable.png]]></value>
@@ -807,16 +807,16 @@ String getLineColor(){
                     <value><![CDATA[common/com.spacetimeinsight.viewer.ui.footer]]></value>
                 </section>
                 <section name="windowwidth">
-                    <value><![CDATA[400]]></value>
+                    <value><![CDATA[1100]]></value>
                 </section>
                 <section name="windowheight">
-                    <value><![CDATA[300]]></value>
+                    <value><![CDATA[400]]></value>
                 </section>
                 <section name="windowtop">
                     <value><![CDATA[300]]></value>
                 </section>
                 <section name="windowleft">
-                    <value><![CDATA[100]]></value>
+                    <value><![CDATA[300]]></value>
                 </section>
                 <section name="hidefrombusinessviewmenu">
                     <value><![CDATA[false]]></value>
@@ -920,13 +920,13 @@ String getLineColor(){
                 <section name="columndetails">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[deviceId]]></value>
+                            <value><![CDATA[owner]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -941,13 +941,13 @@ String getLineColor(){
                     </section>
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[vehicleID]]></value>
+                            <value><![CDATA[deviceId]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[300]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -968,7 +968,7 @@ String getLineColor(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -989,7 +989,7 @@ String getLineColor(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1010,7 +1010,7 @@ String getLineColor(){
                             <value><![CDATA[TextAndHtml]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[0]]></value>
+                            <value><![CDATA[200]]></value>
                         </section>
                         <section name="column">
                             <value><![CDATA[false]]></value>
@@ -1019,7 +1019,7 @@ String getLineColor(){
                             <value><![CDATA[]]></value>
                         </section>
                         <section name="column">
-                            <value><![CDATA[None]]></value>
+                            <value><![CDATA[Descending]]></value>
                         </section>
                         <section name="column"/>
                     </section>
@@ -1027,12 +1027,17 @@ String getLineColor(){
                 <section name="groupattributes">
                     <section name="row">
                         <section name="column">
-                            <value><![CDATA[vehicleID]]></value>
+                            <value><![CDATA[owner]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[deviceId]]></value>
                         </section>
                     </section>
                 </section>
                 <section name="expandall">
-                    <value><![CDATA[false]]></value>
+                    <value><![CDATA[true]]></value>
                 </section>
                 <section name="freezecolumns">
                     <value><![CDATA[1]]></value>
