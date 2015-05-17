@@ -465,12 +465,12 @@ void bindData() {
 }
 String getStyle(){ return "placemarkstyle"; }
 String getName() {
-
-String[] d = $artefact.getAttributeValueAsString("Deaths").split(".");
-String s=d[0]+"";
-
-	//return  s;//$artefact.getAttributeValueAsString("DISTRICT")+" - Dead:"+$artefact.getAttributeValueAsString("Deaths")+", Injured:"+$artefact.getAttributeValueAsString("Injured");
-	return parseString( $artefact.getAttributeValueAsString("Deaths"), $artefact.getAttributeValueAsString("Injured") ); 
+String label = $artefact.getAttributeValueAsString("DISTRICT")+" - Dead:";
+String d = $artefact.getAttributeValueAsString("Deaths");
+label+=d.substring(0,d.length()-2)+", Injured:";
+d  = $artefact.getAttributeValueAsString("Injured");
+label+=d.substring(0,d.length()-2);
+return label;
 }
 
 String parseString(String d, String i)
