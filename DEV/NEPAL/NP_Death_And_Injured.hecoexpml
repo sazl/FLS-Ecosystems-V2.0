@@ -463,14 +463,14 @@ private com.enterprisehorizons.magma.datamashup.ExcelDataDriver $excelfilemashup
 void bindData() {
 	
 }
-
+String getStyle(){ return "placemarkstyle"; }
 String getName() {
 
 String[] d = $artefact.getAttributeValueAsString("Deaths").split(".");
-//parseString( $artefact.getAttributeValueAsString("Deaths"), $artefact.getAttributeValueAsString("Injured") );
+String s=d[0]+"";
 
-	return $artefact.getAttributeValueAsString("DISTRICT")+" - Dead:"+$artefact.getAttributeValueAsString("Deaths")+", Injured:"+$artefact.getAttributeValueAsString("Injured");
-	 
+	//return  s;//$artefact.getAttributeValueAsString("DISTRICT")+" - Dead:"+$artefact.getAttributeValueAsString("Deaths")+", Injured:"+$artefact.getAttributeValueAsString("Injured");
+	return parseString( $artefact.getAttributeValueAsString("Deaths"), $artefact.getAttributeValueAsString("Injured") ); 
 }
 
 String parseString(String d, String i)

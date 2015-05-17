@@ -241,9 +241,9 @@
             <section name="folder">
                 <section name="name">
                     <section name="script">
-                        <value><![CDATA[Title]]></value>
+                        <value><![CDATA[getTitleName()]]></value>
                         <section name="type">
-                            <value><![CDATA[2]]></value>
+                            <value><![CDATA[1]]></value>
                         </section>
                     </section>
                 </section>
@@ -391,6 +391,8 @@ void bindData() {
     String fls = data.getAttributeValue("Author")!=""?data.getAttributeValue("Author").toString():"FLS";
     $artefact.addAttribute("Author", fls );
 	$artefact.addAttribute("Title", data.getAttributeValue("Title"));	
+	
+	
 	$artefact.addAttribute("Link", data.getAttributeValue("Link"));	
 	String description = (String)data.getAttributeValue("Title");	
 	if(description!=null ){
@@ -418,7 +420,17 @@ String formatDate(String date) {
 		
 	}
 
-String getName() { 	return $artefact.getAttributeValueAsString("Title"); }
+String getTitleName() { 	
+//return $artefact.getAttributeValueAsString("Title"); 
+String t = $artefact.getAttributeValueAsString("Title");
+	if ( t!=null )
+	{
+	   int i = t.indexOf("(");
+	   int j = t.lastIndexOf(")");
+	   t= t.substring(i+1,j);
+	}
+ return t;
+}
 
 String getIconUrl(){ 
 	return "images//earthquake.png"; 
@@ -658,13 +670,13 @@ String getAuthorUrl(){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -747,13 +759,13 @@ String getAuthorUrl(){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -836,13 +848,13 @@ String getAuthorUrl(){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
@@ -916,13 +928,13 @@ String getAuthorUrl(){
                     <value><![CDATA[Arial]]></value>
                 </section>
                 <section name="labelfontsize">
-                    <value><![CDATA[8]]></value>
+                    <value><![CDATA[9]]></value>
                 </section>
                 <section name="labelfontstyle">
                     <value><![CDATA[normal]]></value>
                 </section>
                 <section name="labelfontweight">
-                    <value><![CDATA[normal]]></value>
+                    <value><![CDATA[bold]]></value>
                 </section>
                 <section name="labelfontdecoration">
                     <value><![CDATA[none]]></value>
