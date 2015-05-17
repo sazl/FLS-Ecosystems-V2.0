@@ -666,7 +666,7 @@ String getName() {
 String getLabel() { 
 String l = $artefact.getAttributeValueAsString("population");
 l=l.substring(0,l.length()-2 );
-	return $artefact.getAttributeValueAsString("district")+" ( "+l+" )";
+	return $artefact.getAttributeValueAsString("district")+" ( "+l+" ) population affected";
 }
 String getSeverity() {
 	return $artefact.getAttributeValueAsString("severity_class").trim();
