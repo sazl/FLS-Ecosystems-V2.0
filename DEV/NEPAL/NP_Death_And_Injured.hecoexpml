@@ -465,8 +465,18 @@ void bindData() {
 }
 
 String getName() {
-	return $artefact.getAttributeValueAsString("DISTRICT")+" - Dead:"
-	+$artefact.getAttributeValueAsString("Deaths")+", Injured:"+$artefact.getAttributeValueAsString("Injured");
+
+String[] d = $artefact.getAttributeValueAsString("Deaths").split(".");
+//parseString( $artefact.getAttributeValueAsString("Deaths"), $artefact.getAttributeValueAsString("Injured") );
+
+	return $artefact.getAttributeValueAsString("DISTRICT")+" - Dead:"+$artefact.getAttributeValueAsString("Deaths")+", Injured:"+$artefact.getAttributeValueAsString("Injured");
+	 
+}
+
+String parseString(String d, String i)
+{
+
+return d.split(".")[0];
 }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>

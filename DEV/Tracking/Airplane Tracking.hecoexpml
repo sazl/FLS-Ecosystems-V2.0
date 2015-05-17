@@ -529,7 +529,7 @@
             <section name="folder">
                 <section name="name">
                     <section name="script">
-                        <value><![CDATA[name]]></value>
+                        <value><![CDATA[deviceId]]></value>
                         <section name="type">
                             <value><![CDATA[2]]></value>
                         </section>
@@ -546,7 +546,7 @@
                 </section>
                 <section name="label">
                     <section name="script">
-                        <value><![CDATA[name]]></value>
+                        <value><![CDATA[deviceId]]></value>
                         <section name="type">
                             <value><![CDATA[2]]></value>
                         </section>

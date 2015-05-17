@@ -628,6 +628,38 @@
                     <value><![CDATA[]]></value>
                 </section>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Latitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Latitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Longitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Longitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[true]]></value>
@@ -2017,6 +2049,22 @@ String getName() {
                         </section>
                         <section name="column">
                             <value><![CDATA[Update_Tracking]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Latitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Latitude]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Longitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[Longitude]]></value>
                         </section>
                     </section>
                 </section>
