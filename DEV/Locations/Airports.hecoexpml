@@ -272,7 +272,7 @@
                     <value><![CDATA[java.lang.String]]></value>
                 </section>
                 <section name="column">
-                    <value><![CDATA[QRcode]]></value>
+                    <value><![CDATA[Location QR Code]]></value>
                 </section>
                 <section name="column">
                     <value><![CDATA[false]]></value>
