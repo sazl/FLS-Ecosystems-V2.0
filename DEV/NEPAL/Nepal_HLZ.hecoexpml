@@ -368,6 +368,70 @@
                     <value><![CDATA[]]></value>
                 </section>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Latitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Latitude/Longitude]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[LatitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.Double]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[LatitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[QRcode]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[Location QR Code]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[false]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[LongitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[java.lang.String]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[LongitudeStr]]></value>
+                </section>
+                <section name="column">
+                    <value><![CDATA[true]]></value>
+                </section>
+                <section name="column"/>
+                <section name="column"/>
+            </section>
         </section>
         <section name="cache">
             <value><![CDATA[true]]></value>
@@ -570,6 +634,48 @@
                     </section>
                 </section>
             </section>
+            <section name="row">
+                <section name="column">
+                    <value><![CDATA[Location]]></value>
+                </section>
+                <section name="column">
+                    <section name="columntype">
+                        <value><![CDATA[table]]></value>
+                    </section>
+                    <section name="table">
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Latitude]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Text]]></value>
+                            </section>
+                            <section name="column"/>
+                            <section name="column"/>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[Longitude]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Text]]></value>
+                            </section>
+                            <section name="column"/>
+                            <section name="column"/>
+                        </section>
+                        <section name="row">
+                            <section name="column">
+                                <value><![CDATA[QRcode]]></value>
+                            </section>
+                            <section name="column">
+                                <value><![CDATA[Text]]></value>
+                            </section>
+                            <section name="column"/>
+                            <section name="column"/>
+                        </section>
+                    </section>
+                </section>
+            </section>
         </section>
         <section name="experiencedef">
             <section name="folder">
@@ -682,11 +788,14 @@
 private com.enterprisehorizons.magma.datamashup.ExcelDataDriver $excelfilemashupdriver;
 
 void bindData() {
-	
+	$artefact.addAttribute("QRcode", "QRcode");
+	System.out.println( $artefact.getAttributeValueAsString("LatitudeStr") );
+	$artefact.addAttribute("Latitude", $artefact.getAttributeValueAsString("LatitudeStr")+"/"+$artefact.getAttributeValueAsString("LongitudeStr"));
+		
 }
 
 String getName() {
-	return $artefact.getAttributeValueAsString("Name");
+	return $artefact.getAttributeValueAsString("Name"); 
 }
 String getLabelName() { 
 	String comp =$artefact.getAttributeValueAsString("Composition");
@@ -2317,6 +2426,22 @@ String getStyleName()
                         </section>
                         <section name="column">
                             <value><![CDATA[Degrees]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Latitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[LatitudeStr]]></value>
+                        </section>
+                    </section>
+                    <section name="row">
+                        <section name="column">
+                            <value><![CDATA[Longitude]]></value>
+                        </section>
+                        <section name="column">
+                            <value><![CDATA[LongitudeStr]]></value>
                         </section>
                     </section>
                 </section>

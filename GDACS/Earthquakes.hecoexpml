@@ -318,7 +318,12 @@
                     <value><![CDATA[268]]></value>
                 </section>
                 <section name="alerttime">
-                    <value><![CDATA[03/02/2015 23:00:10]]></value>
+                    <section name="script">
+                        <value><![CDATA[getAlertTime()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
+                        </section>
+                    </section>
                 </section>
                 <section name="alertsourcetype">
                     <value><![CDATA[250]]></value>
@@ -344,6 +349,7 @@
 import com.wfp.utils.IEPICConstants;
 import javax.servlet.http.HttpSession;
 import java.util.concurrent.TimeUnit;
+import com.wfp.utils.IEPICConstants;
 
 String serverRootUrl = getServerContextBaseUrl();
 private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
@@ -523,6 +529,11 @@ String getAuthorUrl(){
 	   			}  			
 		   }	if( timeDiff <0 ) humanReadable="Its a future date"	;   
 		   return humanReadable;
+}
+String getAlertTime()
+{
+  return CommonUtils.formatDate( CommonUtils.getUTCdatetimeAsString(),IEPICConstants.NEW_PORTAL_DATE_FORMAT, IEPICConstants.PORTAL_DATE_FORMAT_MM );
+
 }]]></value>
                 <section name="type">
                     <value><![CDATA[1]]></value>
