@@ -787,10 +787,14 @@
                 <value><![CDATA[private com.enterprisehorizons.magma.designtime.artifact.GeoArtifact $artefact;
 private com.enterprisehorizons.magma.datamashup.ExcelDataDriver $excelfilemashupdriver;
 
-void bindData() {
-	$artefact.addAttribute("QRcode", "QRcode");
-	System.out.println( $artefact.getAttributeValueAsString("LatitudeStr") );
+void addAttribute()
+{
+	$artefact.addAttribute("QRcode", "QRcode");	
 	$artefact.addAttribute("Latitude", $artefact.getAttributeValueAsString("LatitudeStr")+"/"+$artefact.getAttributeValueAsString("LongitudeStr"));
+	
+}
+void bindData() {
+
 		
 }
 
@@ -813,7 +817,7 @@ String getStyleName()
 	else if( lent!="" )
 	{   
 	    int l = Integer.parseInt(lent);
-		System.out.println(l);
+		//System.out.println(l);
 		if( l >140 ) return "Large";
 			else if( l >0 ) return "Small";	
 	}
@@ -2442,6 +2446,21 @@ String getStyleName()
                         </section>
                         <section name="column">
                             <value><![CDATA[LongitudeStr]]></value>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section name="runtimeattributes">
+            <section name="attributegroup">
+                <section name="name">
+                    <value><![CDATA[Attribute9]]></value>
+                </section>
+                <section name="attributes">
+                    <section name="script">
+                        <value><![CDATA[addAttribute()]]></value>
+                        <section name="type">
+                            <value><![CDATA[1]]></value>
                         </section>
                     </section>
                 </section>
